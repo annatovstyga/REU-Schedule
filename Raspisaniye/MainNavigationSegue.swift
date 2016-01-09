@@ -29,6 +29,7 @@ class MainNavigationSegue: UIStoryboardSegue {
         
         tabBarController.placeholderView.layoutIfNeeded()
         destinationController.didMoveToParentViewController(tabBarController)
+    
 
     }
 

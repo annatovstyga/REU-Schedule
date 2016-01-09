@@ -1,14 +1,17 @@
-
-
 import UIKit
 
 class MMSwiftTabBarController: UIViewController {
     
+    
+    @IBAction func PersonClick(sender: AnyObject) {
+         performSegueWithIdentifier("cabSegue", sender: self)
+    }
+    
     @IBAction func monClick(sender: AnyObject) {
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     @IBAction func TueClick(sender: AnyObject) {
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
     }
     @IBAction func WedClick(sender: AnyObject) {
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
@@ -19,27 +22,22 @@ class MMSwiftTabBarController: UIViewController {
     @IBAction func FriClick(sender: AnyObject) {
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
     }
+
     @IBAction func SutClick(sender: AnyObject) {
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
-    }
-    @IBAction func SunClick(sender: AnyObject) {
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[6])
+         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
-    let firstReuColor = UIColor(red: 212/255, green: 190/255, blue: 106/255, alpha: 1.0)
-    let secondReuColor = UIColor(red: 170/255,green: 143/255,blue: 57/255,alpha: 1.0)
+    
 
     var currentViewController: UIViewController?
     @IBOutlet var placeholderView: UIView!
-    @IBOutlet var tabBarButtons: Array<UIButton>!
     
+    @IBOutlet var tabBarButtons: Array<UIButton>!
+    @IBOutlet var tabBarButtons2: Array<UIButton>!
     override func viewDidLoad() {
-        
+        print(tabBarButtons)
         super.viewDidLoad()
-        
-        if(tabBarButtons.count > 0) {
-            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
-        }
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     
     override func shouldAutorotate() -> Bool {
@@ -49,17 +47,16 @@ class MMSwiftTabBarController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let availableIdentifiers = ["mainSegue"]
-        
         if(availableIdentifiers.contains(segue.identifier!) ) {
                         
             for btn in tabBarButtons {
                 btn.selected = false
-                btn.backgroundColor = secondReuColor
+                btn.backgroundColor = GlobalColors.secondColor
             }
             
             let senderBtn = sender as! UIButton
                senderBtn.selected = true
-               senderBtn.backgroundColor = firstReuColor
+               senderBtn.backgroundColor = GlobalColors.firstColor
             
         }
     }
