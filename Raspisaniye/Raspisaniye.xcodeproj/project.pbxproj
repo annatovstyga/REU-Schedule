@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B204A7711C4085C100086E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76C1C4085C100086E9E /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		B204A7721C4085C100086E9E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76D1C4085C100086E9E /* FirstViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B204A7731C4085C100086E9E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B204A76E1C4085C100086E9E /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		B204A7741C4085C100086E9E /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76F1C4085C100086E9E /* MainNavigationSegue.swift */; settings = {ASSET_TAGS = (); }; };
-		B204A7751C4085C100086E9E /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A7701C4085C100086E9E /* MMSwiftTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
-		B204A77A1C4085DF00086E9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B204A7761C4085DF00086E9E /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
-		B204A77B1C4085DF00086E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B204A7781C4085DF00086E9E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		B2FDE3831C3DB4C300290A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FDE3821C3DB4C300290A04 /* Assets.xcassets */; };
+		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		B24ACAC01C408B86006FB191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24ACABB1C408B86006FB191 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
+		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; settings = {ASSET_TAGS = (); }; };
+		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
+		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B204A76B1C4085C000086E9E /* Raspisaniye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Raspisaniye-Bridging-Header.h"; sourceTree = "<group>"; };
-		B204A76C1C4085C100086E9E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../REU_RASP/REU_RASP/AppDelegate.swift; sourceTree = "<group>"; };
-		B204A76D1C4085C100086E9E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ../../REU_RASP/REU_RASP/FirstViewController.swift; sourceTree = "<group>"; };
-		B204A76E1C4085C100086E9E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../REU_RASP/REU_RASP/Info.plist; sourceTree = "<group>"; };
-		B204A76F1C4085C100086E9E /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainNavigationSegue.swift; path = ../../REU_RASP/REU_RASP/MainNavigationSegue.swift; sourceTree = "<group>"; };
-		B204A7701C4085C100086E9E /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MMSwiftTabBarController.swift; path = ../../REU_RASP/REU_RASP/MMSwiftTabBarController.swift; sourceTree = "<group>"; };
-		B204A7771C4085DF00086E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../REU_RASP/REU_RASP/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B204A7791C4085DF00086E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../REU_RASP/REU_RASP/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B24ACABB1C408B86006FB191 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
+		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
+		B24ACAC31C408BB1006FB191 /* Raspisaniye-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Raspisaniye-Bridging-Header.h"; path = "../Raspisaniye-Bridging-Header.h"; sourceTree = "<group>"; };
+		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspisaniye.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2FDE3821C3DB4C300290A04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +42,15 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
-				B2FDE3781C3DB4C300290A04 /* Raspisaniye */,
+				B2C406391C408C4E00FB90BF /* Info.plist */,
+				B24ACAC31C408BB1006FB191 /* Raspisaniye-Bridging-Header.h */,
+				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
+				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
+				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
+				B24ACABB1C408B86006FB191 /* Info.plist */,
+				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
+				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
 				B2FDE3771C3DB4C300290A04 /* Products */,
-				B204A76B1C4085C000086E9E /* Raspisaniye-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,21 +60,6 @@
 				B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B2FDE3781C3DB4C300290A04 /* Raspisaniye */ = {
-			isa = PBXGroup;
-			children = (
-				B204A7761C4085DF00086E9E /* LaunchScreen.xib */,
-				B204A7781C4085DF00086E9E /* Main.storyboard */,
-				B204A76C1C4085C100086E9E /* AppDelegate.swift */,
-				B204A76D1C4085C100086E9E /* FirstViewController.swift */,
-				B204A76E1C4085C100086E9E /* Info.plist */,
-				B204A76F1C4085C100086E9E /* MainNavigationSegue.swift */,
-				B204A7701C4085C100086E9E /* MMSwiftTabBarController.swift */,
-				B2FDE3821C3DB4C300290A04 /* Assets.xcassets */,
-			);
-			path = Raspisaniye;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +121,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B204A7731C4085C100086E9E /* Info.plist in Resources */,
-				B204A77A1C4085DF00086E9E /* LaunchScreen.xib in Resources */,
-				B2FDE3831C3DB4C300290A04 /* Assets.xcassets in Resources */,
-				B204A77B1C4085DF00086E9E /* Main.storyboard in Resources */,
+				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
+				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
+				B24ACAC01C408B86006FB191 /* Info.plist in Resources */,
+				B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,35 +135,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B204A7711C4085C100086E9E /* AppDelegate.swift in Sources */,
-				B204A7741C4085C100086E9E /* MainNavigationSegue.swift in Sources */,
-				B204A7721C4085C100086E9E /* FirstViewController.swift in Sources */,
-				B204A7751C4085C100086E9E /* MMSwiftTabBarController.swift in Sources */,
+				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
+				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
+				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B204A7761C4085DF00086E9E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B204A7771C4085DF00086E9E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		B204A7781C4085DF00086E9E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B204A7791C4085DF00086E9E /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B2FDE3881C3DB4C300290A04 /* Debug */ = {
@@ -261,13 +228,12 @@
 		B2FDE38B1C3DB4C300290A04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/../REU_RASP/REU_RASP/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -275,13 +241,12 @@
 		B2FDE38C1C3DB4C300290A04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/../REU_RASP/REU_RASP/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
