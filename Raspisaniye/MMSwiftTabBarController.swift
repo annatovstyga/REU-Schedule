@@ -33,10 +33,8 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var placeholderView: UIView!
     
     @IBOutlet var tabBarButtons: Array<UIButton>!
-    @IBOutlet var tabBarButtons2: Array<UIButton>!
     override func viewDidLoad() {
-        print(tabBarButtons)
-        super.viewDidLoad()
+            super.viewDidLoad()
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     
@@ -60,5 +58,12 @@ class MMSwiftTabBarController: UIViewController {
             
         }
     }
+    
+    @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)
+    {
+        
+        // Pull any data from the view controller which initiated the unwind segue.
+    }
+
 
 }
