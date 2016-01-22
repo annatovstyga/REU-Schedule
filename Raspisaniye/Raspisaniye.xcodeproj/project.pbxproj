@@ -14,6 +14,8 @@
 		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; settings = {ASSET_TAGS = (); }; };
 		B2639AD71C41291F0028F663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2639AD61C41291F0028F663 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090B1C52CC0700EB0A08 /* CabController.swift */; settings = {ASSET_TAGS = (); }; };
+		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; settings = {ASSET_TAGS = (); }; };
+		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; settings = {ASSET_TAGS = (); }; };
 		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +30,8 @@
 		B2639ACF1C4123A30028F663 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B2639AD61C41291F0028F663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Raspisaniye/Images.xcassets; sourceTree = "<group>"; };
 		B289090B1C52CC0700EB0A08 /* CabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabController.swift; sourceTree = "<group>"; };
+		B289090D1C52D14500EB0A08 /* CabNavSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabNavSegue.swift; sourceTree = "<group>"; };
+		B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewOneController.swift; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +66,9 @@
 				B24ACAC31C408BB1006FB191 /* Raspisaniye-Bridging-Header.h */,
 				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
 				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
+				B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
+				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				B24ACABB1C408B86006FB191 /* Info.plist */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
@@ -157,6 +163,8 @@
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
 				B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */,
+				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
+				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

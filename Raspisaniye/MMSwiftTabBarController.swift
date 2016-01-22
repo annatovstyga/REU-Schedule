@@ -34,6 +34,13 @@ class MMSwiftTabBarController: UIViewController {
     
     @IBOutlet var tabBarButtons: Array<UIButton>!
     override func viewDidLoad() {
+        let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
+        if(false) //!!!добавить условие
+        {
+        let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
+        }
             super.viewDidLoad()
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
