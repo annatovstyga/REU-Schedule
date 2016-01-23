@@ -35,7 +35,7 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var tabBarButtons: Array<UIButton>!
     override func viewDidLoad() {
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
-        if(false) //!!!добавить условие
+        if(true) //!!!добавить условие
         {
         let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
         appDelegate.window?.rootViewController = initialViewController
