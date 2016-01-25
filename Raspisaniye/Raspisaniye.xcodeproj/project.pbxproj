@@ -25,6 +25,8 @@
 		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */; settings = {ASSET_TAGS = (); }; };
+		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_REA_90.png; sourceTree = "<group>"; };
+		B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFld.swift; sourceTree = "<group>"; };
 		B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspisaniye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +75,7 @@
 		B28F1FC11C5422DF00C9136B /* Pics */ = {
 			isa = PBXGroup;
 			children = (
+				B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */,
 				B28F1FC21C54259D00C9136B /* Fon.png */,
 				B28F1FBB1C54153800C9136B /* gerb.png */,
 				B2169D141C52E42B000303DC /* Fon_zvezda.png */,
@@ -79,9 +84,20 @@
 			name = Pics;
 			sourceTree = "<group>";
 		};
+		B2C4F87E1C566D3000B7CAFD /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
+				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
+				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
+			);
+			name = Customs;
+			sourceTree = "<group>";
+		};
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
+				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */,
 				B28F1FC11C5422DF00C9136B /* Pics */,
 				B2639AD61C41291F0028F663 /* Images.xcassets */,
@@ -96,9 +112,7 @@
 				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				B24ACABB1C408B86006FB191 /* Info.plist */,
-				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
-				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B2FDE3771C3DB4C300290A04 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 			files = (
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
+				B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
 				B28F1FBC1C54153800C9136B /* gerb.png in Resources */,
 				B24ACAC01C408B86006FB191 /* Info.plist in Resources */,
@@ -193,6 +208,7 @@
 				B2639AD01C4123A30028F663 /* Global.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
+				B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
 				B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */,
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
@@ -292,6 +308,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
@@ -308,6 +328,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
