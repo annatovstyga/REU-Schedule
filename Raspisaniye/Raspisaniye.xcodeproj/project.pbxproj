@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2169D151C52E42B000303DC /* Fon_zvezda.png in Resources */ = {isa = PBXBuildFile; fileRef = B2169D141C52E42B000303DC /* Fon_zvezda.png */; settings = {ASSET_TAGS = (); }; };
-		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		B24ACAC01C408B86006FB191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24ACABB1C408B86006FB191 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; settings = {ASSET_TAGS = (); }; };
-		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
-		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; settings = {ASSET_TAGS = (); }; };
-		B2639AD71C41291F0028F663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2639AD61C41291F0028F663 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090B1C52CC0700EB0A08 /* CabController.swift */; settings = {ASSET_TAGS = (); }; };
-		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; settings = {ASSET_TAGS = (); }; };
-		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; settings = {ASSET_TAGS = (); }; };
-		B28F1FBA1C5412E800C9136B /* Venz.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FB91C5412E800C9136B /* Venz.png */; settings = {ASSET_TAGS = (); }; };
-		B28F1FBC1C54153800C9136B /* gerb.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FBB1C54153800C9136B /* gerb.png */; settings = {ASSET_TAGS = (); }; };
-		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; settings = {ASSET_TAGS = (); }; };
-		B28F1FC31C54259D00C9136B /* Fon.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FC21C54259D00C9136B /* Fon.png */; settings = {ASSET_TAGS = (); }; };
-		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; settings = {ASSET_TAGS = (); }; };
-		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
-		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */; settings = {ASSET_TAGS = (); }; };
-		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; settings = {ASSET_TAGS = (); }; };
+		B2169D151C52E42B000303DC /* Fon_zvezda.png in Resources */ = {isa = PBXBuildFile; fileRef = B2169D141C52E42B000303DC /* Fon_zvezda.png */; };
+		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
+		B24ACAC01C408B86006FB191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24ACABB1C408B86006FB191 /* Info.plist */; };
+		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
+		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
+		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; };
+		B2639AD71C41291F0028F663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2639AD61C41291F0028F663 /* Images.xcassets */; };
+		B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090B1C52CC0700EB0A08 /* CabController.swift */; };
+		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; };
+		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
+		B28F1FBA1C5412E800C9136B /* Venz.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FB91C5412E800C9136B /* Venz.png */; };
+		B28F1FBC1C54153800C9136B /* gerb.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FBB1C54153800C9136B /* gerb.png */; };
+		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
+		B28F1FC31C54259D00C9136B /* Fon.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FC21C54259D00C9136B /* Fon.png */; };
+		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
+		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; };
+		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
+		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; };
+		B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */; };
+		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		B24ACABB1C408B86006FB191 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
-		B24ACAC31C408BB1006FB191 /* Raspisaniye-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Raspisaniye-Bridging-Header.h"; path = "../Raspisaniye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2639ACF1C4123A30028F663 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B2639AD61C41291F0028F663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Raspisaniye/Images.xcassets; sourceTree = "<group>"; };
 		B289090B1C52CC0700EB0A08 /* CabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabController.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 				B2639AD51C4127EC0028F663 /* Icons */,
 				B2639ACF1C4123A30028F663 /* Global.swift */,
 				B2C406391C408C4E00FB90BF /* Info.plist */,
-				B24ACAC31C408BB1006FB191 /* Raspisaniye-Bridging-Header.h */,
 				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
 				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
 				B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */,
