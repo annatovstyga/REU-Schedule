@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2169D151C52E42B000303DC /* Fon_zvezda.png in Resources */ = {isa = PBXBuildFile; fileRef = B2169D141C52E42B000303DC /* Fon_zvezda.png */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
-		B24ACAC01C408B86006FB191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24ACABB1C408B86006FB191 /* Info.plist */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
 		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; };
@@ -17,22 +15,16 @@
 		B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090B1C52CC0700EB0A08 /* CabController.swift */; };
 		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; };
 		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
-		B28F1FBA1C5412E800C9136B /* Venz.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FB91C5412E800C9136B /* Venz.png */; };
-		B28F1FBC1C54153800C9136B /* gerb.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FBB1C54153800C9136B /* gerb.png */; };
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
-		B28F1FC31C54259D00C9136B /* Fon.png in Resources */ = {isa = PBXBuildFile; fileRef = B28F1FC21C54259D00C9136B /* Fon.png */; };
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
 		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; };
-		B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B2169D141C52E42B000303DC /* Fon_zvezda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fon_zvezda.png; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B24ACABB1C408B86006FB191 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
 		B2639ACF1C4123A30028F663 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -40,15 +32,11 @@
 		B289090B1C52CC0700EB0A08 /* CabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabController.swift; sourceTree = "<group>"; };
 		B289090D1C52D14500EB0A08 /* CabNavSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabNavSegue.swift; sourceTree = "<group>"; };
 		B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewOneController.swift; sourceTree = "<group>"; };
-		B28F1FB91C5412E800C9136B /* Venz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Venz.png; sourceTree = "<group>"; };
-		B28F1FBB1C54153800C9136B /* gerb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gerb.png; sourceTree = "<group>"; };
 		B28F1FBF1C54183400C9136B /* CustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
-		B28F1FC21C54259D00C9136B /* Fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fon.png; sourceTree = "<group>"; };
 		B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewTwoController.swift; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_REA_90.png; sourceTree = "<group>"; };
 		B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFld.swift; sourceTree = "<group>"; };
 		B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspisaniye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,31 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B2639AD51C4127EC0028F663 /* Icons */ = {
+		A250EB601C56CF530022A117 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				B2C406391C408C4E00FB90BF /* Info.plist */,
+				B2FDE3771C3DB4C300290A04 /* Products */,
 			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
-		B28F1FC11C5422DF00C9136B /* Pics */ = {
-			isa = PBXGroup;
-			children = (
-				B2C4F8701C5624B100B7CAFD /* Logo_REA_90.png */,
-				B28F1FC21C54259D00C9136B /* Fon.png */,
-				B28F1FBB1C54153800C9136B /* gerb.png */,
-				B2169D141C52E42B000303DC /* Fon_zvezda.png */,
-				B28F1FB91C5412E800C9136B /* Venz.png */,
-			);
-			name = Pics;
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 		B2C4F87E1C566D3000B7CAFD /* Customs */ = {
 			isa = PBXGroup;
 			children = (
 				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
-				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
+				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -97,21 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
-				B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */,
-				B28F1FC11C5422DF00C9136B /* Pics */,
-				B2639AD61C41291F0028F663 /* Images.xcassets */,
-				B2639AD51C4127EC0028F663 /* Icons */,
 				B2639ACF1C4123A30028F663 /* Global.swift */,
-				B2C406391C408C4E00FB90BF /* Info.plist */,
-				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
-				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
 				B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */,
+				B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
 				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
-				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
-				B24ACABB1C408B86006FB191 /* Info.plist */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
-				B2FDE3771C3DB4C300290A04 /* Products */,
+				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
+				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
+				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
+				B2639AD61C41291F0028F663 /* Images.xcassets */,
+				A250EB601C56CF530022A117 /* Supporting files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,7 +129,7 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FKNLQ46HWC;
+						DevelopmentTeam = GQ92PTQY7M;
 					};
 				};
 			};
@@ -184,14 +158,8 @@
 			files = (
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
-				B2C4F8711C5624B100B7CAFD /* Logo_REA_90.png in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
-				B28F1FBC1C54153800C9136B /* gerb.png in Resources */,
-				B24ACAC01C408B86006FB191 /* Info.plist in Resources */,
 				B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */,
-				B28F1FC31C54259D00C9136B /* Fon.png in Resources */,
-				B2169D151C52E42B000303DC /* Fon_zvezda.png in Resources */,
-				B28F1FBA1C5412E800C9136B /* Venz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -292,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -306,14 +274,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.IlyaMudriy.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -326,14 +297,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.IlyaMudriy.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
