@@ -10,7 +10,7 @@ class CustomBtn: UIButton {
     
     override func drawRect(rect: CGRect) {
         
-        let path = UIBezierPath(rect: rect)
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: 6)
         btnColor.set()
         
         if(isFilled)

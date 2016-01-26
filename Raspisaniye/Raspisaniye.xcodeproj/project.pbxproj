@@ -17,7 +17,7 @@
 		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
-		B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C406391C408C4E00FB90BF /* Info.plist */; };
+		B296042E1C582F0400A14509 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B296042D1C582F0400A14509 /* README.md */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
@@ -34,6 +34,7 @@
 		B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewOneController.swift; sourceTree = "<group>"; };
 		B28F1FBF1C54183400C9136B /* CustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
 		B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewTwoController.swift; sourceTree = "<group>"; };
+		B296042D1C582F0400A14509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -55,15 +56,26 @@
 		A250EB601C56CF530022A117 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				B296042D1C582F0400A14509 /* README.md */,
 				B2C406391C408C4E00FB90BF /* Info.plist */,
 				B2FDE3771C3DB4C300290A04 /* Products */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		B296042F1C58316700A14509 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */,
+				B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */,
+			);
+			name = "Login Screen";
+			sourceTree = "<group>";
+		};
 		B2C4F87E1C566D3000B7CAFD /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
@@ -76,10 +88,8 @@
 			children = (
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B2639ACF1C4123A30028F663 /* Global.swift */,
-				B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */,
-				B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */,
+				B296042F1C58316700A14509 /* Login Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
-				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
@@ -124,7 +134,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = rGradeStd;
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
@@ -159,7 +169,6 @@
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
-				B2C4063A1C408C4E00FB90BF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +188,7 @@
 				B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */,
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
+				B296042E1C582F0400A14509 /* README.md in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

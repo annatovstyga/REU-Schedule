@@ -19,6 +19,12 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
          self.cstmTF.delegate = self;
+        if(amistudent){
+            whoamiStringTwo = "номер группы"
+        }
+        else{
+            whoamiStringTwo = "Вашу фамилию"
+        }
         self.cstmTF.placegolderText += whoamiStringTwo
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
