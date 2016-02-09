@@ -35,14 +35,14 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var tabBarButtons: Array<UIButton>!
     override func viewDidLoad() {
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
-        if(true)//if(isLogined == false)
+        if(false)//if(isLogined == false)
         {
         let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
         }
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
             super.viewDidLoad()
-            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     
     override func shouldAutorotate() -> Bool {
@@ -55,13 +55,11 @@ class MMSwiftTabBarController: UIViewController {
         if(availableIdentifiers.contains(segue.identifier!) ) {
                         
             for btn in tabBarButtons {
-                btn.selected = false
-                btn.backgroundColor = GlobalColors.secondColor
+                btn.backgroundColor = GlobalColors.lightBlueColor
             }
             
             let senderBtn = sender as! UIButton
-               senderBtn.selected = true
-               senderBtn.backgroundColor = GlobalColors.firstColor
+               senderBtn.backgroundColor = GlobalColors.BlueColor
             
         }
     }
