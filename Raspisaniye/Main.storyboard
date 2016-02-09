@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPA-nv-JkJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oVv-51-eUa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -39,6 +39,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjA-Bz-xO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1237" y="981"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Nhk-SI-udf">
+            <objects>
+                <viewController id="oVv-51-eUa" customClass="TestViewController" customModule="Raspisaniye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="evD-qX-EPj"/>
+                        <viewControllerLayoutGuide type="bottom" id="rwE-tu-Ug6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Kx-Gn-YlO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW8-nY-JJd">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="testButton:" destination="oVv-51-eUa" eventType="touchUpInside" id="X2C-MG-7bT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pW8-nY-JJd" firstAttribute="centerX" secondItem="1Kx-Gn-YlO" secondAttribute="centerX" id="B12-Iq-Dh8"/>
+                            <constraint firstItem="pW8-nY-JJd" firstAttribute="centerY" secondItem="1Kx-Gn-YlO" secondAttribute="centerY" id="ruw-Yg-1jx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDh-0E-7K3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2914" y="-360"/>
         </scene>
         <!--Login View One Controller-->
         <scene sceneID="yNQ-Ks-IA1">
@@ -644,7 +675,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Gwd-oo-5cn">
-                        <barButtonItem key="leftBarButtonItem" image="3C9013AF-3E74-4F3B-B718-00AA875D48E7" width="10" id="bkz-wZ-agD">
+                        <barButtonItem key="leftBarButtonItem" image="63AEF67B-D326-4327-92FF-3F7A28141E21" width="10" id="bkz-wZ-agD">
                             <connections>
                                 <action selector="PersonClick:" destination="bPA-nv-JkJ" id="wCK-zX-lCP"/>
                             </connections>
@@ -822,7 +853,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3C9013AF-3E74-4F3B-B718-00AA875D48E7" width="32" height="32">
+        <image name="63AEF67B-D326-4327-92FF-3F7A28141E21" width="32" height="32">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
