@@ -15,6 +15,7 @@ class HelperManager {
     
     func showMBProgressHUD() -> MBProgressHUD {
         let window = UIApplication.sharedApplication().windows.last
+        MBProgressHUD.hideHUDForView(window, animated: true)
         let hud = MBProgressHUD.showHUDAddedTo(window, animated: true)
         hud.labelText = "Loading..."
         return hud
