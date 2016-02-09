@@ -10,6 +10,7 @@
 		680F6841198259183FD7DC4C /* Pods_Raspisaniye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EF12D659A4D7BCF1911287 /* Pods_Raspisaniye.framework */; };
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
 		A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D31C6A27C700D73B5C /* TestViewController.swift */; };
+		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
@@ -32,6 +33,7 @@
 		A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetManager.swift; path = Managers/InternetManager.swift; sourceTree = "<group>"; };
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
 		A29F12D31C6A27C700D73B5C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		A29F12D51C6A63DA00D73B5C /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperManager.swift; path = Managers/HelperManager.swift; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */,
+				A29F12D51C6A63DA00D73B5C /* HelperManager.swift */,
+				B2639ACF1C4123A30028F663 /* Global.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -123,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
-				B2639ACF1C4123A30028F663 /* Global.swift */,
 				B296042F1C58316700A14509 /* Login Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
@@ -283,6 +286,7 @@
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B296042E1C582F0400A14509 /* README.md in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
+				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
