@@ -11,8 +11,10 @@ import MBProgressHUD
 
 class HelperManager {
     
+    // MARK: Singleton
     static let sharedInstance = HelperManager()
     
+    // MARK: MBProgressHUD - Show & Hide
     func showMBProgressHUD() -> MBProgressHUD {
         let window = UIApplication.sharedApplication().windows.last
         MBProgressHUD.hideHUDForView(window, animated: true)
