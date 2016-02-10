@@ -33,12 +33,12 @@ class CabController: UIViewController {
             
             for btn in tabBarButtons {
 //                btn.selected = false //fix it
-                btn.backgroundColor = GlobalColors.secondColor
+//                btn.backgroundColor = GlobalColors.secondColor
             }
             
             let senderBtn = sender as! UIButton
 //            senderBtn.selected = true //fix it
-            senderBtn.backgroundColor = GlobalColors.firstColor
+//            senderBtn.backgroundColor = GlobalColors.firstColor
             
         }
     }
