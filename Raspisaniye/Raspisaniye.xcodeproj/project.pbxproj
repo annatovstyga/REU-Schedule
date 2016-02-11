@@ -31,6 +31,8 @@
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
+		B2D3B4371C6D1944003C1464 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D3B4361C6D1944003C1464 /* clock.png */; };
+		B2D3B4391C6D1948003C1464 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D3B4381C6D1948003C1464 /* location.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4063C1C408CD000FB90BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFld.swift; sourceTree = "<group>"; };
+		B2D3B4361C6D1944003C1464 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		B2D3B4381C6D1948003C1464 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspisaniye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EF12D659A4D7BCF1911287 /* Pods_Raspisaniye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raspisaniye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,6 +153,8 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
+				B2D3B4381C6D1948003C1464 /* location.png */,
+				B2D3B4361C6D1944003C1464 /* clock.png */,
 				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
 				B25612801C6A6F810083CFCB /* Search.png */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
@@ -239,8 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
+				B2D3B4371C6D1944003C1464 /* clock.png in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
+				B2D3B4391C6D1948003C1464 /* location.png in Resources */,
 				B25612811C6A6F810083CFCB /* Search.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
