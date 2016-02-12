@@ -5,6 +5,7 @@ import UIKit
 
 let defaults = NSUserDefaults.standardUserDefaults()
 
+var weekNumber:Int = 1
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent : Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 

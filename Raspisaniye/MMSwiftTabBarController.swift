@@ -24,13 +24,26 @@ class MMSwiftTabBarController: UIViewController {
          performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
-    
+    func rotateWeek(sender: UIScreenEdgePanGestureRecognizer) {
 
+        if sender.state == .Ended {
+            weekNumber++
+            weekLabel.text = "Неделя " + String(weekNumber)
+
+            }
+        }
+
+
+    @IBOutlet weak var weekLabel: UILabel!
     var currentViewController: UIViewController?
     @IBOutlet var placeholderView: UIView!
     
     @IBOutlet var tabBarButtons: Array<UIButton>!
     override func viewDidLoad() {
+        let screenEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "rotateWeek:")
+        screenEdgeRecognizer.edges = .Right
+        self.view.addGestureRecognizer(screenEdgeRecognizer)
         isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
         if(isLogined == false)
@@ -40,8 +53,11 @@ class MMSwiftTabBarController: UIViewController {
         appDelegate.window?.makeKeyAndVisible()
         }
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+             weekLabel.text = "Неделя " + String(weekNumber)
             super.viewDidLoad()
     }
+    
+    
     
     override func shouldAutorotate() -> Bool {
         return true
@@ -61,6 +77,7 @@ class MMSwiftTabBarController: UIViewController {
             
         }
     }
+    
     
     @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)
     {
