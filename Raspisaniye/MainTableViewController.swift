@@ -11,7 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
-                self.tableView.estimatedRowHeight = 120
+        self.tableView.estimatedRowHeight = 120
         self.tableView.rowHeight = self.view.frame.size.height / 5
         super.viewDidLoad()
 

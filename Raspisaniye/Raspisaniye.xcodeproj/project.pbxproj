@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		680F6841198259183FD7DC4C /* Pods_Raspisaniye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EF12D659A4D7BCF1911287 /* Pods_Raspisaniye.framework */; };
+		A2498BA61C6F30EA00AFBF4C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2498BA51C6F30EA00AFBF4C /* ProfileViewController.swift */; };
+		A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */; };
+		A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */; };
+		A2498BB01C6F4FB800AFBF4C /* runnigMan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */; };
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
 		A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D31C6A27C700D73B5C /* TestViewController.swift */; };
 		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
@@ -27,7 +31,6 @@
 		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
-		B296042E1C582F0400A14509 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B296042D1C582F0400A14509 /* README.md */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063C1C408CD000FB90BF /* Main.storyboard */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
@@ -38,6 +41,10 @@
 /* Begin PBXFileReference section */
 		45F2318CF5A2ADE9D6C6DF29 /* Pods-Raspisaniye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raspisaniye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raspisaniye/Pods-Raspisaniye.debug.xcconfig"; sourceTree = "<group>"; };
 		7BDB444D168DAA28D947611A /* Pods-Raspisaniye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raspisaniye.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raspisaniye/Pods-Raspisaniye.release.xcconfig"; sourceTree = "<group>"; };
+		A2498BA51C6F30EA00AFBF4C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileBackground@2x.png"; sourceTree = "<group>"; };
+		A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileNavigationBackground@2x.png"; sourceTree = "<group>"; };
+		A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "runnigMan@2x.png"; sourceTree = "<group>"; };
 		A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetManager.swift; path = Managers/InternetManager.swift; sourceTree = "<group>"; };
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
 		A29F12D31C6A27C700D73B5C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +94,19 @@
 				D4EF12D659A4D7BCF1911287 /* Pods_Raspisaniye.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2498BB11C6F585400AFBF4C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B2D3B4381C6D1948003C1464 /* location.png */,
+				A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */,
+				A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */,
+				A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */,
+				B2D3B4361C6D1944003C1464 /* clock.png */,
+				B25612801C6A6F810083CFCB /* Search.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		A250EB601C56CF530022A117 /* Supporting files */ = {
@@ -153,14 +173,13 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
-				B2D3B4381C6D1948003C1464 /* location.png */,
-				B2D3B4361C6D1944003C1464 /* clock.png */,
+				A2498BB11C6F585400AFBF4C /* images */,
 				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
-				B25612801C6A6F810083CFCB /* Search.png */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
+				A2498BA51C6F30EA00AFBF4C /* ProfileViewController.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				A29F12CF1C69F3C600D73B5C /* Managers */,
 				A29F12DB1C6A8A6C00D73B5C /* Data Model */,
@@ -244,9 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
+				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2D3B4371C6D1944003C1464 /* clock.png in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
+				A2498BB01C6F4FB800AFBF4C /* runnigMan@2x.png in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
 				B2D3B4391C6D1948003C1464 /* location.png in Resources */,
 				B25612811C6A6F810083CFCB /* Search.png in Resources */,
@@ -317,6 +339,7 @@
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,
+				A2498BA61C6F30EA00AFBF4C /* ProfileViewController.swift in Sources */,
 				B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */,
 				B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
@@ -324,7 +347,6 @@
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
 				A29F12D81C6A80CF00D73B5C /* GroupItem.swift in Sources */,
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
-				B296042E1C582F0400A14509 /* README.md in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
 			);
@@ -419,7 +441,7 @@
 			baseConfigurationReference = 45F2318CF5A2ADE9D6C6DF29 /* Pods-Raspisaniye.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -445,7 +467,7 @@
 			baseConfigurationReference = 7BDB444D168DAA28D947611A /* Pods-Raspisaniye.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
