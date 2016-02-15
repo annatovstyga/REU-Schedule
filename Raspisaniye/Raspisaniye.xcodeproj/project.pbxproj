@@ -12,6 +12,8 @@
 		A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */; };
 		A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */; };
 		A2498BB01C6F4FB800AFBF4C /* runnigMan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */; };
+		A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DC4041C711507000842D3 /* ProfileTableViewController.swift */; };
+		A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */; };
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
 		A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D31C6A27C700D73B5C /* TestViewController.swift */; };
 		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
@@ -45,6 +47,8 @@
 		A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileBackground@2x.png"; sourceTree = "<group>"; };
 		A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileNavigationBackground@2x.png"; sourceTree = "<group>"; };
 		A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "runnigMan@2x.png"; sourceTree = "<group>"; };
+		A29DC4041C711507000842D3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ViewControllers/ProfileTableViewController.swift; sourceTree = "<group>"; };
+		A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScreenTableViewCell.swift; path = Customs/ProfileScreenTableViewCell.swift; sourceTree = "<group>"; };
 		A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetManager.swift; path = Managers/InternetManager.swift; sourceTree = "<group>"; };
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
 		A29F12D31C6A27C700D73B5C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A29DC4031C7114D4000842D3 /* Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A2498BA51C6F30EA00AFBF4C /* ProfileViewController.swift */,
+				A29DC4041C711507000842D3 /* ProfileTableViewController.swift */,
+			);
+			name = "Profile Screen";
+			sourceTree = "<group>";
+		};
 		A29F12CF1C69F3C600D73B5C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +179,7 @@
 				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
+				A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -177,9 +191,9 @@
 				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
+				A29DC4031C7114D4000842D3 /* Profile Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
-				A2498BA51C6F30EA00AFBF4C /* ProfileViewController.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				A29F12CF1C69F3C600D73B5C /* Managers */,
 				A29F12DB1C6A8A6C00D73B5C /* Data Model */,
@@ -335,7 +349,9 @@
 				B2639AD01C4123A30028F663 /* Global.swift in Sources */,
 				A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */,
 				A29F12DA1C6A810E00D73B5C /* LectorItem.swift in Sources */,
+				A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
+				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,

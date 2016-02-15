@@ -6,7 +6,7 @@
 //  Copyright © 2016 rGradeStd. All rights reserved.
 //
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
 
@@ -20,15 +20,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
-        
-    }
     
     
 }
