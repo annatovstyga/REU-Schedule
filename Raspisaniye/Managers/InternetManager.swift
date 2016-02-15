@@ -37,6 +37,7 @@ class InternetManager {
             case .Failure(let error):
                 failure(error)
                 HelperManager.sharedInstance.hideMBProgressHUD()
+                
             }
         })
     }
