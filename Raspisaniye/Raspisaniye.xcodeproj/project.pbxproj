@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = GQ92PTQY7M;
+						DevelopmentTeam = FKNLQ46HWC;
 					};
 				};
 			};
@@ -468,7 +468,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.IlyaMudriy.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
@@ -494,7 +494,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.IlyaMudriy.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
