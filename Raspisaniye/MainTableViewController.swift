@@ -16,6 +16,7 @@ class MainTableViewController: UITableViewController {
         
         self.tableView.estimatedRowHeight = 120
         self.tableView.rowHeight = self.view.frame.size.height / 5
+        rowH = self.tableView.rowHeight
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations

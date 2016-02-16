@@ -11,6 +11,7 @@ var amistudent : Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 var groupsList:     Array<AnyObject>?
 var lectorsNamesList:   [String] = []
 var groupNamesList:   [String] = []
+var rowH:CGFloat = 0
 var listOfLectors : Array<LectorItem> = []
 struct GlobalColors{
     
