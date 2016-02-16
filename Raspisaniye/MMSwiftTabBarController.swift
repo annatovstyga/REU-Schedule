@@ -24,15 +24,28 @@ class MMSwiftTabBarController: UIViewController {
          performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
-    func rotateWeek(sender: UIScreenEdgePanGestureRecognizer) {
-
-        if sender.state == .Ended {
+    func rotateWeekForward(sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .Ended
+        {
+        if(weekNumber < 56)
+        {
             weekNumber++
             weekLabel.text = "Неделя " + String(weekNumber)
-
-            }
         }
-
+        }
+        }
+    
+    func rotateWeekBackward(sender: UIScreenEdgePanGestureRecognizer) {
+        
+        if sender.state == .Ended {
+            if(weekNumber > 1)
+            {
+            weekNumber--
+            weekLabel.text = "Неделя " + String(weekNumber)
+            }
+            
+        }
+    }
 
     @IBOutlet weak var weekLabel: UILabel!
     var currentViewController: UIViewController?
@@ -40,13 +53,20 @@ class MMSwiftTabBarController: UIViewController {
     
     @IBOutlet var tabBarButtons: Array<UIButton>!
     override func viewDidLoad() {
-        let screenEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
-            action: "rotateWeek:")
-        screenEdgeRecognizer.edges = .Right
-        self.view.addGestureRecognizer(screenEdgeRecognizer)
+        
+        
+        let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "rotateWeekForward:")
+        let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "rotateWeekBackward:")
+        screenForwardEdgeRecognizer.edges = .Right
+        screenBackwardEdgeRecognizer.edges = .Left
+        self.view.addGestureRecognizer(screenForwardEdgeRecognizer)
+        self.view.addGestureRecognizer(screenBackwardEdgeRecognizer)
         isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
         if(isLogined == false)
+
         {
         let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
         appDelegate.window?.rootViewController = initialViewController
