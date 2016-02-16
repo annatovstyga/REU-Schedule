@@ -3,6 +3,9 @@ import UIKit
 class MMSwiftTabBarController: UIViewController {
     
 
+    @IBAction func profileClick(sender: AnyObject) {
+    performSegueWithIdentifier("profileSegue", sender: sender)
+    }
     
     @IBAction func monClick(sender: AnyObject) {
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])

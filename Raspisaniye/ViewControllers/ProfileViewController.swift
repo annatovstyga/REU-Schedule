@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
 
         // Customize navigation bar
+        self.navigationController?.navigationBarHidden = false
         self.navigationController?.navigationBar.translucent = false
         
         let backgroundImage = UIImage(named: "profileNavigationBackground@2x")
@@ -19,7 +20,7 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
     }
-    
-    
-    
+    override func viewWillDisappear(animated: Bool) {
+       self.navigationController?.navigationBarHidden = true
+    }
 }
