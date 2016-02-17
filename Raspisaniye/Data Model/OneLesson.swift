@@ -10,6 +10,7 @@ import Foundation
 
 class OneLesson {
     
+    var lessonNumber: Int?
     var hashID:     String?
     var lessonType: String?
     var room:       String?
@@ -18,9 +19,9 @@ class OneLesson {
     var building:   String?
     var lector:     String?
     var house:      String?
-    var groups:     Array<AnyObject>?
+    var groups:     [AnyObject]?
     
-    func initWith(hashID hashIDValue:String, lessonTypeValue:String, roomValue:String, groupIDValue:Int, disciplineValue:String, buildingValue:String, lectorValue:String, houseValue:String, groupsValue:Array<AnyObject>) -> OneLesson {
+    func initWith(hashID hashIDValue:String, lessonTypeValue:String, roomValue:String, groupIDValue:Int, disciplineValue:String, buildingValue:String, lectorValue:String, houseValue:String, groupsValue:[AnyObject]) -> OneLesson {
         hashID     = hashIDValue
         lessonType = lessonTypeValue
         room       = roomValue

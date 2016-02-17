@@ -2,11 +2,43 @@ import UIKit
 
 class MMSwiftTabBarController: UIViewController {
     
+    // MARK: Propiertes
+    @IBOutlet weak var weekLabel: UILabel!
+    @IBOutlet var placeholderView: UIView!
+    @IBOutlet var tabBarButtons: Array<UIButton>!
+    var currentViewController: UIViewController?
+    
+    
+    // MARK: ViewDidLoad
+    override func viewDidLoad() {
+        
+        let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "rotateWeekForward:")
+        let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "rotateWeekBackward:")
+        screenForwardEdgeRecognizer.edges = .Right
+        screenBackwardEdgeRecognizer.edges = .Left
+        self.view.addGestureRecognizer(screenForwardEdgeRecognizer)
+        self.view.addGestureRecognizer(screenBackwardEdgeRecognizer)
+        
+        isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
+        let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
 
-    @IBAction func profileClick(sender: AnyObject) {
-    performSegueWithIdentifier("profileSegue", sender: sender)
+        if(isLogined == false) {
+            let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
+            appDelegate.window?.rootViewController = initialViewController
+            appDelegate.window?.makeKeyAndVisible()
+        }
+        
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        weekLabel.text = "Неделя " + String(weekNumber)
+        super.viewDidLoad()
     }
     
+    // MARK: IBActions - buttons
+    @IBAction func profileClick(sender: AnyObject) {
+        performSegueWithIdentifier("profileSegue", sender: sender)
+    }
     @IBAction func monClick(sender: AnyObject) {
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
@@ -22,81 +54,51 @@ class MMSwiftTabBarController: UIViewController {
     @IBAction func FriClick(sender: AnyObject) {
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
     }
-
     @IBAction func SutClick(sender: AnyObject) {
-         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
+    // MARK: Rotate weeks
     func rotateWeekForward(sender: UIScreenEdgePanGestureRecognizer) {
         if sender.state == .Ended
         {
-        if(weekNumber < 56)
-        {
-            weekNumber++
-            weekLabel.text = "Неделя " + String(weekNumber)
+            if(weekNumber < 56)
+            {
+                weekNumber++
+                weekLabel.text = "Неделя " + String(weekNumber)
+            }
         }
-        }
-        }
+    }
     
     func rotateWeekBackward(sender: UIScreenEdgePanGestureRecognizer) {
         
         if sender.state == .Ended {
             if(weekNumber > 1)
             {
-            weekNumber--
-            weekLabel.text = "Неделя " + String(weekNumber)
+                weekNumber--
+                weekLabel.text = "Неделя " + String(weekNumber)
             }
             
         }
     }
-
-    @IBOutlet weak var weekLabel: UILabel!
-    var currentViewController: UIViewController?
-    @IBOutlet var placeholderView: UIView!
     
-    @IBOutlet var tabBarButtons: Array<UIButton>!
-    override func viewDidLoad() {
-        
-        
-        let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
-            action: "rotateWeekForward:")
-        let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
-            action: "rotateWeekBackward:")
-        screenForwardEdgeRecognizer.edges = .Right
-        screenBackwardEdgeRecognizer.edges = .Left
-        self.view.addGestureRecognizer(screenForwardEdgeRecognizer)
-        self.view.addGestureRecognizer(screenBackwardEdgeRecognizer)
-        isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
-        let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
-        if(isLogined == false)
-
-        {
-        let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
-        appDelegate.window?.rootViewController = initialViewController
-        appDelegate.window?.makeKeyAndVisible()
-        }
-            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
-             weekLabel.text = "Неделя " + String(weekNumber)
-            super.viewDidLoad()
-    }
-    
-    
-    
+    // MARK: Supporting methods
     override func shouldAutorotate() -> Bool {
         return true
     }
     
+    // MARK: Segue methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let availableIdentifiers = ["mainSegue"]
         if(availableIdentifiers.contains(segue.identifier!) ) {
-                        
+            
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
             
             let senderBtn = sender as! UIButton
-               senderBtn.backgroundColor = GlobalColors.BlueColor
+            senderBtn.backgroundColor = GlobalColors.BlueColor
             
         }
     }
@@ -107,6 +109,6 @@ class MMSwiftTabBarController: UIViewController {
         
         // Pull any data from the view controller which initiated the unwind segue.
     }
-
-
+    
+    
 }

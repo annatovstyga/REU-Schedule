@@ -124,6 +124,15 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		A27DA1251C735A6100F7A92D /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
+				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
 		A28E67A5085289D8D531C923 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,11 +184,11 @@
 			isa = PBXGroup;
 			children = (
 				B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */,
+				A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */,
 				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
-				A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -188,12 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				A2498BB11C6F585400AFBF4C /* images */,
-				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
+				A27DA1251C735A6100F7A92D /* Main Screen */,
 				A29DC4031C7114D4000842D3 /* Profile Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
-				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				A29F12CF1C69F3C600D73B5C /* Managers */,
 				A29F12DB1C6A8A6C00D73B5C /* Data Model */,
@@ -250,7 +258,7 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FKNLQ46HWC;
+						DevelopmentTeam = GQ92PTQY7M;
 					};
 				};
 			};
@@ -468,7 +476,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
@@ -494,7 +502,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";

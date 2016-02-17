@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XIP-Z3-xvl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oVv-51-eUa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,21 +30,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.30-10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6x-eT-aNH">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <rect key="frame" x="34.5" y="25.5" width="84.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.27843137254901962" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="cxv-ry-ylI">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <rect key="frame" x="141" y="26.5" width="14" height="18.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cxv-ry-ylI" secondAttribute="height" multiplier="22:29" id="Y5V-JU-clq"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Y5V-JU-clq"/>
-                                                </mask>
-                                            </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="Y5V-JU-clq"/>
@@ -52,33 +47,28 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ауд. 132(Нежинская)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGI-F2-ka0">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <rect key="frame" x="157" y="29" width="108" height="13"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                             <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Математический анализ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYK-t2-zDm">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <rect key="frame" x="-12" y="55" width="206" height="20"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Семинар | 12-13 неделя | Ежак С.С." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24K-fL-uYm">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <rect key="frame" x="8" y="100" width="184" height="13"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                             <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="49V-ZG-DTM">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <rect key="frame" x="8" y="26.5" width="18.5" height="18.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="49V-ZG-DTM" secondAttribute="height" multiplier="1:1" id="w96-ev-xuJ"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="w96-ev-xuJ"/>
-                                                </mask>
-                                            </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="w96-ev-xuJ"/>
@@ -114,34 +104,6 @@
                                         <constraint firstItem="cxv-ry-ylI" firstAttribute="height" secondItem="49V-ZG-DTM" secondAttribute="height" id="spg-m0-2C7"/>
                                         <constraint firstItem="cxv-ry-ylI" firstAttribute="centerY" secondItem="D6x-eT-aNH" secondAttribute="centerY" id="uaS-Mb-Xgt"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="D6x-eT-aNH"/>
-                                            <exclude reference="cxv-ry-ylI"/>
-                                            <exclude reference="fGI-F2-ka0"/>
-                                            <exclude reference="BYK-t2-zDm"/>
-                                            <exclude reference="24K-fL-uYm"/>
-                                            <exclude reference="49V-ZG-DTM"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <exclude reference="F3P-mW-qGR"/>
-                                            <exclude reference="jsA-yH-cWT"/>
-                                            <exclude reference="rHg-Fe-C79"/>
-                                            <exclude reference="7aU-Ys-hZm"/>
-                                            <exclude reference="BWI-BF-ryJ"/>
-                                            <exclude reference="o9z-qQ-czj"/>
-                                            <exclude reference="2xr-vu-0T8"/>
-                                            <exclude reference="MBw-vi-LS3"/>
-                                            <exclude reference="N0A-md-shW"/>
-                                            <exclude reference="Ynd-DS-nAE"/>
-                                            <exclude reference="Kny-3K-v7e"/>
-                                            <exclude reference="iZc-ZQ-hr2"/>
-                                            <exclude reference="hbm-Rz-OWM"/>
-                                            <exclude reference="q8f-G7-xez"/>
-                                            <exclude reference="spg-m0-2C7"/>
-                                            <exclude reference="uaS-Mb-Xgt"/>
-                                        </mask>
-                                    </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="D6x-eT-aNH"/>
@@ -171,6 +133,12 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionCell" destination="24K-fL-uYm" id="dPL-FH-tWg"/>
+                                    <outlet property="placeCell" destination="fGI-F2-ka0" id="h7m-I2-Dji"/>
+                                    <outlet property="timeCell" destination="D6x-eT-aNH" id="Vv8-MU-Vqa"/>
+                                    <outlet property="titleCell" destination="BYK-t2-zDm" id="rDV-Zz-yli"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -659,7 +627,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="P6z-eo-2dL"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
@@ -751,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTW-yD-LIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="1518"/>
+            <point key="canvasLocation" x="-632" y="1768"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="T2h-Vi-xls">
@@ -971,15 +938,15 @@
                                 <exclude reference="az6-mx-9ce"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5hv-YB-rDC"/>
-                                <exclude reference="XYg-WG-UL1"/>
-                                <exclude reference="hRu-vs-0Qt"/>
-                                <exclude reference="hrT-gK-YdS"/>
                                 <exclude reference="bx5-oF-HTf"/>
                                 <exclude reference="EcZ-XI-gIg"/>
                                 <exclude reference="bIB-Gh-TsT"/>
                                 <exclude reference="eff-60-Jw1"/>
                                 <exclude reference="oF0-gF-YZB"/>
+                                <exclude reference="5hv-YB-rDC"/>
+                                <exclude reference="XYg-WG-UL1"/>
+                                <exclude reference="hRu-vs-0Qt"/>
+                                <exclude reference="hrT-gK-YdS"/>
                                 <exclude reference="2mP-FB-IpU"/>
                                 <exclude reference="Mr2-nt-Gou"/>
                             </mask>
@@ -990,13 +957,13 @@
                                 <include reference="az6-mx-9ce"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5hv-YB-rDC"/>
-                                <exclude reference="hrT-gK-YdS"/>
                                 <include reference="bx5-oF-HTf"/>
                                 <include reference="EcZ-XI-gIg"/>
                                 <exclude reference="bIB-Gh-TsT"/>
                                 <include reference="eff-60-Jw1"/>
                                 <include reference="oF0-gF-YZB"/>
+                                <exclude reference="5hv-YB-rDC"/>
+                                <exclude reference="hrT-gK-YdS"/>
                                 <include reference="2mP-FB-IpU"/>
                                 <include reference="Mr2-nt-Gou"/>
                             </mask>
