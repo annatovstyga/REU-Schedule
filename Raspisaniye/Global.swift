@@ -13,6 +13,7 @@ var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 var dictOfItems: [String:AnyObject] = [:]
 var groupNamesList: [String] = []
 var lectorsNamesList: [String] = []
+var rowH:CGFloat = 0
 
 struct GlobalColors{
     
