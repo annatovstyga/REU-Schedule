@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -114,22 +113,22 @@
                                             <include reference="49V-ZG-DTM"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="F3P-mW-qGR"/>
-                                            <include reference="jsA-yH-cWT"/>
-                                            <include reference="rHg-Fe-C79"/>
+                                            <include reference="Kny-3K-v7e"/>
+                                            <include reference="iZc-ZQ-hr2"/>
+                                            <include reference="2xr-vu-0T8"/>
+                                            <include reference="MBw-vi-LS3"/>
                                             <include reference="7aU-Ys-hZm"/>
                                             <include reference="BWI-BF-ryJ"/>
                                             <include reference="o9z-qQ-czj"/>
-                                            <include reference="2xr-vu-0T8"/>
-                                            <include reference="MBw-vi-LS3"/>
-                                            <include reference="N0A-md-shW"/>
-                                            <include reference="Ynd-DS-nAE"/>
-                                            <include reference="Kny-3K-v7e"/>
-                                            <include reference="iZc-ZQ-hr2"/>
+                                            <include reference="F3P-mW-qGR"/>
+                                            <include reference="jsA-yH-cWT"/>
+                                            <include reference="rHg-Fe-C79"/>
                                             <include reference="hbm-Rz-OWM"/>
                                             <include reference="q8f-G7-xez"/>
                                             <exclude reference="spg-m0-2C7"/>
                                             <include reference="uaS-Mb-Xgt"/>
+                                            <include reference="N0A-md-shW"/>
+                                            <include reference="Ynd-DS-nAE"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

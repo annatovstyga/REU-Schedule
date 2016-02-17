@@ -32,10 +32,11 @@ class TestViewController: UIViewController {
             success in
             let lessons = success["success"]["data"]
             for item in lessons {
-        
+
                 let arrayGroups = item.1["groups"].array
                 
-//                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonType: item.1["lesson_type"].string!, room: item.1["room"].string!, groupID: item.1["group_id"].int!, discipline: item.1["discipline"].string!, building: item.1["building"].string!, lector: item.1["lector"].string!, house: item.1["housing"].string!, groups: )
+                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string, lessonTypeValue: item.1["lesson_type"].string, roomValue: item.1["room"].string, groupIDValue: item.1["group_id"].int, disciplineValue: item.1["discipline"].string, buildingValue: item.1["building"].string, lectorValue: item.1["lector"].string, houseValue: item.1["housing"].string, groupsValue: arrayGroups)
+                print("lessons at day \(dayLesson)")
             }
             }, failure: {error in print(error)})
 //        */
