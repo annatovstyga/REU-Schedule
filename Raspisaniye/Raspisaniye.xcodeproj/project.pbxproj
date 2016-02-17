@@ -23,6 +23,9 @@
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
+		B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287A1C75184100CDF3BA /* OneWeek.swift */; };
+		B24B287D1C75199000CDF3BA /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287C1C75199000CDF3BA /* Year.swift */; };
+		B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287E1C751C5E00CDF3BA /* OneDay.swift */; };
 		B25612811C6A6F810083CFCB /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = B25612801C6A6F810083CFCB /* Search.png */; };
 		B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612861C6A828A0083CFCB /* MainTableViewController.swift */; };
 		B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */; };
@@ -59,6 +62,9 @@
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
+		B24B287A1C75184100CDF3BA /* OneWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneWeek.swift; sourceTree = "<group>"; };
+		B24B287C1C75199000CDF3BA /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
+		B24B287E1C751C5E00CDF3BA /* OneDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDay.swift; sourceTree = "<group>"; };
 		B25612801C6A6F810083CFCB /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
 		B25612861C6A828A0083CFCB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				A29F12D71C6A80CF00D73B5C /* GroupItem.swift */,
 				A29F12D91C6A810E00D73B5C /* LectorItem.swift */,
 				A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */,
+				B24B287E1C751C5E00CDF3BA /* OneDay.swift */,
+				B24B287A1C75184100CDF3BA /* OneWeek.swift */,
+				B24B287C1C75199000CDF3BA /* Year.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -360,11 +369,13 @@
 				A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
 				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
+				B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,
 				A2498BA61C6F30EA00AFBF4C /* ProfileViewController.swift in Sources */,
 				B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */,
+				B24B287D1C75199000CDF3BA /* Year.swift in Sources */,
 				B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
 				B289090C1C52CC0700EB0A08 /* CabController.swift in Sources */,
@@ -373,6 +384,7 @@
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
+				B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

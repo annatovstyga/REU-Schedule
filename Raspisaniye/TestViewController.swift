@@ -30,11 +30,14 @@ class TestViewController: UIViewController {
 //         Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
-            let lessons = success["success"]["data"]
-            for item in lessons {
-        
-                let arrayGroups = item.1["groups"].array
-                
+            let weeks = success["success"]["data"]
+            for item in weeks {
+            let weekNumber = item.1["weekNum"]
+            let lessons = item.1["lessons"]
+            let Mon = lessons["Monday"]
+//                print(item)
+            
+            print(Mon)
 //                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonType: item.1["lesson_type"].string!, room: item.1["room"].string!, groupID: item.1["group_id"].int!, discipline: item.1["discipline"].string!, building: item.1["building"].string!, lector: item.1["lector"].string!, house: item.1["housing"].string!, groups: )
             }
             }, failure: {error in print(error)})
