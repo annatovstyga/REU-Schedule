@@ -30,13 +30,16 @@ class TestViewController: UIViewController {
 //         Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
-            let lessons = success["success"]["data"]
-            for item in lessons {
-
-                let arrayGroups = item.1["groups"].array
+            for week in success["success"]["data"] {
+                for day in week.1 {
+                    print(day.1)
+                }
                 
-                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string, lessonTypeValue: item.1["lesson_type"].string, roomValue: item.1["room"].string, groupIDValue: item.1["group_id"].int, disciplineValue: item.1["discipline"].string, buildingValue: item.1["building"].string, lectorValue: item.1["lector"].string, houseValue: item.1["housing"].string, groupsValue: arrayGroups)
-                print("lessons at day \(dayLesson)")
+//                let arrayGroups = item.1["groups"]
+//                print("array of groups \(arrayGroups)")
+                
+//                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string, lessonTypeValue: item.1["lesson_type"].string, roomValue: item.1["room"].string, groupIDValue: item.1["group_id"].int, disciplineValue: item.1["discipline"].string, buildingValue: item.1["building"].string, lectorValue: item.1["lector"].string, houseValue: item.1["housing"].string, groupsValue: arrayGroups)
+//                print("lessons at day \(dayLesson)")
             }
             }, failure: {error in print(error)})
 //        */
