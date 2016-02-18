@@ -11,7 +11,12 @@ import Foundation
 class OneDay {
     
     var Number:Int?
-    var Lessons: [OneLesson]?
+    var Lessons: [OneLesson]
+    
+    init () {
+        self.Number = nil
+        self.Lessons = []
+    }
     
     func initWith() -> OneDay {
         

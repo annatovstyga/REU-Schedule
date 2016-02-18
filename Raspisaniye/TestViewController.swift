@@ -30,16 +30,43 @@ class TestViewController: UIViewController {
 //         Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
-            for week in success["success"]["data"] {
-                for day in week.1 {
-                    print(day.1)
+            for data in success["success"]["data"] {
+                var week = OneWeek()
+                for weekData in data.1 {
+                   
+                    var day = OneDay()
+                    for dayData in weekData.1
+                    {
+                        if(dayData.1 != nil)
+                        {
+                        for item in dayData.1{
+                            
+                            if(item.1 != nil){
+                                let lectorName:String?
+                                
+                                if(item.1["lector"].string != nil)
+                                {
+                                    lectorName = item.1["lector"].string
+                                }
+                                else
+                                {
+                                    lectorName = ""
+                                }
+                            
+                                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonTypeValue: item.1["lesson_type"].string!, roomValue: item.1["room"].int!, disciplineValue: item.1["discipline"].string!, buildingValue: item.1["building"].string!, lectorValue: lectorName!, houseValue: item.1["housing"].int!)
+                                
+                                    day.Lessons.append(dayLesson)
+                                }
+                          
+                            }
+                            let string:String = dayData.0
+                            day.Number = getDayNumber(string)
+                            }
+                            week.Days.append(day)
+                            print(week.Days[0].Lessons)
+                        }
                 }
-                
-//                let arrayGroups = item.1["groups"]
-//                print("array of groups \(arrayGroups)")
-                
-//                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string, lessonTypeValue: item.1["lesson_type"].string, roomValue: item.1["room"].string, groupIDValue: item.1["group_id"].int, disciplineValue: item.1["discipline"].string, buildingValue: item.1["building"].string, lectorValue: item.1["lector"].string, houseValue: item.1["housing"].string, groupsValue: arrayGroups)
-//                print("lessons at day \(dayLesson)")
+
             }
             }, failure: {error in print(error)})
 //        */

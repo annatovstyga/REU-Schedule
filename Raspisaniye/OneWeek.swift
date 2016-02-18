@@ -11,7 +11,12 @@ import Foundation
 class OneWeek {
     
     var Number:Int?
-    var Days: [OneDay]?
+    var Days: [OneDay]
+    
+    init () {
+        self.Number = nil
+        self.Days = []
+    }
     
     func initWith() -> OneWeek {
 

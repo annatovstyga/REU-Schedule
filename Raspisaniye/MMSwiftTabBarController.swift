@@ -31,6 +31,7 @@ class MMSwiftTabBarController: UIViewController {
         }
         
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        weekNumber = getWeekNumber()
         weekLabel.text = "Неделя " + String(weekNumber)
         super.viewDidLoad()
     }

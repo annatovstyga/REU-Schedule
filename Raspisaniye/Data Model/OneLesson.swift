@@ -14,29 +14,28 @@ class OneLesson {
     var lessonNumber: Int?
     var hashID:     String?
     var lessonType: String?
-    var room:       String?
+    var room:       Int?
     var groupID:    Int?
     var discipline: String?
     var building:   String?
     var lector:     String?
-    var house:      String?
-    var groups:     [String]?
+    var house:      Int?
+//    var groups:     [String]?
     
-    func initWith(hashID hashIDValue: String, lessonTypeValue: String, roomValue: String, groupIDValue: Int, disciplineValue: String, buildingValue: String, lectorValue: String, houseValue: String, groupsValue:[JSON]) -> OneLesson {
+    func initWith(hashID hashIDValue: String, lessonTypeValue: String, roomValue: Int, disciplineValue: String, buildingValue: String, lectorValue: String, houseValue: Int) -> OneLesson {
         
         hashID = hashIDValue
         lessonType = lessonTypeValue
         room = roomValue
-        groupID = groupIDValue
         discipline = disciplineValue
         building = buildingValue
         lector = lectorValue
         house = houseValue
 
-        for item in groupsValue {
-            let object: String = item.stringValue
-            groups?.append(object)
-        }
+//        for item in groupsValue {
+//            let object: String = item.stringValue
+//            groups?.append(object)
+//        }
         
         return self
     }
