@@ -13,63 +13,44 @@ class TestViewController: UIViewController {
         /*
         // Get groups list
         InternetManager.sharedInstance.getGroupList({
-            success in
-            let groups = success["success"]["data"]
-            for item in groups {
-                let idGroup   = item.1["ID"].int!
-                let nameGroup = item.1["name"].string!
-                let itemGroup = GroupItem().initWith(itemID: idGroup, itemName: nameGroup)
-            }
-            }, failure:{error in print(error)})
+        success in
+        let groups = success["success"]["data"]
+        for item in groups {
+        let idGroup   = item.1["ID"].int!
+        let nameGroup = item.1["name"].string!
+        let itemGroup = GroupItem().initWith(itemID: idGroup, itemName: nameGroup)
+        }
+        }, failure:{error in print(error)})
 //        */
         
-//         Get lectors list
-        
-      
-//        /*
-//         Get schedule
+        // Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
             
-            // Data is item of week
-            for data in success["success"]["data"] {
-                var week = OneWeek()
-
-                for weekData in data.1 {
-                   
-                    var day = OneDay()
-                    for dayData in weekData.1
-                    {
-                        if(dayData.1 != nil)
-                        {
-                        for item in dayData.1{
-                            
-                            if(item.1 != nil){
-                                let lectorName:String?
-                                
-                                if(item.1["lector"].string != nil)
-                                {
-                                    lectorName = item.1["lector"].string
+            // weekData - is JSON item of week
+            for weekData in success["success"]["data"] {
+//                print("weekData.0 - \(weekData.0)")
+//                print("weekData.1 - \(weekData.1)")
+                // week - is JSON data of item with Days
+                for week in weekData.1 {
+//                    print("week.0 - \(week.0)")
+//                    print("week.1 - \(week.1)")
+                    // dayData - is JSON data of one day
+                    for dayData in week.1 {
+//                        print("dayData.0 - \(dayData.0)")
+//                        print("dayData.1 - \(dayData.1)")
+                        if(dayData.1 != nil) {
+                            // lessonData - is data of one lesson
+                            for lessonData in dayData.1 {
+//                                print("item.0 - \(lessonData.0)")
+//                                print("item.1 - \(lessonData.1)")
+                                if(dayData.1 != nil) {
+                                    break
                                 }
-                                else
-                                {
-                                    lectorName = ""
-                                }
-                            
-//                                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonTypeValue: item.1["lesson_type"].string!, roomValue: item.1["room"].int!, disciplineValue: item.1["discipline"].string!, buildingValue: item.1["building"].string!, lectorValue: lectorName!, houseValue: item.1["housing"].int!)
-                                
-//                                    day.Lessons.append(dayLesson)
-                                }
-                          
                             }
-                            let string:String = dayData.0
-//                            day.Number = getDayNumber(string)
-                            }
-//                            week.Days.append(day)
-//                            print(week.Days[0].Lessons)
                         }
+                    }
                 }
-
             }
             }, failure: {error in print(error)})
 //        */
