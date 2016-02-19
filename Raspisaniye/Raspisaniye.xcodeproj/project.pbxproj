@@ -23,6 +23,8 @@
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
+		B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287A1C75184100CDF3BA /* OneWeek.swift */; };
+		B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287E1C751C5E00CDF3BA /* OneDay.swift */; };
 		B25612811C6A6F810083CFCB /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = B25612801C6A6F810083CFCB /* Search.png */; };
 		B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612861C6A828A0083CFCB /* MainTableViewController.swift */; };
 		B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */; };
@@ -59,6 +61,8 @@
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
+		B24B287A1C75184100CDF3BA /* OneWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneWeek.swift; sourceTree = "<group>"; };
+		B24B287E1C751C5E00CDF3BA /* OneDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDay.swift; sourceTree = "<group>"; };
 		B25612801C6A6F810083CFCB /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
 		B25612861C6A828A0083CFCB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		A27DA1251C735A6100F7A92D /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
+				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
 		A28E67A5085289D8D531C923 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,8 @@
 				A29F12D71C6A80CF00D73B5C /* GroupItem.swift */,
 				A29F12D91C6A810E00D73B5C /* LectorItem.swift */,
 				A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */,
+				B24B287E1C751C5E00CDF3BA /* OneDay.swift */,
+				B24B287A1C75184100CDF3BA /* OneWeek.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -175,11 +190,11 @@
 			isa = PBXGroup;
 			children = (
 				B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */,
+				A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */,
 				B289090D1C52D14500EB0A08 /* CabNavSegue.swift */,
 				B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */,
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
-				A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -188,12 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				A2498BB11C6F585400AFBF4C /* images */,
-				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
+				A27DA1251C735A6100F7A92D /* Main Screen */,
 				A29DC4031C7114D4000842D3 /* Profile Screen */,
 				B289090B1C52CC0700EB0A08 /* CabController.swift */,
-				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
 				A29F12CF1C69F3C600D73B5C /* Managers */,
 				A29F12DB1C6A8A6C00D73B5C /* Data Model */,
@@ -250,7 +264,7 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FKNLQ46HWC;
+						DevelopmentTeam = GQ92PTQY7M;
 					};
 				};
 			};
@@ -352,6 +366,7 @@
 				A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
 				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
+				B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,
@@ -365,6 +380,7 @@
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
+				B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +484,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
@@ -494,7 +510,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rGradeStd.Raspisaniye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Raspisaniye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
