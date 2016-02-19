@@ -7,11 +7,12 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
+    var weekNumberTab:Int?
     
-    
+    @IBOutlet weak var subjectNameLabelMain: UILabel!
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-        
+        self.subjectNameLabelMain.text = subjectName
         let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
             action: "rotateWeekForward:")
         let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
@@ -31,8 +32,9 @@ class MMSwiftTabBarController: UIViewController {
         }
         
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
-        weekNumber = getWeekNumber()
-        weekLabel.text = "Неделя " + String(weekNumber)
+        weekNumberTab = weekNumber
+        print(weekNumberTab)
+        weekLabel.text = "Неделя " + String(weekNumberTab!)
         super.viewDidLoad()
     }
     
@@ -65,8 +67,8 @@ class MMSwiftTabBarController: UIViewController {
         {
             if(weekNumber < 56)
             {
-                weekNumber++
-                weekLabel.text = "Неделя " + String(weekNumber)
+                (weekNumberTab!)++
+                weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
         }
     }
@@ -76,8 +78,8 @@ class MMSwiftTabBarController: UIViewController {
         if sender.state == .Ended {
             if(weekNumber > 1)
             {
-                weekNumber--
-                weekLabel.text = "Неделя " + String(weekNumber)
+               (weekNumberTab!)--
+                weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
             
         }

@@ -8,8 +8,18 @@
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var subjectNameLabel: UILabel!
+    @IBAction func changeTheSubject(sender: AnyObject) {
+        defaults.setBool(false, forKey: "isLogined")
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("LoginViewOneControllerID") as? LoginViewOneController {
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    @IBOutlet weak var weekNumberLabel: UILabel!
     override func viewDidLoad() {
-
+        self.subjectNameLabel.text = subjectName
+        self.weekNumberLabel.text = String(weekNumber) + " неделя"
         // Customize navigation bar
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.navigationBar.translucent = false

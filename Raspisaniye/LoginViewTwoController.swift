@@ -47,7 +47,15 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
         performSegueWithIdentifier("fromLogin", sender: sender)
     }
     
-    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(amistudent){
+            subjectName = groupNamesList[row]
+        }
+        else{
+            subjectName = lectorsNamesList[row]
+        }
+        
+    }
     override func viewDidLoad() {
 
         lectorsNamesList.sortInPlace(before)

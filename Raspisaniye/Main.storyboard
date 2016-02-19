@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oVv-51-eUa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XIP-Z3-xvl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -670,6 +670,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="placeholderView" destination="cMO-yg-Cdf" id="Quh-Rd-a9j"/>
+                        <outlet property="subjectNameLabelMain" destination="RPp-YC-EJG" id="veD-Lx-8ye"/>
                         <outlet property="weekLabel" destination="zyN-8s-SD7" id="PFT-1W-M3A"/>
                         <outletCollection property="tabBarButtons" destination="wjW-Pf-JXm" collectionClass="NSMutableArray" id="cdM-0F-6Gt"/>
                         <outletCollection property="tabBarButtons" destination="mhe-sn-TKh" collectionClass="NSMutableArray" id="EdD-nA-pXv"/>
@@ -734,6 +735,9 @@
                                 <state key="normal" title="Сменить">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeTheSubject:" destination="RYg-Jc-fvV" eventType="touchUpInside" id="QLw-eA-DBJ"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-Uk-Zvv">
                                 <rect key="frame" x="0.0" y="217" width="600" height="383"/>
@@ -776,6 +780,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="hyg-6M-cwu"/>
+                    <connections>
+                        <outlet property="subjectNameLabel" destination="Vgr-Pc-3fn" id="NZJ-P0-7eF"/>
+                        <outlet property="weekNumberLabel" destination="EN8-t7-yU3" id="eY1-8u-odh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTW-yD-LIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1109,7 +1117,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rPU-EJ-FQ9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" navigationBarHidden="YES" id="XIP-Z3-xvl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StartPoint" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" navigationBarHidden="YES" id="XIP-Z3-xvl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xk1-9g-wLY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

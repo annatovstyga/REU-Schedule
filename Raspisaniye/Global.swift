@@ -5,7 +5,7 @@ import UIKit
 let defaults = NSUserDefaults.standardUserDefaults()
 
 var selectedDay:Int64 = 1
-var weekNumber:Int = 1
+var weekNumber:Int = getWeekNumber()
 
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
@@ -14,6 +14,7 @@ var dictOfItems: [String:AnyObject] = [:]
 var groupNamesList: [String] = []
 var lectorsNamesList: [String] = []
 var rowH:CGFloat = 0
+var subjectName:String?
 
 struct GlobalColors{
     
