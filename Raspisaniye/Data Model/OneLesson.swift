@@ -22,21 +22,27 @@ class OneLesson {
     var house:      Int?
 //    var groups:     [String]?
     
-    func initWith(hashID hashIDValue: String, lessonTypeValue: String, roomValue: Int, disciplineValue: String, buildingValue: String, lectorValue: String, houseValue: Int) -> OneLesson {
+    // MARK: - Initializators
+    init() {}
+    
+    init(lessonNumber: Int?, hashID: String?, lessonType: String?, room: Int?, groupID: Int?, discipline: String?, building: String?, lector: String?, house: Int?) {
         
-        hashID = hashIDValue
-        lessonType = lessonTypeValue
-        room = roomValue
-        discipline = disciplineValue
-        building = buildingValue
-        lector = lectorValue
-        house = houseValue
+        self.lessonNumber = lessonNumber
+        self.hashID     = hashID
+        self.lessonType = lessonType
+        self.room       = room
+        self.groupID    = groupID
+        self.discipline = discipline
+        self.building   = building
+        self.lector     = lector
+        self.house      = house
+        
+        
 
 //        for item in groupsValue {
 //            let object: String = item.stringValue
 //            groups?.append(object)
 //        }
-        
-        return self
     }
+    
 }

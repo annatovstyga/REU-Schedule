@@ -13,10 +13,11 @@ class GroupItem {
     var id:   Int?
     var name: String?
     
-    func initWith(itemID itemID: Int, itemName: String) -> GroupItem {
-        id   = itemID
-        name = itemName
-        
-        return self
+    // MARK: - Initializators
+    init() {}
+    
+    init(id: Int?, name: String?) {
+        self.id   = id
+        self.name = name
     }
 }

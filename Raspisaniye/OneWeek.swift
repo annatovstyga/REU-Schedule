@@ -10,16 +10,14 @@ import Foundation
 
 class OneWeek {
     
-    var Number:Int?
-    var Days: [OneDay]
+    var number: Int?
+    var days:   [OneDay]?
     
-    init () {
-        self.Number = nil
-        self.Days = []
-    }
+    // MARK: - Initializators
+    init() {}
     
-    func initWith() -> OneWeek {
-
-        return self
+    init(number: Int?, days: [OneDay]?) {
+        self.number = number
+        self.days   = days
     }
 }

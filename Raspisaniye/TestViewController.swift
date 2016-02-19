@@ -30,8 +30,11 @@ class TestViewController: UIViewController {
 //         Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
+            
+            // Data is item of week
             for data in success["success"]["data"] {
                 var week = OneWeek()
+
                 for weekData in data.1 {
                    
                     var day = OneDay()
@@ -53,17 +56,17 @@ class TestViewController: UIViewController {
                                     lectorName = ""
                                 }
                             
-                                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonTypeValue: item.1["lesson_type"].string!, roomValue: item.1["room"].int!, disciplineValue: item.1["discipline"].string!, buildingValue: item.1["building"].string!, lectorValue: lectorName!, houseValue: item.1["housing"].int!)
+//                                let dayLesson = OneLesson().initWith(hashID: item.1["hash_id"].string!, lessonTypeValue: item.1["lesson_type"].string!, roomValue: item.1["room"].int!, disciplineValue: item.1["discipline"].string!, buildingValue: item.1["building"].string!, lectorValue: lectorName!, houseValue: item.1["housing"].int!)
                                 
-                                    day.Lessons.append(dayLesson)
+//                                    day.Lessons.append(dayLesson)
                                 }
                           
                             }
                             let string:String = dayData.0
-                            day.Number = getDayNumber(string)
+//                            day.Number = getDayNumber(string)
                             }
-                            week.Days.append(day)
-                            print(week.Days[0].Lessons)
+//                            week.Days.append(day)
+//                            print(week.Days[0].Lessons)
                         }
                 }
 

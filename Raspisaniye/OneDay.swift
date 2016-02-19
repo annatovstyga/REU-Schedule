@@ -10,16 +10,15 @@ import Foundation
 
 class OneDay {
     
-    var Number:Int?
-    var Lessons: [OneLesson]
+    var number:  Int?
+    var lessons: [OneLesson]?
     
-    init () {
-        self.Number = nil
-        self.Lessons = []
+    // MARK: - Initializators
+    init() {}
+
+    init(number: Int?, lessons: [OneLesson]?) {
+        self.number  = number
+        self.lessons = lessons
     }
     
-    func initWith() -> OneDay {
-        
-        return self
-    }
 }
