@@ -1,21 +1,20 @@
-
 import UIKit
 
 class CabController: UIViewController {
     
     
     @IBAction func firstBtnClick(sender: AnyObject) {
-         performSegueWithIdentifier("cabTabSegue", sender: tabBarButtons[0])
+        performSegueWithIdentifier("cabTabSegue", sender: tabBarButtons[0])
         
     }
     @IBAction func secondBtnClick(sender: AnyObject) {
-    performSegueWithIdentifier("cabTabSegue", sender: tabBarButtons[1])
+        performSegueWithIdentifier("cabTabSegue", sender: tabBarButtons[1])
     }
     
-       var currentViewController: UIViewController?
+    var currentViewController: UIViewController?
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         performSegueWithIdentifier("cabTabSegue", sender: tabBarButtons[0])

@@ -68,8 +68,8 @@ class MMSwiftTabBarController: UIViewController {
         {
             if(weekNumber < 56)
             {
-                weekNumber++
-                weekLabel.text = "Неделя " + String(weekNumber)
+                (weekNumberTab!)++
+                weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
         }
     }
@@ -79,8 +79,8 @@ class MMSwiftTabBarController: UIViewController {
         if sender.state == .Ended {
             if(weekNumber > 1)
             {
-                weekNumber--
-                weekLabel.text = "Неделя " + String(weekNumber)
+               (weekNumberTab!)--
+                weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
             
         }

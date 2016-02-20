@@ -15,6 +15,7 @@ var dictOfItems: [String:AnyObject] = [:]
 var groupNamesList: [String] = []
 var lectorsNamesList: [String] = []
 var rowH:CGFloat = 0
+var subjectName:String?
 
 struct GlobalColors{
     
