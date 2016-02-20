@@ -26,26 +26,46 @@ class TestViewController: UIViewController {
         // Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
-            
-            // weekData - is JSON item of week
-            for weekData in success["success"]["data"] {
-//                print("weekData.0 - \(weekData.0)")
-//                print("weekData.1 - \(weekData.1)")
-                // week - is JSON data of item with Days
-                for week in weekData.1 {
-//                    print("week.0 - \(week.0)")
-//                    print("week.1 - \(week.1)")
-                    // dayData - is JSON data of one day
-                    for dayData in week.1 {
-//                        print("dayData.0 - \(dayData.0)")
-//                        print("dayData.1 - \(dayData.1)")
-                        if(dayData.1 != nil) {
-                            // lessonData - is data of one lesson
-                            for lessonData in dayData.1 {
-//                                print("item.0 - \(lessonData.0)")
-//                                print("item.1 - \(lessonData.1)")
-                                if(dayData.1 != nil) {
-                                    break
+            // semestr - is JSON item of week
+            for semestr in success["success"]["data"] {
+                // weekData - is JSON data of item with Days
+                for weekData in semestr.1 {
+                    let week = OneWeek()
+                    if (weekData.1 != nil) {
+                        // dayData - is JSON data of one day
+                        for dayData in weekData.1 {
+                            let day = OneDay()
+                            if(dayData.1 != nil) {
+                                // lessonData - is data of one lesson
+                                for lessonData in dayData.1 {
+                                    if(lessonData.1 != nil) {
+                                        // Main properties
+                                        let lessonNumber        = Int(lessonData.0)
+                                        let hashID: String?     = lessonData.1["hash_id"].string
+                                        let lessonType: String? = lessonData.1["lesson_type"].string
+                                        let room: String?       = lessonData.1["room"].string
+                                        let lessonStart: String? = lessonData.1["lesson_start"].string
+                                        let lessonEnd: String?   = lessonData.1["lesson_end"].string
+                                        let discipline: String? = lessonData.1["discipline"].string
+                                        let building: String?   = lessonData.1["building"].string
+                                        let lector: String?     = lessonData.1["lector"].string
+                                        let house: Int?         = lessonData.1["housing"].int
+                                        // Groups property
+                                        var groups: [String]?   = []
+                                        let lessonsGroups = lessonData.1["groups"].array
+                                        if let data = lessonsGroups {
+                                            for groupName in data {
+                                                let groupString = groupName.stringValue
+                                                groups?.append(groupString)
+                                            }
+                                        }
+                                        
+                                        // Create new lesson and append it to
+                                        let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+                                        day.dayName = lessonData.0
+                                        day.lessons?.append(lesson)
+                                        break
+                                    }
                                 }
                             }
                         }
@@ -53,6 +73,5 @@ class TestViewController: UIViewController {
                 }
             }
             }, failure: {error in print(error)})
-//        */
     }
 }

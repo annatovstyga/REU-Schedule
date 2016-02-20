@@ -7,42 +7,41 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class OneLesson {
     
     var lessonNumber: Int?
     var hashID:     String?
     var lessonType: String?
-    var room:       Int?
-    var groupID:    Int?
+    var room:       String?
+    var lessonStart: String?
+    var lessonEnd: String?
     var discipline: String?
     var building:   String?
     var lector:     String?
     var house:      Int?
-//    var groups:     [String]?
+    var groups:     [String]?
     
     // MARK: - Initializators
     init() {}
     
-    init(lessonNumber: Int?, hashID: String?, lessonType: String?, room: Int?, groupID: Int?, discipline: String?, building: String?, lector: String?, house: Int?) {
+    init(lessonNumber: Int?, hashID: String?, lessonType: String?, room: String?, lessonStart: String?, lessonEnd: String?, discipline: String?, building: String?, lector: String?, house: Int?, groups: [String]?) {
         
         self.lessonNumber = lessonNumber
         self.hashID     = hashID
         self.lessonType = lessonType
         self.room       = room
-        self.groupID    = groupID
+        self.lessonStart = lessonStart
+        self.lessonEnd   = lessonEnd
         self.discipline = discipline
         self.building   = building
         self.lector     = lector
         self.house      = house
+        self.groups     = groups
         
-        
-
-//        for item in groupsValue {
+//        for item in groups! {
 //            let object: String = item.stringValue
-//            groups?.append(object)
+//            self.groups?.append(object)
 //        }
     }
-    
 }

@@ -10,14 +10,14 @@ import Foundation
 
 class OneDay {
     
-    var number:  Int?
+    var dayName:  String?
     var lessons: [OneLesson]?
     
     // MARK: - Initializators
     init() {}
 
-    init(number: Int?, lessons: [OneLesson]?) {
-        self.number  = number
+    init(dayName: String?, lessons: [OneLesson]?) {
+        self.dayName  = dayName
         self.lessons = lessons
     }
     
