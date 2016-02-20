@@ -26,7 +26,6 @@ class TestViewController: UIViewController {
         // Get schedule
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
             success in
-            
             // weekData - is JSON item of week
             for weekData in success["success"]["data"] {
 //                print("weekData.0 - \(weekData.0)")

@@ -86,10 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Raspisaniye/Alamofire.framework"
   install_framework "Pods-Raspisaniye/MBProgressHUD.framework"
+  install_framework "Pods-Raspisaniye/Realm.framework"
+  install_framework "Pods-Raspisaniye/RealmSwift.framework"
   install_framework "Pods-Raspisaniye/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Raspisaniye/Alamofire.framework"
   install_framework "Pods-Raspisaniye/MBProgressHUD.framework"
+  install_framework "Pods-Raspisaniye/Realm.framework"
+  install_framework "Pods-Raspisaniye/RealmSwift.framework"
   install_framework "Pods-Raspisaniye/SwiftyJSON.framework"
 fi
