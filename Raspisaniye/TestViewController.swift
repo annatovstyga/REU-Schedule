@@ -30,11 +30,12 @@ class TestViewController: UIViewController {
             for semestr in success["success"]["data"] {
                 // weekData - is JSON data of item with Days
                 for weekData in semestr.1 {
-                    let week = OneWeek()
+                    var OneSemDic : [Int:AnyObject] = [:]
+                    var OneWeekDic : [Int:AnyObject] = [:]
                     if (weekData.1 != nil) {
                         // dayData - is JSON data of one day
                         for dayData in weekData.1 {
-                            let day = OneDay()
+                            var OneDayDic : [Int:OneLesson] = [:]
                             if(dayData.1 != nil) {
                                 // lessonData - is data of one lesson
                                 for lessonData in dayData.1 {
@@ -60,15 +61,24 @@ class TestViewController: UIViewController {
                                             }
                                         }
                                         
+                                        
+                                        
                                         // Create new lesson and append it to
                                         let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
-                                        day.dayName = lessonData.0
-                                        day.lessons?.append(lesson)
+                                        OneDayDic[lesson.lessonNumber!] = lesson
+//                                        print(OneDayDic)
                                         break
                                     }
                                 }
+                                OneWeekDic[getDayNumber(dayData.0)] = OneDayDic
+//                            print(OneWeekDic)
                             }
                         }
+
+                        
+                      OneSemDic[Int(semestr.1["weekNum"].stringValue)!] = OneWeekDic
+                    print(OneSemDic)
+                        break
                     }
                 }
             }

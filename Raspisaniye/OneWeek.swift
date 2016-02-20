@@ -8,8 +8,8 @@
 
 import Foundation
 
+
 class OneWeek {
-    
     var number: Int?
     var days:   [OneDay]?
     

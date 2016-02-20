@@ -8,6 +8,10 @@
 
 import Foundation
 
+//var OneSemDic : [Int:AnyObject] = [:] TEMP
+//var OneWeekDic : [Int:AnyObject] = [:]
+//let OneDayDic : [Int:OneLesson] = [:]
+
 class OneLesson {
     
     var lessonNumber: Int?
