@@ -44,6 +44,7 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     
     @IBAction func enterClick(sender: AnyObject) {
         defaults.setBool(true, forKey: "isLogined")
+        Data =  getDataForGroup()
         performSegueWithIdentifier("fromLogin", sender: sender)
     }
     

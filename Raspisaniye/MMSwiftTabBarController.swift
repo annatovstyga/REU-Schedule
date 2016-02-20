@@ -7,11 +7,11 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
-    
+    var Data:Array<AnyObject> = []
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-        
+       
         let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
             action: "rotateWeekForward:")
         let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
@@ -24,16 +24,19 @@ class MMSwiftTabBarController: UIViewController {
         isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
 
-        if(isLogined == false) {
+        if(isLogined ==  false) { // debuging
             let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         }
+
+ 
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+            weekNumber = getWeekNumber()
+            weekLabel.text = "Неделя " + String(weekNumber)
+            
+            super.viewDidLoad()
         
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
-        weekNumber = getWeekNumber()
-        weekLabel.text = "Неделя " + String(weekNumber)
-        super.viewDidLoad()
     }
     
     // MARK: IBActions - buttons
