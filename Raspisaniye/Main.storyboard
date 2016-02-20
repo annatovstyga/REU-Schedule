@@ -670,7 +670,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="placeholderView" destination="cMO-yg-Cdf" id="Quh-Rd-a9j"/>
-                        <outlet property="subjectNameLabelMain" destination="RPp-YC-EJG" id="veD-Lx-8ye"/>
+                        <outlet property="subjectNameLabel" destination="RPp-YC-EJG" id="zDz-Zo-mTG"/>
                         <outlet property="weekLabel" destination="zyN-8s-SD7" id="PFT-1W-M3A"/>
                         <outletCollection property="tabBarButtons" destination="wjW-Pf-JXm" collectionClass="NSMutableArray" id="cdM-0F-6Gt"/>
                         <outletCollection property="tabBarButtons" destination="mhe-sn-TKh" collectionClass="NSMutableArray" id="EdD-nA-pXv"/>

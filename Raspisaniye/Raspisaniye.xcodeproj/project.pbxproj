@@ -31,6 +31,7 @@
 		B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */; };
 		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; };
 		B2639AD71C41291F0028F663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2639AD61C41291F0028F663 /* Images.xcassets */; };
+		B27314051C7919760004B709 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27314041C7919760004B709 /* CabController.swift */; };
 		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; };
 		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
@@ -69,6 +70,7 @@
 		B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B2639ACF1C4123A30028F663 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B2639AD61C41291F0028F663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Raspisaniye/Images.xcassets; sourceTree = "<group>"; };
+		B27314041C7919760004B709 /* CabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabController.swift; sourceTree = "<group>"; };
 		B289090D1C52D14500EB0A08 /* CabNavSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabNavSegue.swift; sourceTree = "<group>"; };
 		B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewOneController.swift; sourceTree = "<group>"; };
 		B28F1FBF1C54183400C9136B /* CustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
@@ -203,7 +205,7 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
-				B231FE361C778B2800B116CC /* CabController.swift */,
+				B27314041C7919760004B709 /* CabController.swift */,
 				A2498BB11C6F585400AFBF4C /* images */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
@@ -375,11 +377,11 @@
 				A2498BA61C6F30EA00AFBF4C /* ProfileViewController.swift in Sources */,
 				B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */,
 				B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */,
+				B27314051C7919760004B709 /* CabController.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
 				A29F12D81C6A80CF00D73B5C /* GroupItem.swift in Sources */,
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
-				B231FE371C778B2800B116CC /* CabController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
 				B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */,
