@@ -42,10 +42,6 @@ class OneLesson {
         self.lector     = lector
         self.house      = house
         self.groups     = groups
-        
-//        for item in groups! {
-//            let object: String = item.stringValue
-//            self.groups?.append(object)
-//        }
+
     }
 }

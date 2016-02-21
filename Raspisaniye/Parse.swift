@@ -9,19 +9,7 @@
 import Foundation
 
 func getDataForGroup() -> Array<AnyObject> {
-    /*
-    // Get groups list
-    InternetManager.sharedInstance.getGroupList({
-    success in
-    let groups = success["success"]["data"]
-    for item in groups {
-    let idGroup   = item.1["ID"].int!
-    let nameGroup = item.1["name"].string!
-    let itemGroup = GroupItem().initWith(itemID: idGroup, itemName: nameGroup)
-    }
-    }, failure:{error in print(error)})
-    //        */
-    
+
     // Get schedule
     var TotalSchedule : Array<AnyObject> = []
     InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
@@ -31,7 +19,7 @@ func getDataForGroup() -> Array<AnyObject> {
             // weekData - is JSON data of item with Days
             for weekData in semestr.1 {
                 var OneSemDic : [Int:AnyObject] = [:]
-                var OneWeekDic : [Int:AnyObject] = [:]
+                var OneWeekDic : [String:AnyObject] = [:]
                 if (weekData.1 != nil) {
                     // dayData - is JSON data of one day
                     for dayData in weekData.1 {
@@ -61,8 +49,6 @@ func getDataForGroup() -> Array<AnyObject> {
                                         }
                                     }
                                     
-                                    
-                                    
                                     // Create new lesson and append it to
                                     let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
                                     OneDayDic[lesson.lessonNumber!] = lesson
@@ -70,7 +56,7 @@ func getDataForGroup() -> Array<AnyObject> {
                                     break
                                 }
                             }
-                            OneWeekDic[getDayNumber(dayData.0)] = OneDayDic
+                            OneWeekDic[dayData.0] = OneDayDic
                             //                            print(OneWeekDic)
                         }
                     }
