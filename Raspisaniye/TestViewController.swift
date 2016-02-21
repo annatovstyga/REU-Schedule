@@ -10,7 +10,7 @@ import SwiftyJSON
 class TestViewController: UIViewController {
     
     @IBAction func testButton(sender: UIButton) {
-       let Data =  getDataForGroup()
+//       let Data = getDataForGroup()
         /*
         // Get groups list
         InternetManager.sharedInstance.getGroupList({
@@ -32,12 +32,12 @@ class TestViewController: UIViewController {
             for semestr in success["success"]["data"] {
                 // weekData - is JSON data of item with Days
                 for weekData in semestr.1 {
-                    var OneSemDic : [Int:AnyObject] = [:]
-                    var OneWeekDic : [String:AnyObject] = [:]
+                    var oneSemDic : [Int:AnyObject] = [:]
+                    var oneWeekDic : [String:AnyObject] = [:]
                     if (weekData.1 != nil) {
                         // dayData - is JSON data of one day
                         for dayData in weekData.1 {
-                            var OneDayDic : [Int:OneLesson] = [:]
+                            var oneDayDic : [Int:OneLesson] = [:]
                             if(dayData.1 != nil) {
                                 // lessonData - is data of one lesson
                                 for lessonData in dayData.1 {
@@ -62,33 +62,27 @@ class TestViewController: UIViewController {
                                                 groups?.append(groupString)
                                             }
                                         }
-                                        
-                                        
-                                        
                                         // Create new lesson and append it to
-                                        let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
-                                        OneDayDic[lesson.lessonNumber!] = lesson
+                                        let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+                                        oneDayDic[lesson.lessonNumber!] = lesson
                                         //                                        print(OneDayDic)
                                         break
                                     }
                                 }
-                                OneWeekDic[dayData.0] = OneDayDic
+                                oneWeekDic[dayData.0] = oneDayDic
                                 //                            print(OneWeekDic)
                             }
                         }
-                        
-                        
-                        OneSemDic[Int(semestr.1["weekNum"].stringValue)!] = OneWeekDic
-                        TotalSchedule.append(OneSemDic)
+                        oneSemDic[Int(semestr.1["weekNum"].stringValue)!] = oneWeekDic
+                        TotalSchedule.append(oneSemDic)
                         //                    print(OneSemDic)
-                        
                         break
                     }
                 }
-                
-                //??
             }
             print(TotalSchedule)
             }, failure: {error in print(error)})
     }
 }
+
+
