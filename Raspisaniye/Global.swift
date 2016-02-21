@@ -6,7 +6,7 @@ let defaults = NSUserDefaults.standardUserDefaults()
 
 var selectedDay:Int64 = 1
 var weekNumber:Int = 1
-var Data:Array<AnyObject> = []
+//var Data:Array<AnyObject> = []
 
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()

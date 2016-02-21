@@ -8,11 +8,10 @@
 
 import Foundation
 
-func getDataForGroup() -> Array<AnyObject> {
+func getDataForGroup(groupName:String) -> Array<AnyObject> {
 
-    // Get schedule
     var TotalSchedule : Array<AnyObject> = []
-    InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
+    InternetManager.sharedInstance.getLessonsList(["who":"group","id":groupName,"timestamp":0], success: {
         success in
         // semestr - is JSON item of week
         for semestr in success["success"]["data"] {
@@ -53,7 +52,7 @@ func getDataForGroup() -> Array<AnyObject> {
                                     let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
                                     OneDayDic[lesson.lessonNumber!] = lesson
                                     //                                        print(OneDayDic)
-                                    break
+                                   
                                 }
                             }
                             OneWeekDic[dayData.0] = OneDayDic
@@ -72,8 +71,9 @@ func getDataForGroup() -> Array<AnyObject> {
             
             //??
         }
-                    print(TotalSchedule)
+//                    print(TotalSchedule)
         }, failure: {error in print(error)})
+//     print(TotalSchedule) ВОТ ТУТ НОРМ ВЫВОДИТ!!!!!
     return TotalSchedule
 }
 

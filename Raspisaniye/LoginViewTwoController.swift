@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate{
-    
+    var Data:Array<AnyObject> = []
     func before(value1: String, value2: String) -> Bool {
         return value1 < value2;
     }
@@ -44,7 +44,11 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     
     @IBAction func enterClick(sender: AnyObject) {
         defaults.setBool(true, forKey: "isLogined")
-        Data =  getDataForGroup()
+        print(getDataForGroup("150")) // УЖЕ ПУСТОЙ
+        Data = getDataForGroup("150")
+        print("START")
+        print(Data)
+        print("FINISH")
         performSegueWithIdentifier("fromLogin", sender: sender)
     }
     

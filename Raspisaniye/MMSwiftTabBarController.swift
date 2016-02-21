@@ -7,7 +7,6 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
-    var Data:Array<AnyObject> = []
     var weekNumberTab:Int?
     @IBOutlet weak var subjectNameLabel: UILabel!
     
