@@ -11,9 +11,13 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var totalSchedule: [[Int:AnyObject]] = []
+    var totalSchedule: [[Int:OneWeek]] = []
     var timestamp: Int = 0
     var currentWeek: Int = 0
+    
+    var week: OneWeek = OneWeek()
+    var day:  OneDay  = OneDay()
+    var lesson: OneLesson = OneLesson()
 
     // MARK: - View methods
     override func viewDidLoad() {
@@ -28,28 +32,54 @@ class MainTableViewController: UITableViewController {
         self.tableView.rowHeight = self.view.frame.size.height / 5
         rowH = self.tableView.rowHeight
         
-        print("LOL - \(subjectName)")
-        
         if(isLogined == true) {
             subjectName = (subjectIDMemory, subjectNameMemory)
-            updateSchedule(itemID: subjectName.0)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.updateSchedule(itemID: subjectName.0, successBlock: {
+                    successBlock in
+                    self.totalSchedule = successBlock
+                    self.updateScheduleProperties()
+                    self.tableView.reloadData()
+                })
+            })
         }
-        print("TOTAL: \(totalSchedule)")
     }
     
     // MARK: - Update schedule
-    func updateSchedule(itemID itemID: Int) {
+    func updateScheduleProperties() {
+//        if (self.totalSchedule.count != 0) {
+            for item in self.totalSchedule {
+                if let week = item[self.currentWeek] {
+                    print("week.days - \(week.description())")
+                    if let days = week.days {
+//                        self.day = days[selectedDay]
+                    for day in days {
+                        self.day = day
+                        if let lessons = self.day.lessons {
+                            for lesson in lessons {
+                                self.lesson = lesson
+                                print("lesson \(self.lesson.description())")
+//                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateSchedule(itemID itemID: Int, successBlock: [[Int:OneWeek]] -> ()) {
         
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":itemID,"timestamp":0], success: {
             success in
+            var schedule: [[Int:OneWeek]] = []
             
             self.timestamp   = success["success"]["timestamp"].intValue
             self.currentWeek = success["success"]["current_week"].intValue
-            print("Time \(self.timestamp) current \(self.currentWeek)")
             
             // semestr - is JSON item of week
             for semestr in success["success"]["data"] {
-                var oneSemDic: [Int:AnyObject] = [:]
+                var oneSemDic: [Int:OneWeek] = [:]
                 let oneWeek: OneWeek = OneWeek()
                 let oneDay: OneDay = OneDay()
                 oneWeek.number = semestr.1["weekNum"].int
@@ -86,19 +116,23 @@ class MainTableViewController: UITableViewController {
                                     }
                                     // Create new lesson and append it to
                                     let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+//                                    print("One lesson - \(lesson.description())")
                                     oneDay.lessons?.append(lesson)
                                 }
                             }
                         }
+//                        print("One day - \(oneDay.description())")
                         oneWeek.days?.append(oneDay)
-                        oneDay.clearAll()
+//                        oneDay.clearAll()
                     }
+//                    print("One Week - \(oneWeek.description())")
                     oneSemDic[semestr.1["weekNum"].int!] = oneWeek
-                    oneWeek.clearAll()
+//                    oneWeek.clearAll()
                 }
-                self.totalSchedule.append(oneSemDic)
+//                print("One SEM dic - \(oneSemDic.description)")
+                schedule.append(oneSemDic)
             }
-            print("Total schedule - \(self.totalSchedule)") // ВОТ ТУТ НОРМ ВЫВОДИТ!!!!!
+            successBlock(schedule)
             }, failure: {error in print(error)})
     }
     
@@ -116,8 +150,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomTableViewCell
-        
-        
+
         
         return cell
     }

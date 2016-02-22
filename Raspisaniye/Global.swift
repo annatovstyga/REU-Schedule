@@ -4,7 +4,7 @@ import UIKit
 
 let defaults = NSUserDefaults.standardUserDefaults()
 
-var selectedDay:Int64 = 1
+var selectedDay:Int = 1
 var weekNumber:Int = 1
 //var Data:Array<AnyObject> = []
 
