@@ -20,7 +20,6 @@
 		A29F12D81C6A80CF00D73B5C /* GroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D71C6A80CF00D73B5C /* GroupItem.swift */; };
 		A29F12DA1C6A810E00D73B5C /* LectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D91C6A810E00D73B5C /* LectorItem.swift */; };
 		A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */; };
-		B239A6A11C79124600B501CF /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239A6A01C79124600B501CF /* Parse.swift */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
@@ -59,7 +58,6 @@
 		A29F12D71C6A80CF00D73B5C /* GroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupItem.swift; path = "Data Model/GroupItem.swift"; sourceTree = "<group>"; };
 		A29F12D91C6A810E00D73B5C /* LectorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectorItem.swift; path = "Data Model/LectorItem.swift"; sourceTree = "<group>"; };
 		A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneLesson.swift; path = "Data Model/OneLesson.swift"; sourceTree = "<group>"; };
-		B239A6A01C79124600B501CF /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */,
 				B24B287E1C751C5E00CDF3BA /* OneDay.swift */,
 				B24B287A1C75184100CDF3BA /* OneWeek.swift */,
-				B239A6A01C79124600B501CF /* Parse.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */,
-				B239A6A11C79124600B501CF /* Parse.swift in Sources */,
 				B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */,
 				B2639AD01C4123A30028F663 /* Global.swift in Sources */,
 				A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */,

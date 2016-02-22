@@ -10,8 +10,6 @@ import SwiftyJSON
 class TestViewController: UIViewController {
     
     @IBAction func testButton(sender: UIButton) {
-//       let Data =  getDataForGroup("195")
-
 
         /*
         // Get groups list

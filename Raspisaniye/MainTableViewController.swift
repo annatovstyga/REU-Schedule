@@ -10,10 +10,12 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
+    // MARK: - Properties
     var totalSchedule: [[Int:AnyObject]] = []
     var timestamp: Int = 0
     var currentWeek: Int = 0
-    
+
+    // MARK: - View methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -22,7 +24,6 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to disp.lay an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-        
         self.tableView.estimatedRowHeight = 120
         self.tableView.rowHeight = self.view.frame.size.height / 5
         rowH = self.tableView.rowHeight
@@ -85,7 +86,6 @@ class MainTableViewController: UITableViewController {
                                     }
                                     // Create new lesson and append it to
                                     let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
-                                    
                                     oneDay.lessons?.append(lesson)
                                 }
                             }
@@ -103,7 +103,6 @@ class MainTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
