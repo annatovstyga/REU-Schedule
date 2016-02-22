@@ -10,12 +10,14 @@ var weekNumber:Int = 1
 
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
+var subjectNameMemory = defaults.objectForKey("subjectName") as? String ?? String()
+var subjectIDMemory   = defaults.objectForKey("subjectID") as? Int ?? Int()
 
 var dictOfItems: [String:AnyObject] = [:]
-var groupNamesList: [String] = []
-var lectorsNamesList: [String] = []
-var rowH:CGFloat = 0
-var subjectName:String?
+var groupNamesList: [Int: String] = [:]
+var lectorsNamesList: [Int: String] = [:]
+var rowH: CGFloat = 0
+var subjectName: (Int, String) = (0,"")
 
 struct GlobalColors{
     

@@ -12,7 +12,7 @@ class MMSwiftTabBarController: UIViewController {
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-       
+        
         let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
             action: "rotateWeekForward:")
         let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
@@ -24,20 +24,23 @@ class MMSwiftTabBarController: UIViewController {
         
         isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
-
+        
         if(isLogined ==  false) { // debuging
             let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         }
-
- 
-            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
-            weekNumber = getWeekNumber()
-            weekNumberTab = weekNumber
-            weekLabel.text = "Неделя " + String(weekNumber)
-            subjectNameLabel.text = subjectName
-            super.viewDidLoad()
+        
+        
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        weekNumber = getWeekNumber()
+        weekNumberTab = weekNumber
+        weekLabel.text = "Неделя " + String(weekNumber)
+        if(isLogined == true) {
+            subjectName = (subjectIDMemory, subjectNameMemory)
+        }
+        subjectNameLabel.text = subjectName.1
+        super.viewDidLoad()
         
     }
     
@@ -81,7 +84,7 @@ class MMSwiftTabBarController: UIViewController {
         if sender.state == .Ended {
             if(weekNumberTab > 1)
             {
-               (weekNumberTab!)--
+                (weekNumberTab!)--
                 weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
             

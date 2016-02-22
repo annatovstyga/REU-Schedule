@@ -7,7 +7,7 @@
 //
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var subjectNameLabel: UILabel!
     @IBAction func changeTheSubject(sender: AnyObject) {
         defaults.setBool(false, forKey: "isLogined")
@@ -18,7 +18,10 @@ class ProfileViewController: UIViewController {
     }
     @IBOutlet weak var weekNumberLabel: UILabel!
     override func viewDidLoad() {
-        self.subjectNameLabel.text = subjectName
+        if(isLogined == true) {
+            subjectName = (subjectIDMemory, subjectNameMemory)
+        }
+        self.subjectNameLabel.text = subjectName.1
         self.weekNumberLabel.text = String(weekNumber) + " неделя"
         // Customize navigation bar
         self.navigationController?.navigationBarHidden = false
@@ -31,6 +34,6 @@ class ProfileViewController: UIViewController {
         
     }
     override func viewWillDisappear(animated: Bool) {
-       self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = true
     }
 }
