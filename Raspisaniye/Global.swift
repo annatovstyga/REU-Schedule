@@ -12,6 +12,8 @@ var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 var subjectNameMemory = defaults.objectForKey("subjectName") as? String ?? String()
 var subjectIDMemory   = defaults.objectForKey("subjectID") as? Int ?? Int()
+var timestampMemory   = defaults.objectForKey("timestamp") as? Int ?? Int()
+var currentWeekMemory = defaults.objectForKey("currentWeek") as? Int ?? Int()
 
 var dictOfItems: [String:AnyObject] = [:]
 var groupNamesList: [Int: String] = [:]

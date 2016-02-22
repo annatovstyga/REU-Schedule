@@ -11,6 +11,8 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     var totalSchedule: [[Int:AnyObject]] = []
+    var timestamp: Int = 0
+    var currentWeek: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +41,11 @@ class MainTableViewController: UITableViewController {
         
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":itemID,"timestamp":0], success: {
             success in
-            print("SUCCESS timestamp - \(success["success"]["timestamp"])")
-            print("SUCCESS current_week - \(success["success"]["current_week"])")
+            
+            self.timestamp   = success["success"]["timestamp"].intValue
+            self.currentWeek = success["success"]["current_week"].intValue
+            print("Time \(self.timestamp) current \(self.currentWeek)")
+            
             // semestr - is JSON item of week
             for semestr in success["success"]["data"] {
                 var oneSemDic: [Int:AnyObject] = [:]
