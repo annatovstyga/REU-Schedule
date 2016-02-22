@@ -17,8 +17,18 @@ class OneDay {
     init() {}
 
     init(dayName: String?, lessons: [OneLesson]?) {
-        self.dayName  = dayName
+        self.dayName = dayName
         self.lessons = lessons
     }
     
+    // MARK: - Clear method
+    func clearAll() {
+        self.dayName = nil
+        self.lessons = nil
+    }
+    
+    // MARK: - Print in log
+    func description() {
+        print("\nDay name - \(dayName)\nLessons - \(lessons)")
+    }
 }

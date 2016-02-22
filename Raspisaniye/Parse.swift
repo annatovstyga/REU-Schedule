@@ -8,72 +8,66 @@
 
 import Foundation
 
-func getDataForGroup(groupName:String) -> Array<AnyObject> {
-
-    var TotalSchedule : Array<AnyObject> = []
-    InternetManager.sharedInstance.getLessonsList(["who":"group","id":groupName,"timestamp":0], success: {
+func getDataForGroup(groupName:String) -> [AnyObject] {
+    
+    var totalSchedule: [[Int:AnyObject]] = []
+    InternetManager.sharedInstance.getLessonsList(["who":"group","id":195,"timestamp":0], success: {
         success in
         // semestr - is JSON item of week
         for semestr in success["success"]["data"] {
-            // weekData - is JSON data of item with Days
+            var oneSemDic: [Int:AnyObject] = [:]
+            let oneWeek: OneWeek = OneWeek()
+            let oneDay: OneDay = OneDay()
+            oneWeek.number = semestr.1["weekNum"].int
+            oneWeek.days = []
+            // weekData - is one week
             for weekData in semestr.1 {
-                var OneSemDic : [Int:AnyObject] = [:]
-                var OneWeekDic : [String:AnyObject] = [:]
-                if (weekData.1 != nil) {
-                    // dayData - is JSON data of one day
-                    for dayData in weekData.1 {
-                        var OneDayDic : [Int:OneLesson] = [:]
-                        if(dayData.1 != nil) {
-                            // lessonData - is data of one lesson
-                            for lessonData in dayData.1 {
-                                if(lessonData.1 != nil) {
-                                    // Main properties
-                                    let lessonNumber        = Int(lessonData.0)
-                                    let hashID: String?     = lessonData.1["hash_id"].string
-                                    let lessonType: String? = lessonData.1["lesson_type"].string
-                                    let room: String?       = lessonData.1["room"].string
-                                    let lessonStart: String? = lessonData.1["lesson_start"].string
-                                    let lessonEnd: String?   = lessonData.1["lesson_end"].string
-                                    let discipline: String? = lessonData.1["discipline"].string
-                                    let building: String?   = lessonData.1["building"].string
-                                    let lector: String?     = lessonData.1["lector"].string
-                                    let house: Int?         = lessonData.1["housing"].int
-                                    // Groups property
-                                    var groups: [String]?   = []
-                                    let lessonsGroups = lessonData.1["groups"].array
-                                    if let data = lessonsGroups {
-                                        for groupName in data {
-                                            let groupString = groupName.stringValue
-                                            groups?.append(groupString)
-                                        }
+                // dayData - is one day
+                for dayData in weekData.1 {
+                    oneDay.dayName = dayData.0
+                    oneDay.lessons = []
+                    if(dayData.1 != nil) {
+                        // lessonData - is one lesson
+                        for lessonData in dayData.1 {
+                            if(lessonData.1 != nil) {
+                                // Main properties
+                                let lessonNumber        = Int(lessonData.0)
+                                let hashID: String?     = lessonData.1["hash_id"].string
+                                let lessonType: String? = lessonData.1["lesson_type"].string
+                                let room: String?       = lessonData.1["room"].string
+                                let lessonStart: String? = lessonData.1["lesson_start"].string
+                                let lessonEnd: String?   = lessonData.1["lesson_end"].string
+                                let discipline: String? = lessonData.1["discipline"].string
+                                let building: String?   = lessonData.1["building"].string
+                                let lector: String?     = lessonData.1["lector"].string
+                                let house: Int?         = lessonData.1["housing"].int
+                                // Groups property
+                                var groups: [String]?   = []
+                                let lessonsGroups = lessonData.1["groups"].array
+                                if let data = lessonsGroups {
+                                    for groupName in data {
+                                        let groupString = groupName.stringValue
+                                        groups?.append(groupString)
                                     }
-                                    
-                                    // Create new lesson and append it to
-                                    let lesson = OneLesson.init(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
-                                    OneDayDic[lesson.lessonNumber!] = lesson
-                                    //                                        print(OneDayDic)
-                                   
                                 }
+                                // Create new lesson and append it to
+                                let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+                                
+                                oneDay.lessons?.append(lesson)
                             }
-                            OneWeekDic[dayData.0] = OneDayDic
-                            //                            print(OneWeekDic)
                         }
                     }
-                    
-                    
-                    OneSemDic[Int(semestr.1["weekNum"].stringValue)!] = OneWeekDic
-                    TotalSchedule.append(OneSemDic)
-                    //                    print(OneSemDic)
-                    
-                    break
+                    oneWeek.days?.append(oneDay)
+                    oneDay.clearAll()
                 }
+                oneSemDic[semestr.1["weekNum"].int!] = oneWeek
+                oneWeek.clearAll()
             }
-            
-            //??
+            totalSchedule.append(oneSemDic)
         }
-//                    print(TotalSchedule)
+        print("Total schedule - \(totalSchedule)") // ВОТ ТУТ НОРМ ВЫВОДИТ!!!!!
         }, failure: {error in print(error)})
-//     print(TotalSchedule) ВОТ ТУТ НОРМ ВЫВОДИТ!!!!!
-    return TotalSchedule
+    
+    return totalSchedule
 }
 

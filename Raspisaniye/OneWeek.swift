@@ -10,6 +10,7 @@ import Foundation
 
 
 class OneWeek {
+    
     var number: Int?
     var days:   [OneDay]?
     
@@ -19,5 +20,16 @@ class OneWeek {
     init(number: Int?, days: [OneDay]?) {
         self.number = number
         self.days   = days
+    }
+    
+    // MARK: - Clear method
+    func clearAll() {
+        self.number = nil
+        self.days   = nil
+    }
+    
+    // MARK: - Print in log
+    func description() {
+        print("\nnumber - \(number)\ndays - \(days)")
     }
 }

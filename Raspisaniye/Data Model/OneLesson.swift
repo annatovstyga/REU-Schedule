@@ -42,6 +42,25 @@ class OneLesson {
         self.lector     = lector
         self.house      = house
         self.groups     = groups
-
+    }
+    
+    // MARK: - Clear method
+    func clearAll() {
+        self.lessonNumber = nil
+        self.hashID     = nil
+        self.lessonType = nil
+        self.room       = nil
+        self.lessonStart = nil
+        self.lessonEnd   = nil
+        self.discipline = nil
+        self.building   = nil
+        self.lector     = nil
+        self.house      = nil
+        self.groups     = nil
+    }
+    
+    // MARK: - Print in log
+    func description() {
+        print("\nlessonNumber - \(lessonNumber)\nhashID - \(hashID)\nlessonType - \(lessonType)\nroom - \(room)\nlessonStart - \(lessonStart)\nlessonEnd - \(lessonEnd)\ndiscipline - \(discipline)\nbuilding - \(building)\nlector - \(lector)\nhouse - \(house)\ngroups - \(groups)")
     }
 }
