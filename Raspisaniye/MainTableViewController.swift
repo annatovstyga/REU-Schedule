@@ -32,7 +32,7 @@ class MainTableViewController: UITableViewController {
         
         if(isLogined == true) {
             subjectName = (subjectIDMemory, subjectNameMemory)
-            updateSchedule(itemID: subjectName.0)
+//            updateSchedule(itemID: subjectName.0)
         }
         print("TOTAL: \(totalSchedule)")
     }

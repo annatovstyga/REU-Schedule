@@ -75,6 +75,7 @@ class MMSwiftTabBarController: UIViewController {
             {
                 (weekNumberTab!)++
                 weekLabel.text = "Неделя " + String(weekNumberTab!)
+                performSegueWithIdentifier("weekSegue", sender: sender)
             }
         }
     }
@@ -86,6 +87,7 @@ class MMSwiftTabBarController: UIViewController {
             {
                 (weekNumberTab!)--
                 weekLabel.text = "Неделя " + String(weekNumberTab!)
+                performSegueWithIdentifier("weekSegue", sender: sender)
             }
             
         }
