@@ -1,6 +1,6 @@
 import UIKit
 
-class MainNavigationSegue: UIStoryboardSegue {
+class WeekNavigationSegue: UIStoryboardSegue {
     
     override func perform() {
         
@@ -11,7 +11,7 @@ class MainNavigationSegue: UIStoryboardSegue {
             view.removeFromSuperview()
         }
         
-      
+        
         tabBarController.currentViewController = destinationController
         tabBarController.placeholderView.addSubview(destinationController.view)
         
@@ -26,14 +26,27 @@ class MainNavigationSegue: UIStoryboardSegue {
         let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[v1]-0-|", options: .AlignAllTop, metrics: nil, views: ["v1": destinationController.view])
         
         tabBarController.placeholderView.addConstraints(verticalConstraint)
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        let screenHeight = UIScreen.mainScreen().bounds.size.height
-
-
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            destinationController.view.transform = CGAffineTransformScale(destinationController.view.transform, 0.5, 0.5)
+            //            tabBarController.view.frame = CGRectOffset(tabBarController.view.frame, 0.0, -screenHeight)
+            
+            }) { (Finished) -> Void in
+                UIView.animateWithDuration(0.4, animations: { () -> Void in
+                    destinationController.view.transform = CGAffineTransformIdentity
+                    
+                    }, completion: { (Finished) -> Void in
+                        
+                        
+                })
+                //                self.sourceViewController.presentViewController(self.destinationViewController as UIViewController,
+                //                    animated: false,
+                //                    completion: nil)
+        }
+        
         tabBarController.placeholderView.layoutIfNeeded()
         destinationController.didMoveToParentViewController(tabBarController)
-    
-
+        
+        
     }
-
+    
 }
