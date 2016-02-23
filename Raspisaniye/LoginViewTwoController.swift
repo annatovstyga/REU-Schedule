@@ -94,17 +94,22 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
             // semestr - is JSON item of week
             for semestr in success["success"]["data"] {
                 var oneSemDic: [Int:OneWeek] = [:]
+                
+
                 let oneWeek: OneWeek = OneWeek()
-                let oneDay: OneDay = OneDay()
                 oneWeek.number = semestr.1["weekNum"].int
                 oneWeek.days = []
                 // weekData - is one week
                 for weekData in semestr.1 {
+
+
                     // dayData - is one day
                     for dayData in weekData.1 {
+                        let oneDay: OneDay = OneDay()
                         oneDay.dayName = dayData.0
+                        print("NAME \(dayData.0)")
                         oneDay.lessons = []
-                        if(dayData.1 != nil) {
+//                        if(dayData.1 != nil) {
                             // lessonData - is one lesson
                             for lessonData in dayData.1 {
                                 if(lessonData.1 != nil) {
@@ -132,11 +137,14 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
                                     let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
                                     //                                    print("One lesson - \(lesson.description())")
                                     oneDay.lessons?.append(lesson)
+                                    
                                 }
                             }
-                        }
-                        //                        print("One day - \(oneDay.description())")
+//                            oneWeek.days?.append(oneDay)
+//                        }
+//                                                print("One day - \(oneDay.description())")
                         oneWeek.days?.append(oneDay)
+//                        print(oneDay.dayName)
                         //                        oneDay.clearAll()
                     }
                     //                    print("One Week - \(oneWeek.description())")

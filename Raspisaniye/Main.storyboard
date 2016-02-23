@@ -341,9 +341,6 @@
                                         <state key="normal" title="Пн">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="monClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="YlS-VF-Umq"/>
                                         </connections>
@@ -354,9 +351,6 @@
                                         <state key="normal" title="Вт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="100" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="TueClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="OMh-X4-oTz"/>
                                         </connections>
@@ -367,9 +361,6 @@
                                         <state key="normal" title="Ср">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="200" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="WedClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="0J9-Lv-d8d"/>
                                         </connections>
@@ -380,9 +371,6 @@
                                         <state key="normal" title="Пт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="400" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="FriClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="nvm-Ep-mIi"/>
                                         </connections>
@@ -393,9 +381,6 @@
                                         <state key="normal" title="Сб">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="500" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="SutClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="K8e-PB-RVO"/>
                                         </connections>
@@ -406,9 +391,6 @@
                                         <state key="normal" title="Чт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="300" y="-1" width="100" height="53"/>
-                                        </variation>
                                         <connections>
                                             <action selector="ThuClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="5Gm-Pk-VTB"/>
                                         </connections>
@@ -486,9 +468,6 @@
                                 <rect key="frame" x="0.0" y="67.5" width="600" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="67" width="600" height="480"/>
-                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ntr-oW-vmY" appends="YES" id="OKc-I8-pFF"/>
                                 </connections>

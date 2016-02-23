@@ -8,6 +8,7 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
     var weekNumberTab:Int? = 1
+    var weekNumber:Int? = 1
     @IBOutlet weak var subjectNameLabel: UILabel!
     var currentWeek: Int = 0
     var week: OneWeek = OneWeek()
@@ -85,7 +86,8 @@ class MMSwiftTabBarController: UIViewController {
             {
                 (weekNumberTab!)++
                 self.updateScheduleProperties(0)
-                weekLabel.text = "Неделя " + String(weekNumberTab!)
+                
+                weekLabel.text = "Неделя " + String(weekNumber!)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
         }
@@ -94,9 +96,17 @@ class MMSwiftTabBarController: UIViewController {
 //     MARK: - Update schedule
     func updateScheduleProperties(dayIndex:Int?) {
 //            if (totalSchedule.count != 0) {
-        print(dayIndex)
-        day = (totalSchedule[0][1]?.days![dayIndex!])!
-        print(day.dayName)
+        
+        for item in (totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days)!
+        {
+                  print(item.dayName)
+        }
+        
+        let weekTemp = totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days!
+        weekNumber = totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.number
+//        day = weekTemp?.indices
+        day = (totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days![dayIndex!])!
+//        print(day.dayName)
 //                for item in totalSchedule {
 //                    if let week = item[weekNumberTab!] {
 //                        print("week.days - \(week.description())")
@@ -124,7 +134,7 @@ class MMSwiftTabBarController: UIViewController {
             if(weekNumberTab > 1)
             {
                 (weekNumberTab!)--
-                weekLabel.text = "Неделя " + String(weekNumberTab!)
+                weekLabel.text = "Неделя " + String(weekNumber!)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
             
