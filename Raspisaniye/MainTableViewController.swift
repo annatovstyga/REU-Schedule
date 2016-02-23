@@ -56,8 +56,15 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if(day.lessons?.count != nil)
+        {
         return (day.lessons?.count)!
-    }
+        }
+        else
+        {
+        return 0
+        }
+        }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

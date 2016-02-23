@@ -34,7 +34,7 @@ class MMSwiftTabBarController: UIViewController {
             appDelegate.window?.makeKeyAndVisible()
         }
         
-        self.updateScheduleProperties()
+//        self.updateScheduleProperties(0)
 //        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
         weekNumber = getWeekNumber()
         weekLabel.text = "Неделя " + String(weekNumberTab!)
@@ -48,24 +48,31 @@ class MMSwiftTabBarController: UIViewController {
     
     // MARK: IBActions - buttons
     @IBAction func profileClick(sender: AnyObject) {
+
         performSegueWithIdentifier("profileSegue", sender: sender)
     }
     @IBAction func monClick(sender: AnyObject) {
+        updateScheduleProperties(0)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     @IBAction func TueClick(sender: AnyObject) {
+        updateScheduleProperties(1)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
     }
     @IBAction func WedClick(sender: AnyObject) {
+        updateScheduleProperties(2)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
     }
     @IBAction func ThuClick(sender: AnyObject) {
+        updateScheduleProperties(3)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[3])
     }
     @IBAction func FriClick(sender: AnyObject) {
+        updateScheduleProperties(4)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
     }
     @IBAction func SutClick(sender: AnyObject) {
+        updateScheduleProperties(5)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
@@ -77,7 +84,7 @@ class MMSwiftTabBarController: UIViewController {
             if(weekNumberTab < totalSchedule.count)
             {
                 (weekNumberTab!)++
-                self.updateScheduleProperties()
+                self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumberTab!)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
@@ -85,26 +92,29 @@ class MMSwiftTabBarController: UIViewController {
     }
     
 //     MARK: - Update schedule
-        func updateScheduleProperties() {
+    func updateScheduleProperties(dayIndex:Int?) {
 //            if (totalSchedule.count != 0) {
-                for item in totalSchedule {
-                    if let week = item[weekNumberTab!] {
-                        print("week.days - \(week.description())")
-                        if let days = week.days {
-                            self.day = days[selectedDay]
-//                        for day in days {
-//                            self.day = day
-                            if let lessons = self.day.lessons {
-                                for lesson in lessons {
-                                    self.lesson = lesson
-                                    print("lesson \(self.lesson.description())")
-    //                                break
-//                                }
-                            }
-                        }
-                    }
-                }
-            }
+        print(dayIndex)
+        day = (totalSchedule[0][1]?.days![dayIndex!])!
+        print(day.dayName)
+//                for item in totalSchedule {
+//                    if let week = item[weekNumberTab!] {
+//                        print("week.days - \(week.description())")
+//                        if let days = week.days {
+//                            self.day = days[selectedDay]
+////                        for day in days {
+////                            self.day = day
+//                            if let lessons = self.day.lessons {
+//                                for lesson in lessons {
+//                                    self.lesson = lesson
+//                                    print("lesson \(self.lesson.description())")
+//    //                                break
+////                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
 
     
