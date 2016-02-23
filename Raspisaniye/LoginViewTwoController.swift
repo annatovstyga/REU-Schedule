@@ -11,10 +11,12 @@ import UIKit
 class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate{
     
     // MARK: - Properties
-    var Data: [AnyObject] = []
     var lectorsArray: [String] = []
     var groupsArray: [String] = []
     
+
+    var timestamp: Int = 0
+    var currentWeek: Int = 0
     // MARK: - View methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +42,112 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     // MARK: - IBActions
     @IBAction func enterClick(sender: AnyObject) {
         defaults.setBool(true, forKey: "isLogined")
-        performSegueWithIdentifier("fromLogin", sender: sender)
+        subjectName = (subjectIDMemory, subjectNameMemory)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.updateSchedule(itemID: subjectName.0, successBlock: {
+                successBlock in
+                totalSchedule = successBlock
+                self.performSegueWithIdentifier("fromLogin", sender: sender)
+            })
+        })
+       
     }
     
     @IBOutlet weak var myPicker: UIPickerView!
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
     {
         return 1
+    }
+    
+    // MARK: - Update schedule
+    //    func updateScheduleProperties() {
+    ////        if (self.totalSchedule.count != 0) {
+    //            for item in self.totalSchedule {
+    //                if let week = item[self.currentWeek] {
+    //                    print("week.days - \(week.description())")
+    //                    if let days = week.days {
+    ////                        self.day = days[selectedDay]
+    //                    for day in days {
+    //                        self.day = day
+    //                        if let lessons = self.day.lessons {
+    //                            for lesson in lessons {
+    //                                self.lesson = lesson
+    //                                print("lesson \(self.lesson.description())")
+    ////                                break
+    //                            }
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    
+    func updateSchedule(itemID itemID: Int, successBlock: [[Int:OneWeek]] -> ()) {
+        
+        InternetManager.sharedInstance.getLessonsList(["who":"group","id":itemID,"timestamp":0], success: {
+            success in
+            var schedule: [[Int:OneWeek]] = []
+            
+            self.timestamp   = success["success"]["timestamp"].intValue
+            self.currentWeek = success["success"]["current_week"].intValue
+            
+            // semestr - is JSON item of week
+            for semestr in success["success"]["data"] {
+                var oneSemDic: [Int:OneWeek] = [:]
+                let oneWeek: OneWeek = OneWeek()
+                let oneDay: OneDay = OneDay()
+                oneWeek.number = semestr.1["weekNum"].int
+                oneWeek.days = []
+                // weekData - is one week
+                for weekData in semestr.1 {
+                    // dayData - is one day
+                    for dayData in weekData.1 {
+                        oneDay.dayName = dayData.0
+                        oneDay.lessons = []
+                        if(dayData.1 != nil) {
+                            // lessonData - is one lesson
+                            for lessonData in dayData.1 {
+                                if(lessonData.1 != nil) {
+                                    // Main properties
+                                    let lessonNumber        = Int(lessonData.0)
+                                    let hashID: String?     = lessonData.1["hash_id"].string
+                                    let lessonType: String? = lessonData.1["lesson_type"].string
+                                    let room: String?       = lessonData.1["room"].string
+                                    let lessonStart: String? = lessonData.1["lesson_start"].string
+                                    let lessonEnd: String?   = lessonData.1["lesson_end"].string
+                                    let discipline: String? = lessonData.1["discipline"].string
+                                    let building: String?   = lessonData.1["building"].string
+                                    let lector: String?     = lessonData.1["lector"].string
+                                    let house: Int?         = lessonData.1["housing"].int
+                                    // Groups property
+                                    var groups: [String]?   = []
+                                    let lessonsGroups = lessonData.1["groups"].array
+                                    if let data = lessonsGroups {
+                                        for groupName in data {
+                                            let groupString = groupName.stringValue
+                                            groups?.append(groupString)
+                                        }
+                                    }
+                                    // Create new lesson and append it to
+                                    let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+                                    //                                    print("One lesson - \(lesson.description())")
+                                    oneDay.lessons?.append(lesson)
+                                }
+                            }
+                        }
+                        //                        print("One day - \(oneDay.description())")
+                        oneWeek.days?.append(oneDay)
+                        //                        oneDay.clearAll()
+                    }
+                    //                    print("One Week - \(oneWeek.description())")
+                    oneSemDic[semestr.1["weekNum"].int!] = oneWeek
+                    //                    oneWeek.clearAll()
+                }
+                //                print("One SEM dic - \(oneSemDic.description)")
+                schedule.append(oneSemDic)
+            }
+            successBlock(schedule)
+            }, failure: {error in print(error)})
     }
     
     // MARK: - Picker

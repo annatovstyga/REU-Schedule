@@ -32,9 +32,9 @@ class LoginViewOneController: UIViewController {
                 self.showWarning()
         })
 //        groupNamesList.sortInPlace()
-        for lector in lectorsNamesList {
-            print(lector)
-        }
+//        for lector in lectorsNamesList {
+//            print(lector)
+//        }
     }
 
     func showWarning() {

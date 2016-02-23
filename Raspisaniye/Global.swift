@@ -20,7 +20,7 @@ var groupNamesList: [Int: String] = [:]
 var lectorsNamesList: [Int: String] = [:]
 var rowH: CGFloat = 0
 var subjectName: (Int, String) = (0,"")
-
+var totalSchedule: [[Int:OneWeek]] = []
 struct GlobalColors{
     
     static let lightBlueColor = UIColor(red: 0/255, green: 118/255, blue: 225/255, alpha: 1.0)

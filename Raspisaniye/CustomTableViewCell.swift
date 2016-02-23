@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    
+
     @IBOutlet weak var timeCell: UILabel!
     @IBOutlet weak var placeCell: UILabel!
     @IBOutlet weak var titleCell: UILabel!

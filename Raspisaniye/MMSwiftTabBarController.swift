@@ -7,9 +7,12 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
-    var weekNumberTab:Int?
+    var weekNumberTab:Int? = 1
     @IBOutlet weak var subjectNameLabel: UILabel!
-    
+    var currentWeek: Int = 0
+    var week: OneWeek = OneWeek()
+    var day:  OneDay  = OneDay()
+    var lesson: OneLesson = OneLesson()
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         
@@ -31,11 +34,10 @@ class MMSwiftTabBarController: UIViewController {
             appDelegate.window?.makeKeyAndVisible()
         }
         
-        
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        self.updateScheduleProperties()
+//        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
         weekNumber = getWeekNumber()
-        weekNumberTab = weekNumber
-        weekLabel.text = "Неделя " + String(weekNumber)
+        weekLabel.text = "Неделя " + String(weekNumberTab!)
         if(isLogined == true) {
             subjectName = (subjectIDMemory, subjectNameMemory)
         }
@@ -71,13 +73,39 @@ class MMSwiftTabBarController: UIViewController {
     func rotateWeekForward(sender: UIScreenEdgePanGestureRecognizer) {
         if sender.state == .Ended
         {
-            if(weekNumberTab < 56)
+            print(totalSchedule.count)
+            if(weekNumberTab < totalSchedule.count)
             {
                 (weekNumberTab!)++
+                self.updateScheduleProperties()
                 weekLabel.text = "Неделя " + String(weekNumberTab!)
             }
         }
     }
+    
+//     MARK: - Update schedule
+        func updateScheduleProperties() {
+//            if (totalSchedule.count != 0) {
+                for item in totalSchedule {
+                    if let week = item[weekNumberTab!] {
+                        print("week.days - \(week.description())")
+                        if let days = week.days {
+                            self.day = days[selectedDay]
+//                        for day in days {
+//                            self.day = day
+                            if let lessons = self.day.lessons {
+                                for lesson in lessons {
+                                    self.lesson = lesson
+                                    print("lesson \(self.lesson.description())")
+    //                                break
+//                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     
     func rotateWeekBackward(sender: UIScreenEdgePanGestureRecognizer) {
         
@@ -109,6 +137,9 @@ class MMSwiftTabBarController: UIViewController {
             let senderBtn = sender as! UIButton
             senderBtn.backgroundColor = GlobalColors.BlueColor
             
+            let dayVC = segue.destinationViewController as! MainTableViewController
+            print(self.day.lessons?.count)
+            dayVC.day = self.day
         }
     }
     
