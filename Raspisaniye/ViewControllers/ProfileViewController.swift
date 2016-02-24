@@ -18,9 +18,9 @@ class ProfileViewController: UIViewController {
     }
     @IBOutlet weak var weekNumberLabel: UILabel!
     override func viewDidLoad() {
-        if(isLogined == true) {
-            subjectName = (subjectIDMemory, subjectNameMemory)
-        }
+        
+//        subjectName = (subjectIDMemory, subjectNameMemory)
+        
         self.subjectNameLabel.text = subjectName.1
         self.weekNumberLabel.text = String(weekNumber) + " неделя"
         // Customize navigation bar

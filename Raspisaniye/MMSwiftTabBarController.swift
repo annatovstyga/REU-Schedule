@@ -25,7 +25,6 @@ class MMSwiftTabBarController: UIViewController {
         screenBackwardEdgeRecognizer.edges = .Left
         self.view.addGestureRecognizer(screenForwardEdgeRecognizer)
         self.view.addGestureRecognizer(screenBackwardEdgeRecognizer)
-        
         isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
         
@@ -36,14 +35,14 @@ class MMSwiftTabBarController: UIViewController {
         }
         
 //        self.updateScheduleProperties(0)
-//        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
         weekNumber = getWeekNumber()
         weekLabel.text = "Неделя " + String(weekNumberTab!)
-        if(isLogined == true) {
-            subjectName = (subjectIDMemory, subjectNameMemory)
-        }
+//            subjectName = (subjectIDMemory, subjectNameMemory)
+
         subjectNameLabel.text = subjectName.1
+        print(subjectNameMemory)
         super.viewDidLoad()
+        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
         
     }
     
@@ -96,7 +95,7 @@ class MMSwiftTabBarController: UIViewController {
 //     MARK: - Update schedule
     func updateScheduleProperties(dayIndex:Int?) {
 //            if (totalSchedule.count != 0) {
-        
+        print(totalSchedule)
         for item in (totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days)!
         {
                   print(item.dayName)

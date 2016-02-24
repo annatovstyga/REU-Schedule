@@ -13,7 +13,7 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     // MARK: - Properties
     var lectorsArray: [String] = []
     var groupsArray: [String] = []
-    
+    var tempID:Int? = 0
 
     var timestamp: Int = 0
     var currentWeek: Int = 0
@@ -21,15 +21,16 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for (_, value) in lectorsNamesList {
+        for (value, _) in lectorsNamesList {
             lectorsArray.append(value)
         }
         lectorsArray.sortInPlace(before)
         
-        for (_, value) in groupNamesList {
+        for (value, _) in groupNamesList {
             groupsArray.append(value)
         }
         groupsArray.sortInPlace(before)
+//        groupsArray.sortInPlace(before)
         
         myPicker.dataSource = self
         myPicker.delegate = self
@@ -42,7 +43,9 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     // MARK: - IBActions
     @IBAction func enterClick(sender: AnyObject) {
         defaults.setBool(true, forKey: "isLogined")
-        subjectName = (subjectIDMemory, subjectNameMemory)
+//        subjectName = (subjectIDMemory, subjectNameMemory)
+        defaults.setObject(subjectName.0, forKey: "subjectID")
+        defaults.setObject(subjectName.1, forKey: "subjectName")
         dispatch_async(dispatch_get_main_queue(), {
             self.updateSchedule(itemID: subjectName.0, successBlock: {
                 successBlock in
@@ -179,16 +182,16 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (amistudent) {
-            if let group = groupNamesList[row] {
-                subjectName = (row, group)
-            }
+            let groupNameTemp = groupsArray[row]
+            let indexTemp = groupNamesList[groupNameTemp]
+            subjectName = (indexTemp!, groupNameTemp)
         } else {
-            if let lector = lectorsNamesList[row] {
-                subjectName = (row, lector)
-            }
+            let lectorNameTemp = lectorsArray[row]
+            let indexTempLector = lectorsNamesList[lectorNameTemp]
+            subjectName = (indexTempLector!, lectorNameTemp)
+    
         }
-        defaults.setObject(subjectName.0, forKey: "subjectID")
-        defaults.setObject(subjectName.1, forKey: "subjectName")
+
         print("Object that I checked - \(subjectName)")
     }
     

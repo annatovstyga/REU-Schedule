@@ -9,24 +9,26 @@ class LoginViewOneController: UIViewController {
         
         InternetManager.sharedInstance.getGroupList({
             success in
+            print(success)
             let groups = success["success"]["data"]
             for item in groups {
                 let idGroup   = item.1["ID"].int!
                 let nameGroup = item.1["name"].string!
-                groupNamesList[idGroup] = nameGroup
+                groupNamesList[nameGroup] = idGroup
             }
+            
             }, failure:{error in print(error)
                 self.showWarning()
         })
-//        groupNamesList.sortInPlace()
-        
         InternetManager.sharedInstance.getLectorsList({
             success in
             let groups = success["success"]["data"]
+
             for item in groups {
                 let idLector   = item.1["ID"].int!
                 let nameLector = item.1["name"].string!
-                lectorsNamesList[idLector] = nameLector
+                lectorsNamesList[nameLector] = idLector
+                
             }
             }, failure:{error in print(error)
                 self.showWarning()

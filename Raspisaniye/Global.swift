@@ -16,9 +16,10 @@ var timestampMemory   = defaults.objectForKey("timestamp") as? Int ?? Int()
 var currentWeekMemory = defaults.objectForKey("currentWeek") as? Int ?? Int()
 
 var dictOfItems: [String:AnyObject] = [:]
-var groupNamesList: [Int: String] = [:]
-var lectorsNamesList: [Int: String] = [:]
+var groupNamesList: [String: Int] = [:]
+var lectorsNamesList: [String: Int] = [:]
 var rowH: CGFloat = 0
+
 var subjectName: (Int, String) = (0,"")
 var totalSchedule: [[Int:OneWeek]] = []
 struct GlobalColors{

@@ -267,7 +267,7 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = GQ92PTQY7M;
+						DevelopmentTeam = FKNLQ46HWC;
 					};
 				};
 			};
@@ -489,7 +489,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Rasp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rGradeStd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
@@ -517,7 +517,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mudriyilya.Rasp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rGradeStd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
