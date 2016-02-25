@@ -33,16 +33,23 @@ class MMSwiftTabBarController: UIViewController {
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         }
+        else{
+            if(totalSchedule.count > 0)
+            {
+             self.updateScheduleProperties(0)
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+            }
+        }
         
-//        self.updateScheduleProperties(0)
+       
         weekNumber = getWeekNumber()
         weekLabel.text = "Неделя " + String(weekNumberTab!)
 //            subjectName = (subjectIDMemory, subjectNameMemory)
 
         subjectNameLabel.text = subjectName.1
-        print(subjectNameMemory)
+//        print(subjectNameMemory)
         super.viewDidLoad()
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        
         
     }
     
@@ -80,7 +87,7 @@ class MMSwiftTabBarController: UIViewController {
     func rotateWeekForward(sender: UIScreenEdgePanGestureRecognizer) {
         if sender.state == .Ended
         {
-            print(totalSchedule.count)
+//            print(totalSchedule.count)
             if(weekNumberTab < totalSchedule.count)
             {
                 (weekNumberTab!)++
@@ -95,16 +102,14 @@ class MMSwiftTabBarController: UIViewController {
 //     MARK: - Update schedule
     func updateScheduleProperties(dayIndex:Int?) {
 //            if (totalSchedule.count != 0) {
-        print(totalSchedule)
-        for item in (totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days)!
-        {
-                  print(item.dayName)
-        }
+//        print(totalSchedule[0])
+
+    
+
         
-        let weekTemp = totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days!
-        weekNumber = totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.number
-//        day = weekTemp?.indices
-        day = (totalSchedule[weekNumberTab! - 1][weekNumberTab!]?.days![dayIndex!])!
+        print(totalSchedule[weekNumberTab! - 1].number)
+        weekNumber = totalSchedule[weekNumberTab! - 1].number
+        day = (totalSchedule[weekNumberTab! - 1].days![dayIndex!])
 //        print(day.dayName)
 //                for item in totalSchedule {
 //                    if let week = item[weekNumberTab!] {
@@ -149,7 +154,7 @@ class MMSwiftTabBarController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let availableIdentifiers = ["mainSegue"]
-        if(availableIdentifiers.contains(segue.identifier!) ) {
+        if(segue.identifier! == "mainSegue" ) {
             
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
@@ -159,10 +164,18 @@ class MMSwiftTabBarController: UIViewController {
             senderBtn.backgroundColor = GlobalColors.BlueColor
             
             let dayVC = segue.destinationViewController as! MainTableViewController
-            print(self.day.lessons?.count)
+            //            print(self.day.lessons?.count)
+            dayVC.day = self.day
+
+        }
+        if(segue.identifier! == "weekSegue")
+        {
+            let dayVC = segue.destinationViewController as! MainTableViewController
+            //            print(self.day.lessons?.count)
             dayVC.day = self.day
         }
     }
+    
     
     
     @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)

@@ -50,6 +50,7 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
             self.updateSchedule(itemID: subjectName.0, successBlock: {
                 successBlock in
                 totalSchedule = successBlock
+//                print(totalSchedule)
                 self.performSegueWithIdentifier("fromLogin", sender: sender)
             })
         })
@@ -62,34 +63,11 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
         return 1
     }
     
-    // MARK: - Update schedule
-    //    func updateScheduleProperties() {
-    ////        if (self.totalSchedule.count != 0) {
-    //            for item in self.totalSchedule {
-    //                if let week = item[self.currentWeek] {
-    //                    print("week.days - \(week.description())")
-    //                    if let days = week.days {
-    ////                        self.day = days[selectedDay]
-    //                    for day in days {
-    //                        self.day = day
-    //                        if let lessons = self.day.lessons {
-    //                            for lesson in lessons {
-    //                                self.lesson = lesson
-    //                                print("lesson \(self.lesson.description())")
-    ////                                break
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    
-    func updateSchedule(itemID itemID: Int, successBlock: [[Int:OneWeek]] -> ()) {
+    func updateSchedule(itemID itemID: Int, successBlock: [OneWeek] -> ()) {
         
         InternetManager.sharedInstance.getLessonsList(["who":"group","id":itemID,"timestamp":0], success: {
             success in
-            var schedule: [[Int:OneWeek]] = []
+            var schedule: [OneWeek] = []
             
             self.timestamp   = success["success"]["timestamp"].intValue
             self.currentWeek = success["success"]["current_week"].intValue
@@ -98,7 +76,7 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
             for semestr in success["success"]["data"] {
                 var oneSemDic: [Int:OneWeek] = [:]
                 
-
+                
                 let oneWeek: OneWeek = OneWeek()
                 oneWeek.number = semestr.1["weekNum"].int
                 oneWeek.days = []
@@ -110,7 +88,6 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
                     for dayData in weekData.1 {
                         let oneDay: OneDay = OneDay()
                         oneDay.dayName = dayData.0
-                        print("NAME \(dayData.0)")
                         oneDay.lessons = []
 //                        if(dayData.1 != nil) {
                             // lessonData - is one lesson
@@ -138,8 +115,9 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
                                     }
                                     // Create new lesson and append it to
                                     let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
-                                    //                                    print("One lesson - \(lesson.description())")
+//                                                                        print("One lesson - \(lesson.description())")
                                     oneDay.lessons?.append(lesson)
+//                                    print(oneDay.dayName)
                                     
                                 }
                             }
@@ -147,15 +125,16 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
 //                        }
 //                                                print("One day - \(oneDay.description())")
                         oneWeek.days?.append(oneDay)
+                        oneWeek.number = semestr.1["weekNum"].int!
 //                        print(oneDay.dayName)
                         //                        oneDay.clearAll()
                     }
                     //                    print("One Week - \(oneWeek.description())")
-                    oneSemDic[semestr.1["weekNum"].int!] = oneWeek
+//                    oneSemDic[semestr.1["weekNum"].int!] = oneWeek
                     //                    oneWeek.clearAll()
                 }
                 //                print("One SEM dic - \(oneSemDic.description)")
-                schedule.append(oneSemDic)
+                schedule.append(oneWeek)
             }
             successBlock(schedule)
             }, failure: {error in print(error)})
