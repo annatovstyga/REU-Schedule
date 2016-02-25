@@ -22,6 +22,12 @@ var rowH: CGFloat = 0
 
 var subjectName: (Int, String) = (0,"")
 var totalSchedule: [OneWeek] = []
+func before(value1: String, value2: String) -> Bool {
+    return value1 < value2;
+}
+func beforeLes(value1: OneLesson, value2: OneLesson) -> Bool {
+    return value1.lessonNumber < value2.lessonNumber;
+}
 struct GlobalColors{
     
     static let lightBlueColor = UIColor(red: 0/255, green: 118/255, blue: 225/255, alpha: 1.0)

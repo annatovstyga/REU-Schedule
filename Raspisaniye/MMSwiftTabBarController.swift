@@ -60,26 +60,32 @@ class MMSwiftTabBarController: UIViewController {
     }
     @IBAction func monClick(sender: AnyObject) {
         updateScheduleProperties(0)
+//        updateScheduleProperties(0)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
     }
     @IBAction func TueClick(sender: AnyObject) {
-        updateScheduleProperties(1)
+//        updateScheduleProperties(1)
+        updateScheduleProperties(4)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
     }
     @IBAction func WedClick(sender: AnyObject) {
-        updateScheduleProperties(2)
+//        updateScheduleProperties(2)
+        updateScheduleProperties(3)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
     }
     @IBAction func ThuClick(sender: AnyObject) {
-        updateScheduleProperties(3)
+//        updateScheduleProperties(3)
+        updateScheduleProperties(5)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[3])
     }
     @IBAction func FriClick(sender: AnyObject) {
-        updateScheduleProperties(4)
+//        updateScheduleProperties(4)
+        updateScheduleProperties(2)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
     }
     @IBAction func SutClick(sender: AnyObject) {
-        updateScheduleProperties(5)
+//        updateScheduleProperties(5)
+        updateScheduleProperties(1)
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
     }
     
@@ -110,6 +116,7 @@ class MMSwiftTabBarController: UIViewController {
         print(totalSchedule[weekNumberTab! - 1].number)
         weekNumber = totalSchedule[weekNumberTab! - 1].number
         day = (totalSchedule[weekNumberTab! - 1].days![dayIndex!])
+        day.lessons?.sortInPlace(beforeLes)
 //        print(day.dayName)
 //                for item in totalSchedule {
 //                    if let week = item[weekNumberTab!] {

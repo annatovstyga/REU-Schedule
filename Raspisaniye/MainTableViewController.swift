@@ -69,6 +69,7 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomTableViewCell
         cell.titleCell.text = day.lessons![indexPath.item].discipline
+        cell.timeCell.text = "\(day.lessons![indexPath.item].lessonStart!) - \(day.lessons![indexPath.item].lessonEnd!)"
         return cell
     }
     

@@ -36,9 +36,7 @@ class LoginViewTwoController: UIViewController, UIPickerViewDataSource,UIPickerV
         myPicker.delegate = self
     }
     
-    func before(value1: String, value2: String) -> Bool {
-        return value1 < value2;
-    }
+
     
     // MARK: - IBActions
     @IBAction func enterClick(sender: AnyObject) {
