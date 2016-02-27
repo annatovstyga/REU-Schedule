@@ -1,8 +1,10 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 let defaults = NSUserDefaults.standardUserDefaults()
+let realm = try! Realm()
 
 var selectedDay:Int = 1
 var weekNumber:Int = 1
@@ -33,7 +35,18 @@ struct GlobalColors{
     static let lightBlueColor = UIColor(red: 0/255, green: 118/255, blue: 225/255, alpha: 1.0)
     static let BlueColor = UIColor(red: 0/255,green: 71/255,blue: 119/255,alpha: 1.0)
 }
-
+func parseLessonType(notParsedString:String) -> String
+{
+    switch(notParsedString)
+    {
+        case "Л":
+            return "Лекция"
+        case "C":
+            return "Семинар"
+        default:
+            return "Занятие"
+    }
+}
 func getWeekNumber() -> Int
 {
     let start = "2015-09-01"
