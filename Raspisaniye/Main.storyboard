@@ -155,38 +155,6 @@
             </objects>
             <point key="canvasLocation" x="654" y="963"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="Nhk-SI-udf">
-            <objects>
-                <viewController id="oVv-51-eUa" customClass="TestViewController" customModule="Raspisaniye" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="evD-qX-EPj"/>
-                        <viewControllerLayoutGuide type="bottom" id="rwE-tu-Ug6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Kx-Gn-YlO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW8-nY-JJd">
-                                <rect key="frame" x="261" y="268.5" width="78" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="Test"/>
-                                <connections>
-                                    <action selector="testButton:" destination="oVv-51-eUa" eventType="touchUpInside" id="X2C-MG-7bT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pW8-nY-JJd" firstAttribute="centerX" secondItem="1Kx-Gn-YlO" secondAttribute="centerX" id="B12-Iq-Dh8"/>
-                            <constraint firstItem="pW8-nY-JJd" firstAttribute="centerY" secondItem="1Kx-Gn-YlO" secondAttribute="centerY" id="ruw-Yg-1jx"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TDh-0E-7K3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2914" y="-360"/>
-        </scene>
         <!--Login View One Controller-->
         <scene sceneID="yNQ-Ks-IA1">
             <objects>
@@ -229,7 +197,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="cOx-Wd-5vO" kind="show" identifier="studLogin" id="jtB-wy-2BS"/>
+                                    <action selector="studClick:" destination="GXp-XK-kUg" eventType="touchUpInside" id="UEa-2d-V0V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-Fn-dA9" customClass="CustomBtn" customModule="Raspisaniye" customModuleProvider="target">
@@ -250,7 +218,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="cOx-Wd-5vO" kind="show" identifier="profLogin" id="He8-3U-igw"/>
+                                    <action selector="lectorClick:" destination="GXp-XK-kUg" eventType="touchUpInside" id="1Nb-HV-OMV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Войти как:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-Cd-cwb">
@@ -315,6 +283,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="cOx-Wd-5vO" kind="show" identifier="studLogin" id="d9T-aw-J83"/>
+                        <segue destination="cOx-Wd-5vO" kind="show" identifier="lectorLogin" id="Sye-4k-cqK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWR-qK-5Qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,6 +313,9 @@
                                         <state key="normal" title="Пн">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="monClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="YlS-VF-Umq"/>
                                         </connections>
@@ -351,6 +326,9 @@
                                         <state key="normal" title="Вт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="100" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="TueClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="OMh-X4-oTz"/>
                                         </connections>
@@ -361,6 +339,9 @@
                                         <state key="normal" title="Ср">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="200" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="WedClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="0J9-Lv-d8d"/>
                                         </connections>
@@ -371,6 +352,9 @@
                                         <state key="normal" title="Пт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="400" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="FriClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="nvm-Ep-mIi"/>
                                         </connections>
@@ -381,6 +365,9 @@
                                         <state key="normal" title="Сб">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="500" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="SutClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="K8e-PB-RVO"/>
                                         </connections>
@@ -391,6 +378,9 @@
                                         <state key="normal" title="Чт">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="300" y="-1" width="100" height="53"/>
+                                        </variation>
                                         <connections>
                                             <action selector="ThuClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="5Gm-Pk-VTB"/>
                                         </connections>
@@ -468,6 +458,9 @@
                                 <rect key="frame" x="0.0" y="67.5" width="600" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="67" width="600" height="480"/>
+                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ntr-oW-vmY" appends="YES" id="OKc-I8-pFF"/>
                                 </connections>
@@ -1152,7 +1145,7 @@
         <image name="runnigMan.png" width="11" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jtB-wy-2BS"/>
+        <segue reference="Sye-4k-cqK"/>
         <segue reference="ZTr-C1-zsR"/>
     </inferredMetricsTieBreakers>
 </document>

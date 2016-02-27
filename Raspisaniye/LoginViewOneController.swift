@@ -2,11 +2,7 @@ import UIKit
 
 class LoginViewOneController: UIViewController {
 
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    @IBAction func studClick(sender: AnyObject) {
         InternetManager.sharedInstance.getGroupList({
             success in
             print(success)
@@ -16,27 +12,36 @@ class LoginViewOneController: UIViewController {
                 let nameGroup = item.1["name"].string!
                 groupNamesList[nameGroup] = idGroup
             }
-            
+            self.performSegueWithIdentifier("studLogin", sender: sender)
             }, failure:{error in print(error)
                 self.showWarning()
         })
+        
+
+    }
+
+    @IBAction func lectorClick(sender: AnyObject) {
         InternetManager.sharedInstance.getLectorsList({
             success in
             let groups = success["success"]["data"]
-
+            
             for item in groups {
                 let idLector   = item.1["ID"].int!
                 let nameLector = item.1["name"].string!
                 lectorsNamesList[nameLector] = idLector
                 
             }
+            self.performSegueWithIdentifier("lectorLogin", sender: sender)
             }, failure:{error in print(error)
                 self.showWarning()
         })
-//        groupNamesList.sortInPlace()
-//        for lector in lectorsNamesList {
-//            print(lector)
-//        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
+ 
     }
 
     func showWarning() {
@@ -50,11 +55,13 @@ class LoginViewOneController: UIViewController {
         
         if(segue.identifier == "studLogin")
         {
+            slString = "group"
             amistudent = true;
             defaults.setBool(true, forKey: "amistudent")
         }
         else
         {
+            slString = "lector"
             amistudent = false;
             defaults.setBool(false, forKey: "amistudent")
         }

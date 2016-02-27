@@ -26,9 +26,6 @@ class MainNavigationSegue: UIStoryboardSegue {
         let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[v1]-0-|", options: .AlignAllTop, metrics: nil, views: ["v1": destinationController.view])
         
         tabBarController.placeholderView.addConstraints(verticalConstraint)
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        let screenHeight = UIScreen.mainScreen().bounds.size.height
-
 
         tabBarController.placeholderView.layoutIfNeeded()
         destinationController.didMoveToParentViewController(tabBarController)

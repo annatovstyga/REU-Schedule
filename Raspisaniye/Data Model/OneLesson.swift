@@ -60,6 +60,7 @@ class OneLesson {
     }
     
     // MARK: - Print in log
+    
     func description() {
         print("\nlessonNumber - \(lessonNumber)\nhashID - \(hashID)\nlessonType - \(lessonType)\nroom - \(room)\nlessonStart - \(lessonStart)\nlessonEnd - \(lessonEnd)\ndiscipline - \(discipline)\nbuilding - \(building)\nlector - \(lector)\nhouse - \(house)\ngroups - \(groups)")
     }

@@ -15,10 +15,7 @@
 		A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DC4041C711507000842D3 /* ProfileTableViewController.swift */; };
 		A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */; };
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
-		A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D31C6A27C700D73B5C /* TestViewController.swift */; };
 		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
-		A29F12D81C6A80CF00D73B5C /* GroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D71C6A80CF00D73B5C /* GroupItem.swift */; };
-		A29F12DA1C6A810E00D73B5C /* LectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D91C6A810E00D73B5C /* LectorItem.swift */; };
 		A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
@@ -54,10 +51,7 @@
 		A29DC4061C7115DF000842D3 /* ProfileScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScreenTableViewCell.swift; path = Customs/ProfileScreenTableViewCell.swift; sourceTree = "<group>"; };
 		A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetManager.swift; path = Managers/InternetManager.swift; sourceTree = "<group>"; };
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
-		A29F12D31C6A27C700D73B5C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A29F12D51C6A63DA00D73B5C /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperManager.swift; path = Managers/HelperManager.swift; sourceTree = "<group>"; };
-		A29F12D71C6A80CF00D73B5C /* GroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupItem.swift; path = "Data Model/GroupItem.swift"; sourceTree = "<group>"; };
-		A29F12D91C6A810E00D73B5C /* LectorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectorItem.swift; path = "Data Model/LectorItem.swift"; sourceTree = "<group>"; };
 		A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneLesson.swift; path = "Data Model/OneLesson.swift"; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
@@ -133,6 +127,7 @@
 		A27DA1251C735A6100F7A92D /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B27314041C7919760004B709 /* CabController.swift */,
 				B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */,
 				B25612861C6A828A0083CFCB /* MainTableViewController.swift */,
 			);
@@ -170,8 +165,6 @@
 		A29F12DB1C6A8A6C00D73B5C /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				A29F12D71C6A80CF00D73B5C /* GroupItem.swift */,
-				A29F12D91C6A810E00D73B5C /* LectorItem.swift */,
 				A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */,
 				B24B287E1C751C5E00CDF3BA /* OneDay.swift */,
 				B24B287A1C75184100CDF3BA /* OneWeek.swift */,
@@ -205,7 +198,6 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
-				B27314041C7919760004B709 /* CabController.swift */,
 				A2498BB11C6F585400AFBF4C /* images */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
@@ -216,7 +208,6 @@
 				A29F12DB1C6A8A6C00D73B5C /* Data Model */,
 				B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */,
 				B2C4063C1C408CD000FB90BF /* Main.storyboard */,
-				A29F12D31C6A27C700D73B5C /* TestViewController.swift */,
 				B2639AD61C41291F0028F663 /* Images.xcassets */,
 				A250EB601C56CF530022A117 /* Supporting files */,
 				A28E67A5085289D8D531C923 /* Pods */,
@@ -366,13 +357,11 @@
 				B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */,
 				B2639AD01C4123A30028F663 /* Global.swift in Sources */,
 				A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */,
-				A29F12DA1C6A810E00D73B5C /* LectorItem.swift in Sources */,
 				A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
 				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
 				B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
-				A29F12D41C6A27C700D73B5C /* TestViewController.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,
 				A2498BA61C6F30EA00AFBF4C /* ProfileViewController.swift in Sources */,
 				B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */,
@@ -380,7 +369,6 @@
 				B27314051C7919760004B709 /* CabController.swift in Sources */,
 				B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */,
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
-				A29F12D81C6A80CF00D73B5C /* GroupItem.swift in Sources */,
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,

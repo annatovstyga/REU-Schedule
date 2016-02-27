@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class InternetManager {
+    
     // MARK: GET URL list
     private let serverURL = "http://appreu.styleru.net/api"
     
