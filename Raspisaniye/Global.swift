@@ -8,6 +8,8 @@ var jsonDataList:JSON?
 var selectedDay:Int = 1
 var weekNumber:Int = 1
 
+var changes:Bool = false //Temp var
+
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 var subjectNameMemory = defaults.objectForKey("subjectName") as? String ?? String()
@@ -39,8 +41,10 @@ func parseLessonType(notParsedString:String) -> String
     {
         case "Л":
             return "Лекция"
-        case "C":
+        case "С":
             return "Семинар"
+        case "П":
+            return "Практ. занятие"
         default:
             return "Занятие"
     }
@@ -48,7 +52,6 @@ func parseLessonType(notParsedString:String) -> String
 func getWeekNumber() -> Int
 {
     let start = "2015-09-01"
-    
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
     
@@ -65,7 +68,19 @@ func getWeekNumber() -> Int
     }
     let days = daysBetweenDate(startDate, endDate: endDate) + 1
     let week = days/7 + 1
-    return week
+    var count:Int = 0
+    for item in totalSchedule
+    {
+        if(item.number <= week)
+        {
+            count++;
+        }
+        else
+        {
+            break
+        }
+    }
+    return count
 }
 
 

@@ -20,10 +20,16 @@ class ProfileTableViewController: UITableViewController {
         return 1
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        if(changes){
         let cell = tableView.dequeueReusableCellWithIdentifier("changesCell", forIndexPath: indexPath) as! ProfileScreenTableViewCell
         plusH = cell.frame.height
-        return cell
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("noChanges", forIndexPath: indexPath)
+            return cell
+        }
+        
     }
     
 }

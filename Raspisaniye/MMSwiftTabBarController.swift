@@ -12,7 +12,7 @@ class MMSwiftTabBarController: UIViewController {
     
     var weekNumberTab:Int? = 1
     var weekNumber:Int? = 1
-    var currentWeek: Int = 0
+
     var week: OneWeek = OneWeek()
     var day:  OneDay  = OneDay()
     var lesson: OneLesson = OneLesson()
@@ -53,8 +53,11 @@ class MMSwiftTabBarController: UIViewController {
                         
                         if(totalSchedule.count > 0)
                         {
-                            self.weekNumber = getWeekNumber()
-                            self.weekLabel.text = "Неделя \(String(self.weekNumberTab!))"
+                            self.weekNumberTab = getWeekNumber()
+                            print("NUMBER - \(self.weekNumberTab!)")
+                            self.weekNumber = totalSchedule[self.weekNumberTab! - 1].number
+                            
+                            self.weekLabel.text = "Неделя \(String(self.weekNumber!))"
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(0)
@@ -126,7 +129,10 @@ class MMSwiftTabBarController: UIViewController {
         if sender.state == .Ended {
             if(weekNumberTab > 1)
             {
+               
+                
                 (weekNumberTab!)--
+                 self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber!)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }

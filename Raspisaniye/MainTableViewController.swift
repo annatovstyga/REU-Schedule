@@ -40,12 +40,12 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if(day.lessons?.count != nil){
+        if(day.lessons?.count != 0){
             return (day.lessons?.count)!
         }
         else{
-            
-            return 0
+            print("DADA")
+            return 1
             
         }
         
@@ -53,6 +53,8 @@ class MainTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if(day.lessons?.count != 0){
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomTableViewCell
         
         cell.titleCell.text = day.lessons![indexPath.item].discipline
@@ -65,8 +67,14 @@ class MainTableViewController: UITableViewController {
         }
         cell.placeCell.text = "Ауд. \(day.lessons![indexPath.item].room!) (\(day.lessons![indexPath.item].building!) к. \(day.lessons![indexPath.item].house!))"
         return cell
-    }
+        }
+        else
+        {
+            print("noLessons")
+        let cell = tableView.dequeueReusableCellWithIdentifier("noLessons", forIndexPath: indexPath)
+            return cell
+        }
     
-
+    }
     
 }

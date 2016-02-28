@@ -17,6 +17,8 @@
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
 		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
 		A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */; };
+		B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */ = {isa = PBXBuildFile; fileRef = B21DA91E1C82EFB0008B6B32 /* Cat.png */; };
+		B21DA9211C82FC51008B6B32 /* Cat_laze.png in Resources */ = {isa = PBXBuildFile; fileRef = B21DA9201C82FC51008B6B32 /* Cat_laze.png */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
@@ -53,6 +55,8 @@
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
 		A29F12D51C6A63DA00D73B5C /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperManager.swift; path = Managers/HelperManager.swift; sourceTree = "<group>"; };
 		A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneLesson.swift; path = "Data Model/OneLesson.swift"; sourceTree = "<group>"; };
+		B21DA91E1C82EFB0008B6B32 /* Cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cat.png; sourceTree = "<group>"; };
+		B21DA9201C82FC51008B6B32 /* Cat_laze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cat_laze.png; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -103,11 +107,13 @@
 		A2498BB11C6F585400AFBF4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B21DA91E1C82EFB0008B6B32 /* Cat.png */,
 				B2D3B4381C6D1948003C1464 /* location.png */,
 				A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */,
 				A2498BAD1C6F44C400AFBF4C /* profileNavigationBackground@2x.png */,
 				A2498BAF1C6F4FB800AFBF4C /* runnigMan@2x.png */,
 				B2D3B4361C6D1944003C1464 /* clock.png */,
+				B21DA9201C82FC51008B6B32 /* Cat_laze.png */,
 				B25612801C6A6F810083CFCB /* Search.png */,
 			);
 			name = images;
@@ -285,11 +291,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */,
 				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
 				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2D3B4371C6D1944003C1464 /* clock.png in Resources */,
 				B2C4063E1C408CD000FB90BF /* Main.storyboard in Resources */,
+				B21DA9211C82FC51008B6B32 /* Cat_laze.png in Resources */,
 				A2498BB01C6F4FB800AFBF4C /* runnigMan@2x.png in Resources */,
 				B2639AD71C41291F0028F663 /* Images.xcassets in Resources */,
 				B2D3B4391C6D1948003C1464 /* location.png in Resources */,
