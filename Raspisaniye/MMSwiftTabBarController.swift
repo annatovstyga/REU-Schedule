@@ -61,7 +61,14 @@ class MMSwiftTabBarController: UIViewController {
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(0)
-                            self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
+                            if(self.day.lessons?.count != 0){
+                             self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
+                            }
+                            else
+                            {
+                                self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[0])
+                            }
+
                         }
                         
                     }
@@ -74,38 +81,77 @@ class MMSwiftTabBarController: UIViewController {
     
     // MARK: IBActions - buttons
     
+    @IBAction func searchClick(sender: AnyObject) {
+        performSegueWithIdentifier("search", sender: sender)
+    }
     @IBAction func profileClick(sender: AnyObject) {
-
+        
         performSegueWithIdentifier("profileSegue", sender: sender)
     }
     @IBAction func monClick(sender: AnyObject) {
         updateScheduleProperties(0)
+        if(self.day.lessons?.count != 0){
         performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[0])
+        }
     }
     @IBAction func TueClick(sender: AnyObject) {
 
         updateScheduleProperties(4)
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[1])
+        }
     }
     @IBAction func WedClick(sender: AnyObject) {
 
         updateScheduleProperties(3)
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[2])
+        }
     }
     @IBAction func ThuClick(sender: AnyObject) {
 
         updateScheduleProperties(5)
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[3])
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[3])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[3])
+        }
     }
     @IBAction func FriClick(sender: AnyObject) {
 
         updateScheduleProperties(2)
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[4])
+        }
     }
     @IBAction func SutClick(sender: AnyObject) {
 
         updateScheduleProperties(1)
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[5])
+        }
     }
     
     // MARK: Rotate weeks
@@ -175,7 +221,17 @@ class MMSwiftTabBarController: UIViewController {
             dayVC.day = self.day
 
         }
-        
+        if(segue.identifier! == "voidLessons" )
+        {
+            
+            for btn in tabBarButtons {
+                btn.backgroundColor = GlobalColors.lightBlueColor
+            }
+            
+            let senderBtn = sender as! UIButton
+            senderBtn.backgroundColor = GlobalColors.BlueColor
+
+        }
         if(segue.identifier! == "weekSegue")
         {
             
@@ -188,6 +244,7 @@ class MMSwiftTabBarController: UIViewController {
             
             dayVC.day = self.day
         }
+        
     }
     
 
