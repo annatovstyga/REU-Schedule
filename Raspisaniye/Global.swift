@@ -16,6 +16,8 @@ var subjectNameMemory = defaults.objectForKey("subjectName") as? String ?? Strin
 var subjectIDMemory   = defaults.objectForKey("subjectID") as? Int ?? Int()
 var timestampMemory   = defaults.objectForKey("timestamp") as? Int ?? Int()
 var currentWeekMemory = defaults.objectForKey("currentWeek") as? Int ?? Int()
+var lectorsArray: [String] = []
+var groupsArray: [String] = []
 
 var groupNamesList: [String: Int] = [:]
 var lectorsNamesList: [String: Int] = [:]
@@ -83,6 +85,18 @@ func getWeekNumber() -> Int
     return count
 }
 
+func parseToList(parsingList:[String: Int],successBlock: [String] ->())
+{
+    HelperManager.sharedInstance.showMBProgressHUD()
+    var parsedList:[String] = []
+    for (value, _) in parsingList{
+        parsedList.append(value)
+    }
+    parsedList.sortInPlace(before)
+    HelperManager.sharedInstance.hideMBProgressHUD()
+    successBlock(parsedList)
+    return
+}
 
 func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 {

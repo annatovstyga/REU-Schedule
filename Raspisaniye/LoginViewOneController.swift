@@ -12,6 +12,10 @@ class LoginViewOneController: UIViewController {
                 let nameGroup = item.1["name"].string!
                 groupNamesList[nameGroup] = idGroup
             }
+            for (value, _) in groupNamesList {
+                groupsArray.append(value)
+            }
+            groupsArray.sortInPlace(before)
             self.performSegueWithIdentifier("studLogin", sender: sender)
             }, failure:{error in print(error)
                 self.showWarning()
@@ -31,6 +35,10 @@ class LoginViewOneController: UIViewController {
                 lectorsNamesList[nameLector] = idLector
                 
             }
+            for (value, _) in lectorsNamesList {
+                lectorsArray.append(value)
+            }
+            lectorsArray.sortInPlace(before)
             self.performSegueWithIdentifier("lectorLogin", sender: sender)
             }, failure:{error in print(error)
                 self.showWarning()
