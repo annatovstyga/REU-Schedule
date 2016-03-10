@@ -7,30 +7,66 @@
 //
 
 import UIKit
-import RAMReel
 
-class LoginViewTwoController: UIViewController,UICollectionViewDelegate{
+class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     
-    var dataSource: SimplePrefixQueryDataSource!
 
-    var ramReel: RAMReel<RAMCell, RAMTextField, SimplePrefixQueryDataSource>!
+    
     
     // MARK: - Properties
 
+    @IBOutlet weak var REALogo: UIImageView!
     var tempID:Int? = 0
-
+    
     @IBOutlet weak var placeholderView: UIView!
     var timestamp: Int = 0
     var currentWeek: Int = 0
     // MARK: - View methods
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
     }
     
-    override func viewDidLoad() {
+    @IBAction func enterClick(sender: AnyObject) {
+        if (amistudent) {
+            let groupNameTemp = textField.suggestionNormal
+            let indexTemp = groupNamesList[groupNameTemp]
         
-        dispatch_async(dispatch_get_main_queue(), {
+            if(indexTemp != nil){
+                subjectName = (indexTemp!, groupNameTemp)
+                self.enter()
+            }
+            else{
+                self.showWarning()
+            }
+        } else {
+            
+            let lectorNameTemp = textField.suggestionNormal
+            
+            let indexTempLector = lectorsNamesList[lectorNameTemp]
+            if(indexTempLector != nil){
+                subjectName = (indexTempLector!, lectorNameTemp)
+                self.enter()
+            }
+            else{
+                self.showWarning()
+            }
+        }
+        
+        print("ENTER")
+        
+        print("Object that I checked - \(self.textField.text)")
+ 
+        
+    }
+    @IBOutlet weak var textField: AutocompleteField!
+    override func viewDidLoad() {
+
+        textField.returnKeyType = .Go
+        textField.suggestions = groupsArray
+        textField.autocorrectionType = .No
+         self.textField.delegate = self;
             for (value, _) in lectorsNamesList {
                 lectorsArray.append(value)
             }
@@ -43,55 +79,15 @@ class LoginViewTwoController: UIViewController,UICollectionViewDelegate{
             //        groupsArray.sortInPlace(before)
 
         
-        self.dataSource = SimplePrefixQueryDataSource(self.data)
-        var  frameForReel = self.view.bounds
-        frameForReel.origin.y = self.view.bounds.origin.y + 100
-       
-        self.ramReel = RAMReel(frame: frameForReel, dataSource: self.dataSource, placeholder: "Start by typing…") {
-            print("Plain:", $0)
-        }
-        
-        self.ramReel.hooks.append {
-            let r = Array($0.characters.reverse())
-            let j = String(r)
-            print("Reversed:", j)
-        
-            if (amistudent) {
-                let groupNameTemp = self.ramReel.selectedItem!
-                let indexTemp = groupNamesList[groupNameTemp]
-                if(indexTemp != nil){
-                subjectName = (indexTemp!, groupNameTemp)
-                self.enter()
-                }
-                else{
-                    self.showWarning()
-                }
-            } else {
-                
-                let lectorNameTemp = self.ramReel.selectedItem!
-                let indexTempLector = lectorsNamesList[lectorNameTemp]
-                if(indexTempLector != nil){
-                subjectName = (indexTempLector!, lectorNameTemp)
-                self.enter()
-                }
-                else{
-                    self.showWarning()
-                }
-            }
-            
-            print("ENTER")
 
-            print("Object that I checked - \(self.ramReel.selectedItem)")
-        }
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
             
-        
-        self.ramReel.resignFirstResponder()
-        self.view.addSubview(self.ramReel.view)
-        self.ramReel.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.ramReel.prepareForViewing()
-        })
+            
+ 
                 super.viewDidLoad()
         
+    
     }
     
     func showWarning() {
@@ -141,11 +137,23 @@ class LoginViewTwoController: UIViewController,UICollectionViewDelegate{
     }
 
     
+    
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print("DADADA")
+        self.textField.text = self.textField.suggestion
         self.view.endEditing(true)
         return false
     }
 
+    
+
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -150
+      
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
 }
