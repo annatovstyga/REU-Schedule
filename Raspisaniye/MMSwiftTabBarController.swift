@@ -11,7 +11,6 @@ class MMSwiftTabBarController: UIViewController {
     @IBOutlet weak var subjectNameLabel: UILabel!
     
     var weekNumberTab:Int? = 1
-    var weekNumber:Int? = 1
 
     var week: OneWeek = OneWeek()
     var day:  OneDay  = OneDay()
@@ -55,9 +54,9 @@ class MMSwiftTabBarController: UIViewController {
                         {
                             self.weekNumberTab = getWeekNumber()
                             print("NUMBER - \(self.weekNumberTab!)")
-                            self.weekNumber = totalSchedule[self.weekNumberTab! - 1].number
+                            weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                             
-                            self.weekLabel.text = "Неделя \(String(self.weekNumber!))"
+                            self.weekLabel.text = "Неделя \(String(weekNumber))"
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(0)
@@ -164,7 +163,7 @@ class MMSwiftTabBarController: UIViewController {
                 (weekNumberTab!)++
                 self.updateScheduleProperties(0)
                 
-                weekLabel.text = "Неделя " + String(weekNumber!)
+                weekLabel.text = "Неделя " + String(weekNumber)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
         }
@@ -179,7 +178,7 @@ class MMSwiftTabBarController: UIViewController {
                 
                 (weekNumberTab!)--
                  self.updateScheduleProperties(0)
-                weekLabel.text = "Неделя " + String(weekNumber!)
+                weekLabel.text = "Неделя " + String(weekNumber)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
             
@@ -191,7 +190,7 @@ class MMSwiftTabBarController: UIViewController {
     func updateScheduleProperties(dayIndex:Int?) {
 
         print(totalSchedule[weekNumberTab! - 1].number)
-        weekNumber = totalSchedule[weekNumberTab! - 1].number
+        weekNumber = totalSchedule[weekNumberTab! - 1].number!
         day = (totalSchedule[weekNumberTab! - 1].days![dayIndex!])
         day.lessons?.sortInPlace(beforeLes)
         

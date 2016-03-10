@@ -8,10 +8,6 @@
 
 import Foundation
 
-//var OneSemDic : [Int:AnyObject] = [:] TEMP
-//var OneWeekDic : [Int:AnyObject] = [:]
-//let OneDayDic : [Int:OneLesson] = [:]
-
 class OneLesson {
     
     var lessonNumber: Int?
@@ -25,11 +21,13 @@ class OneLesson {
     var lector:     String?
     var house:      Int?
     var groups:     [String]?
+    var startWeek: Int?
+    var endWeek: Int?
     
     // MARK: - Initializators
     init() {}
     
-    init(lessonNumber: Int?, hashID: String?, lessonType: String?, room: String?, lessonStart: String?, lessonEnd: String?, discipline: String?, building: String?, lector: String?, house: Int?, groups: [String]?) {
+    init(lessonNumber: Int?, hashID: String?, lessonType: String?, room: String?, lessonStart: String?, lessonEnd: String?, discipline: String?, building: String?, lector: String?, house: Int?, groups: [String]?,startWeek:Int?,endWeek:Int?) {
         
         self.lessonNumber = lessonNumber
         self.hashID     = hashID
@@ -42,6 +40,8 @@ class OneLesson {
         self.lector     = lector
         self.house      = house
         self.groups     = groups
+        self.startWeek = startWeek
+        self.endWeek = endWeek
     }
     
     // MARK: - Clear method

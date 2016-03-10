@@ -130,7 +130,8 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                         let building: String?   = lessonData.1["building"].string
                         let lector: String?     = lessonData.1["lector"].string
                         let house: Int?         = lessonData.1["housing"].int
-                        
+                        let startWeek: Int? = lessonData.1["week_start"].int
+                        let endWeek: Int?  = lessonData.1["week_end"].int
                         var groups: [String]?   = []
                         let lessonsGroups = lessonData.1["groups"].array
                         if let data = lessonsGroups {
@@ -140,7 +141,7 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                             }
                         }
 
-                        let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups)
+                        let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups,startWeek:startWeek,endWeek:endWeek)
                         
                         oneDay.lessons?.append(lesson)
 

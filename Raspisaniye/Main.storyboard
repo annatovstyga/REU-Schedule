@@ -1348,10 +1348,16 @@
                                     <rect key="frame" x="66" y="40" width="267" height="266.5"/>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLD-jI-S22" customClass="AutocompleteField" customModule="Raspisaniye" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLD-jI-S22" customClass="AutocompleteField" customModule="Raspisaniye" customModuleProvider="target">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="completionColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79652644230769232" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ba-cU-Pj8" customClass="CustomBtn" customModule="Raspisaniye" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1463,17 +1469,6 @@
                                 <exclude reference="mpZ-E2-fSj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5Zd-kC-A3N"/>
-                                <exclude reference="BL9-6V-NWR"/>
-                                <exclude reference="T8R-S6-ise"/>
-                                <exclude reference="2T0-lX-aRl"/>
-                                <exclude reference="H9Q-DL-qhK"/>
-                                <exclude reference="nfp-pl-oJB"/>
-                                <exclude reference="05m-je-MOY"/>
-                                <exclude reference="2O7-DJ-Dk9"/>
-                                <exclude reference="WgB-Fw-G8Q"/>
-                                <exclude reference="oH7-00-qdq"/>
-                                <exclude reference="5hv-YB-rDC"/>
                                 <exclude reference="1z6-iV-hdC"/>
                                 <exclude reference="98G-1X-scn"/>
                                 <exclude reference="xRh-U3-riq"/>
@@ -1481,6 +1476,17 @@
                                 <exclude reference="chl-dV-6RH"/>
                                 <exclude reference="hbo-2w-PL5"/>
                                 <exclude reference="lbx-Cw-AA1"/>
+                                <exclude reference="2T0-lX-aRl"/>
+                                <exclude reference="H9Q-DL-qhK"/>
+                                <exclude reference="nfp-pl-oJB"/>
+                                <exclude reference="05m-je-MOY"/>
+                                <exclude reference="2O7-DJ-Dk9"/>
+                                <exclude reference="WgB-Fw-G8Q"/>
+                                <exclude reference="oH7-00-qdq"/>
+                                <exclude reference="5Zd-kC-A3N"/>
+                                <exclude reference="BL9-6V-NWR"/>
+                                <exclude reference="T8R-S6-ise"/>
+                                <exclude reference="5hv-YB-rDC"/>
                                 <exclude reference="2mP-FB-IpU"/>
                                 <exclude reference="Mr2-nt-Gou"/>
                                 <exclude reference="PQX-RL-e62"/>
@@ -1495,17 +1501,6 @@
                                 <exclude reference="mpZ-E2-fSj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5Zd-kC-A3N"/>
-                                <include reference="BL9-6V-NWR"/>
-                                <include reference="T8R-S6-ise"/>
-                                <include reference="2T0-lX-aRl"/>
-                                <include reference="H9Q-DL-qhK"/>
-                                <include reference="nfp-pl-oJB"/>
-                                <include reference="05m-je-MOY"/>
-                                <include reference="2O7-DJ-Dk9"/>
-                                <include reference="WgB-Fw-G8Q"/>
-                                <include reference="oH7-00-qdq"/>
-                                <exclude reference="5hv-YB-rDC"/>
                                 <include reference="1z6-iV-hdC"/>
                                 <include reference="98G-1X-scn"/>
                                 <include reference="xRh-U3-riq"/>
@@ -1513,6 +1508,17 @@
                                 <include reference="chl-dV-6RH"/>
                                 <include reference="hbo-2w-PL5"/>
                                 <include reference="lbx-Cw-AA1"/>
+                                <include reference="2T0-lX-aRl"/>
+                                <include reference="H9Q-DL-qhK"/>
+                                <include reference="nfp-pl-oJB"/>
+                                <include reference="05m-je-MOY"/>
+                                <include reference="2O7-DJ-Dk9"/>
+                                <include reference="WgB-Fw-G8Q"/>
+                                <include reference="oH7-00-qdq"/>
+                                <include reference="5Zd-kC-A3N"/>
+                                <include reference="BL9-6V-NWR"/>
+                                <include reference="T8R-S6-ise"/>
+                                <exclude reference="5hv-YB-rDC"/>
                                 <include reference="2mP-FB-IpU"/>
                                 <include reference="Mr2-nt-Gou"/>
                                 <include reference="PQX-RL-e62"/>

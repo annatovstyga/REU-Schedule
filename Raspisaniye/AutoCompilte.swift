@@ -259,6 +259,14 @@ public enum AutocompleteType {
         return self.textRectForBounds(bounds)
     }
     
+    public override func drawRect(rect: CGRect) {
+        
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: 6)
+        UIColor.whiteColor().set()
+            path.stroke()
+        
+    }
+
     // ovverride to set padding on placeholder
     public override func placeholderRectForBounds(bounds: CGRect) -> CGRect
     {
