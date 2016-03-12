@@ -1,11 +1,17 @@
+//
+//  MMSwiftTabBarControllerTest.swift
+//  Raspisaniye
+//
+//  Created by rGradeStd on 3/11/16.
+//  Copyright © 2016 rGradeStd. All rights reserved.
+//
+
 import UIKit
 import SwiftyJSON
 
-class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
+class MMSwiftTabBarControllerTest: UIViewController,UITextFieldDelegate{
     
     // MARK: Propiertes
-    
-    @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet var placeholderView: UIView!
     @IBOutlet var tabBarButtons: Array<UIButton>!
@@ -15,7 +21,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var searchField: AutocompleteField!
     
     var weekNumberTab:Int? = 1
-
+    
     var week: OneWeek = OneWeek()
     var day:  OneDay  = OneDay()
     var lesson: OneLesson = OneLesson()
@@ -55,9 +61,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 }, failure:{error in print(error)
                     //                self.showWarning()
             })
-
+            
             }, failure:{error in print(error)
-//                self.showWarning()
+                //                self.showWarning()
         })
         
         print(groupsArray)
@@ -67,7 +73,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         
         super.viewDidLoad()
-         self.searchField.delegate = self;
+        self.searchField.delegate = self;
         self.searchField.autocorrectionType = .No
         self.searchField.autocompleteType = .Sentence
         let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
@@ -111,13 +117,13 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(0)
                             if(self.day.lessons?.count != 0){
-                             self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
+                                self.performSegueWithIdentifier("mainSegueTest", sender: self.tabBarButtons[0])
                             }
                             else
                             {
-                                self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[0])
+                                self.performSegueWithIdentifier("voidLessonsTest", sender: self.tabBarButtons[0])
                             }
-
+                            
                         }
                         
                     }
@@ -130,53 +136,15 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: IBActions - buttons
     
-   
+    
     @IBAction func profileClick(sender: AnyObject) {
-        if(onSearch){
-            let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
-            jsonDataList = JSON.parse(jsonstring)
-            dispatch_async(dispatch_get_main_queue(), {
-                parse(jsonDataList!,successBlock:
-                    {
-                        successBlock in
-                        totalSchedule = successBlock
-                            
-                            if(totalSchedule.count > 0)
-                            {
-                                self.weekNumberTab = getWeekNumber()
-                                print("NUMBER - \(self.weekNumberTab!)")
-                                weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
-                                
-                                self.weekLabel.text = "Неделя \(String(weekNumber))"
-                                
-                                self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
-                                self.updateScheduleProperties(0)
-                                if(self.day.lessons?.count != 0){
-                                    self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
-                                }
-                                else
-                                {
-                                    self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[0])
-                                }
-                                
-                            }
-                            
-                        
-                })
-                
-            })
-            onSearch = false
-            self.leftButton.setTitle("", forState: .Normal)
-            self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
-        }
-        else{
-    performSegueWithIdentifier("profileSegue", sender: sender)
-        }
+        
+        performSegueWithIdentifier("profileSegue", sender: sender)
     }
     @IBAction func monClick(sender: AnyObject) {
         updateScheduleProperties(0)
         if(self.day.lessons?.count != 0){
-        performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[0])
         }
         else
         {
@@ -184,7 +152,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
     }
     @IBAction func TueClick(sender: AnyObject) {
-
+        
         updateScheduleProperties(4)
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[1])
@@ -195,7 +163,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
     }
     @IBAction func WedClick(sender: AnyObject) {
-
+        
         updateScheduleProperties(3)
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[2])
@@ -206,7 +174,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
     }
     @IBAction func ThuClick(sender: AnyObject) {
-
+        
         updateScheduleProperties(5)
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[3])
@@ -217,7 +185,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
     }
     @IBAction func FriClick(sender: AnyObject) {
-
+        
         updateScheduleProperties(2)
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[4])
@@ -228,7 +196,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
     }
     @IBAction func SutClick(sender: AnyObject) {
-
+        
         updateScheduleProperties(1)
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[5])
@@ -260,28 +228,28 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         if sender.state == .Ended {
             if(weekNumberTab > 1)
             {
-               
+                
                 
                 (weekNumberTab!)--
-                 self.updateScheduleProperties(0)
+                self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber)
                 performSegueWithIdentifier("weekSegue", sender: sender)
             }
             
         }
     }
-
-//     MARK: - Update schedule
+    
+    //     MARK: - Update schedule
     
     func updateScheduleProperties(dayIndex:Int?) {
-
+        
         print(totalSchedule[weekNumberTab! - 1].number)
         weekNumber = totalSchedule[weekNumberTab! - 1].number!
         day = (totalSchedule[weekNumberTab! - 1].days![dayIndex!])
         day.lessons?.sortInPlace(beforeLes)
         
     }
-
+    
     
     
     
@@ -304,7 +272,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
             let dayVC = segue.destinationViewController as! MainTableViewController
             dayVC.day = self.day
-
+            
         }
         if(segue.identifier! == "voidLessons" )
         {
@@ -315,7 +283,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
             let senderBtn = sender as! UIButton
             senderBtn.backgroundColor = GlobalColors.BlueColor
-
+            
         }
         if(segue.identifier! == "weekSegue")
         {
@@ -332,45 +300,11 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         
     }
     
-    func showWarning() {
-        let alertController = UIAlertController(title: "Некоректный ввод!", message:
-            "Попробуйте ввести название группы правильно", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-
+    
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        if (amistudent) {
-            let groupNameTemp = searchField.suggestionNormal
-            print(searchField.suggestionNormal)
-            let indexTemp = groupNamesList[groupNameTemp]
-            
-            if(indexTemp != nil){
-                subjectName = (indexTemp!, groupNameTemp)
-                self.enter()
-            }
-            else{
-                self.showWarning()
-            }
-        } else {
-            
-            let lectorNameTemp = searchField.suggestionNormal
-            
-            let indexTempLector = lectorsNamesList[lectorNameTemp]
-            if(indexTempLector != nil){
-                subjectName = (indexTempLector!, lectorNameTemp)
-                self.enter()
-            }
-            else{
-                self.showWarning()
-            }
-        }
-        self.leftButton.setImage(nil, forState: .Normal)
-        self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
-        onSearch = true
-        enter()
+        self.performSegueWithIdentifier("searchTest", sender: self)
         return false
     }
     @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)
@@ -379,59 +313,5 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         // Pull any data from the view controller which initiated the unwind segue.
     }
     
-    func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
-        
-        InternetManager.sharedInstance.getLessonsList(["who":"lector","id":itemID,"timestamp":0], success: {
-            success in
-            jsonDataList = success
-            successBlock()
-            }, failure: {error in print(error)})
-    }
-
-    func enter()
-    {
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.updateSchedule(itemID: subjectName.0, successBlock: {
-                successBlock in
-                dispatch_async(dispatch_get_main_queue(), {
-                    parse(jsonDataList!,successBlock:
-                        {
-                            successBlock in
-                            totalSchedule = successBlock
-                            
-                            
-                                if(totalSchedule.count > 0)
-                                {
-                                    self.weekNumberTab = getWeekNumber()
-                                    print("NUMBER - \(self.weekNumberTab!)")
-                                    weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
-                                    
-                                    self.weekLabel.text = "Неделя \(String(weekNumber))"
-                                    
-                                    self.subjectNameLabel.text = subjectName.1
-                                    self.updateScheduleProperties(0)
-                                    self.weekLabel.hidden = false
-                                    self.searchField.hidden = true
-                                    self.subjectNameLabel.hidden = false
-                                    if(self.day.lessons?.count != 0){
-                                        self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
-                                    }
-                                    else
-                                    {
-                                        self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[0])
-                                    }
-                                    
-                                
-                                
-                            }
-                    })
-                    
-                })
-//                defaults.setValue(jsonDataList?.rawString(), forKey: "jsonDataTemp")
-//                self.updateScheduleProperties(0)
-//                self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
-            })
-        })
-    }
+    
 }

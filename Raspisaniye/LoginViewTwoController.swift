@@ -62,9 +62,14 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     }
     @IBOutlet weak var textField: AutocompleteField!
     override func viewDidLoad() {
-
+        textField.autocompleteType = .Sentence
         textField.returnKeyType = .Go
+        if(amistudent){
         textField.suggestions = groupsArray
+        }
+        else{
+            textField.suggestions = lectorsArray
+        }
         textField.autocorrectionType = .No
          self.textField.delegate = self;
             for (value, _) in lectorsNamesList {

@@ -21,7 +21,7 @@ class LoginViewOneController: UIViewController {
                 self.showWarning()
         })
         
-
+        
     }
 
     @IBAction func lectorClick(sender: AnyObject) {
