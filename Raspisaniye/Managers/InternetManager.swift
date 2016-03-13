@@ -24,7 +24,8 @@ class InternetManager {
 
     // MARK: Get lists of groups and lectors
     func getGroupList(success:JSON -> (), failure:NSError-> ()){
-        HelperManager.sharedInstance.showMBProgressHUD()
+        SwiftSpinner.show("Получаем список групп")
+
         let getRequest = serverURL + getGroupList
         Alamofire.request(.GET, getRequest).responseJSON(completionHandler: {
             response in
@@ -34,17 +35,19 @@ class InternetManager {
                     let json = JSON(value)
                     success(json)
                 }
-                HelperManager.sharedInstance.hideMBProgressHUD()
+
+                    SwiftSpinner.hide()
             case .Failure(let error):
                 failure(error)
-                HelperManager.sharedInstance.hideMBProgressHUD()
+
+                    SwiftSpinner.hide()
                 
             }
         })
     }
 
     func getLectorsList(success:JSON -> (), failure:NSError-> ()){
-        HelperManager.sharedInstance.showMBProgressHUD()
+          SwiftSpinner.show("Получаем список преподавателей")
         let getRequest = serverURL + getLectorsList
         Alamofire.request(.GET, getRequest).responseJSON(completionHandler: {
             response in
@@ -54,17 +57,17 @@ class InternetManager {
                     let json = JSON(value)
                     success(json)
                 }
-                HelperManager.sharedInstance.hideMBProgressHUD()
+                 SwiftSpinner.hide()
             case .Failure(let error):
                 failure(error)
-                HelperManager.sharedInstance.hideMBProgressHUD()
+                 SwiftSpinner.hide()
             }
         })
     }
     
     // MARK: Get schedule
     func getLessonsList(params: Dictionary<String, AnyObject>, success:JSON -> (), failure:NSError -> ()){
-        HelperManager.sharedInstance.showMBProgressHUD()
+          SwiftSpinner.show("Загружаем расписание")
         let getRequest = serverURL + getLessonsList
         Alamofire.request(.GET, getRequest, parameters: params).responseJSON(completionHandler: {
             response in
@@ -74,10 +77,10 @@ class InternetManager {
                     let json = JSON(value)
                     success(json)
                 }
-                HelperManager.sharedInstance.hideMBProgressHUD()
+                 SwiftSpinner.hide()
             case .Failure(let error):
                 failure(error)
-                HelperManager.sharedInstance.hideMBProgressHUD()
+                 SwiftSpinner.hide()
             }
         })
     }

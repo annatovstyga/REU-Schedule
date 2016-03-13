@@ -87,20 +87,21 @@ func getWeekNumber() -> Int
 
 func parseToList(parsingList:[String: Int],successBlock: [String] ->())
 {
-    HelperManager.sharedInstance.showMBProgressHUD()
+     SwiftSpinner.show("Немного волшебства")
     var parsedList:[String] = []
     for (value, _) in parsingList{
         parsedList.append(value)
     }
     parsedList.sortInPlace(before)
-    HelperManager.sharedInstance.hideMBProgressHUD()
+    
     successBlock(parsedList)
+    SwiftSpinner.hide()
     return
 }
 
 func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 {
-    HelperManager.sharedInstance.showMBProgressHUD()
+       SwiftSpinner.show("Немного волшебства")
     var schedule: [OneWeek] = []
     for semestr in jsontoparse["success"]["data"] {
         
@@ -158,7 +159,7 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
         
     }
     successBlock(schedule)
-    HelperManager.sharedInstance.hideMBProgressHUD()
+    SwiftSpinner.hide()
 }
 
 

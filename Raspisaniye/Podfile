@@ -9,7 +9,7 @@ pod 'Alamofire', '~> 3.2'
 pod 'MBProgressHUD', '~> 0.9'
 pod 'SwiftyJSON', '~> 2.3'
 pod 'Log'
-pod 'SRKControls', '~> 3.0.1'
+pod "SwiftSpinner"
 
 end
 

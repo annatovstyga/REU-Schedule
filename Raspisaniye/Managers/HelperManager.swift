@@ -14,6 +14,10 @@ class HelperManager {
     // MARK: Singleton
     static let sharedInstance = HelperManager()
     
+    func showSpinner()
+    {
+        
+    }
     // MARK: MBProgressHUD - Show & Hide
     func showMBProgressHUD() -> MBProgressHUD {
         let window = UIApplication.sharedApplication().windows.last
