@@ -3,14 +3,10 @@ import UIKit
 class WeekNavigationSegue: UIStoryboardSegue {
     
     override func perform() {
-        
         let tabBarController = self.sourceViewController as! MMSwiftTabBarController
         let destinationController = self.destinationViewController as UIViewController
         
-        for view in tabBarController.placeholderView.subviews as [UIView] {
-            view.removeFromSuperview()
-        }
-        
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
         
         tabBarController.currentViewController = destinationController
         tabBarController.placeholderView.addSubview(destinationController.view)
@@ -26,21 +22,12 @@ class WeekNavigationSegue: UIStoryboardSegue {
         let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[v1]-0-|", options: .AlignAllTop, metrics: nil, views: ["v1": destinationController.view])
         
         tabBarController.placeholderView.addConstraints(verticalConstraint)
+        
         UIView.animateWithDuration(0.4, animations: { () -> Void in
-            destinationController.view.transform = CGAffineTransformScale(destinationController.view.transform, 0.5, 0.5)
-            //            tabBarController.view.frame = CGRectOffset(tabBarController.view.frame, 0.0, -screenHeight)
-            
+
+            destinationController.view.frame = CGRectOffset(destinationController.view.frame, -segueSide*screenWidth, 0.0)
             }) { (Finished) -> Void in
-                UIView.animateWithDuration(0.4, animations: { () -> Void in
-                    destinationController.view.transform = CGAffineTransformIdentity
-                    
-                    }, completion: { (Finished) -> Void in
-                        
-                        
-                })
-                //                self.sourceViewController.presentViewController(self.destinationViewController as UIViewController,
-                //                    animated: false,
-                //                    completion: nil)
+                tabBarController.placeholderView.subviews.first?.removeFromSuperview()
         }
         
         tabBarController.placeholderView.layoutIfNeeded()

@@ -18,7 +18,7 @@ var timestampMemory   = defaults.objectForKey("timestamp") as? Int ?? Int()
 var currentWeekMemory = defaults.objectForKey("currentWeek") as? Int ?? Int()
 var lectorsArray: [String] = []
 var groupsArray: [String] = []
-
+var segueSide:CGFloat = 1
 var groupNamesList: [String: Int] = [:]
 var lectorsNamesList: [String: Int] = [:]
 var rowH: CGFloat = 0

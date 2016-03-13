@@ -246,6 +246,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         {
             if(weekNumberTab < totalSchedule.count)
             {
+                segueSide = 1
                 (weekNumberTab!)++
                 self.updateScheduleProperties(0)
                 
@@ -261,7 +262,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             if(weekNumberTab > 1)
             {
                
-                
+                segueSide = -1
                 (weekNumberTab!)--
                  self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber)
@@ -428,9 +429,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                     })
                     
                 })
-//                defaults.setValue(jsonDataList?.rawString(), forKey: "jsonDataTemp")
-//                self.updateScheduleProperties(0)
-//                self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
             })
         })
     }
