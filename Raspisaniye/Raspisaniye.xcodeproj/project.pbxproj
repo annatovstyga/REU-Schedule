@@ -43,6 +43,7 @@
 		B2D3B4371C6D1944003C1464 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D3B4361C6D1944003C1464 /* clock.png */; };
 		B2D3B4391C6D1948003C1464 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D3B4381C6D1948003C1464 /* location.png */; };
 		B2DDE85D1C8DF37E0055CDF4 /* AutoCompilte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDE85C1C8DF37E0055CDF4 /* AutoCompilte.swift */; };
+		B2E7A2801C994D55007F2F8A /* Gerb.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E7A27F1C994D55007F2F8A /* Gerb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		B2D3B4361C6D1944003C1464 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		B2D3B4381C6D1948003C1464 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		B2DDE85C1C8DF37E0055CDF4 /* AutoCompilte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompilte.swift; sourceTree = "<group>"; };
+		B2E7A27F1C994D55007F2F8A /* Gerb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gerb.png; sourceTree = "<group>"; };
 		B2FDE3761C3DB4C300290A04 /* Raspisaniye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspisaniye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EF12D659A4D7BCF1911287 /* Pods_Raspisaniye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raspisaniye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 		A2498BB11C6F585400AFBF4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B2E7A27F1C994D55007F2F8A /* Gerb.png */,
 				B21DA91E1C82EFB0008B6B32 /* Cat.png */,
 				B2D3B4381C6D1948003C1464 /* location.png */,
 				A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */,
@@ -303,6 +306,7 @@
 				B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */,
 				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
 				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
+				B2E7A2801C994D55007F2F8A /* Gerb.png in Resources */,
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
 				B2D3B4371C6D1944003C1464 /* clock.png in Resources */,
 				B22466331C933AB200569745 /* Main.storyboard in Resources */,
