@@ -45,10 +45,27 @@ class InternetManager {
             }
         })
     }
+    func getTimestamp(success:JSON -> (), failure:NSError-> ()){
+        
+//        let getRequest = serverURL
+        Alamofire.request(.GET, "http://appreu.styleru.net/api/lessons/?who=group&id=55&timestamp=0").responseJSON(completionHandler: {
+            response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    success(json)
+                }
+            case .Failure(let error):
+                failure(error)
+            }
+        })
+    }
+
 
     func getLectorsList(success:JSON -> (), failure:NSError-> ()){
           SwiftSpinner.show("Получаем список преподавателей")
-        let getRequest = serverURL + getLectorsList
+        let getRequest = serverURL
         Alamofire.request(.GET, getRequest).responseJSON(completionHandler: {
             response in
             switch response.result {

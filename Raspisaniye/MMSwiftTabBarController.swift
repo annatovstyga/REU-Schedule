@@ -5,6 +5,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: Propiertes
     
+    @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet var placeholderView: UIView!
@@ -65,9 +66,22 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            InternetManager.sharedInstance.getTimestamp({
+                success in
+                print("AWESOMMMEEEE")
+//                self.updateAlert()
+                print(success)
+                
+                }, failure:{error in print(error)
+                   print("NO")
+            })
+
+            })
+      
         super.viewDidLoad()
          self.searchField.delegate = self;
+          self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
         self.searchField.autocorrectionType = .No
         self.searchField.autocompleteType = .Sentence
         let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
@@ -126,6 +140,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         })
         
         
+        
     }
     
     // MARK: IBActions - buttons
@@ -173,6 +188,37 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     performSegueWithIdentifier("profileSegue", sender: sender)
         }
     }
+    
+    @IBAction func SunExtend(sender: AnyObject) {
+        SundayExtension()
+        
+        tabBarButtons.last?.setTitle("Вс", forState: .Normal)
+        updateScheduleProperties(7)
+        if(self.day.lessons?.count != 0){
+            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[6])
+        }
+        else
+        {
+            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[6])
+        }
+
+
+    }
+    
+    func SundayExtension()
+    {
+        
+        var count:CGFloat = 0;
+        for btn in tabBarButtons
+        {
+            
+            
+            btn.frame.origin.x = (tabBarView.frame.width/7)*(count)
+            btn.frame.size.width = tabBarView.frame.width / 7
+            count++
+        }
+    }
+   
     @IBAction func monClick(sender: AnyObject) {
         updateScheduleProperties(0)
         if(self.day.lessons?.count != 0){
@@ -278,7 +324,14 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
 
         print(totalSchedule[weekNumberTab! - 1].number)
         weekNumber = totalSchedule[weekNumberTab! - 1].number!
+        if(dayIndex <= totalSchedule[weekNumberTab! - 1].days?.count)
+        {
         day = (totalSchedule[weekNumberTab! - 1].days![dayIndex!])
+        }
+        else
+        {
+            day.lessons = []
+        }
         day.lessons?.sortInPlace(beforeLes)
         
     }
@@ -340,6 +393,13 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
+    func updateAlert() {
+        let alertController = UIAlertController(title: "Доступно обновление расписания!", message:
+            "Загрузить обновленное расписание?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Отменить", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)

@@ -40,7 +40,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if(day.lessons?.count != 0){
+        if(day.lessons?.count != nil){
             return (day.lessons?.count)!
         }
         else{
@@ -53,7 +53,7 @@ class MainTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(day.lessons?.count != 0){
+        if(day.lessons?.count != nil){
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomTableViewCell
         

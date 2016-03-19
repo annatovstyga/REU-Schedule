@@ -26,6 +26,8 @@
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
 		B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287A1C75184100CDF3BA /* OneWeek.swift */; };
 		B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B287E1C751C5E00CDF3BA /* OneDay.swift */; };
+		B255E9C41C9DACA70078F4CD /* interface.png in Resources */ = {isa = PBXBuildFile; fileRef = B255E9C31C9DACA70078F4CD /* interface.png */; };
+		B255E9C61C9DAEDE0078F4CD /* arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = B255E9C51C9DAEDE0078F4CD /* arrows.png */; };
 		B25612811C6A6F810083CFCB /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = B25612801C6A6F810083CFCB /* Search.png */; };
 		B25612871C6A828A0083CFCB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612861C6A828A0083CFCB /* MainTableViewController.swift */; };
 		B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */; };
@@ -68,6 +70,8 @@
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
 		B24B287A1C75184100CDF3BA /* OneWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneWeek.swift; sourceTree = "<group>"; };
 		B24B287E1C751C5E00CDF3BA /* OneDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDay.swift; sourceTree = "<group>"; };
+		B255E9C31C9DACA70078F4CD /* interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interface.png; sourceTree = "<group>"; };
+		B255E9C51C9DAEDE0078F4CD /* arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows.png; sourceTree = "<group>"; };
 		B25612801C6A6F810083CFCB /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
 		B25612861C6A828A0083CFCB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B25612881C6A86AE0083CFCB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 		A2498BB11C6F585400AFBF4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B255E9C31C9DACA70078F4CD /* interface.png */,
 				B2E7A27F1C994D55007F2F8A /* Gerb.png */,
+				B255E9C51C9DAEDE0078F4CD /* arrows.png */,
 				B21DA91E1C82EFB0008B6B32 /* Cat.png */,
 				B2D3B4381C6D1948003C1464 /* location.png */,
 				A2498BAB1C6F39BB00AFBF4C /* profileBackground@2x.png */,
@@ -303,8 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255E9C41C9DACA70078F4CD /* interface.png in Resources */,
 				B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */,
 				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
+				B255E9C61C9DAEDE0078F4CD /* arrows.png in Resources */,
 				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
 				B2E7A2801C994D55007F2F8A /* Gerb.png in Resources */,
 				B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */,
