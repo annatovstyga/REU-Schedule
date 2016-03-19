@@ -295,9 +295,15 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 segueSide = 1
                 (weekNumberTab!)++
                 self.updateScheduleProperties(0)
-                
                 weekLabel.text = "Неделя " + String(weekNumber)
-                performSegueWithIdentifier("weekSegue", sender: sender)
+                if(self.day.lessons?.count != 0){
+                    performSegueWithIdentifier("weekSegue", sender: sender)
+                }
+                else
+                {
+                    performSegueWithIdentifier("voidLessons", sender: tabBarButtons[0])
+                }
+
             }
         }
     }
@@ -312,7 +318,15 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 (weekNumberTab!)--
                  self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber)
-                performSegueWithIdentifier("weekSegue", sender: sender)
+                if(self.day.lessons?.count != 0){
+                    performSegueWithIdentifier("weekSegue", sender: sender)
+                }
+                else
+                {
+                    performSegueWithIdentifier("voidLessons", sender: tabBarButtons[0])
+                }
+
+                
             }
             
         }

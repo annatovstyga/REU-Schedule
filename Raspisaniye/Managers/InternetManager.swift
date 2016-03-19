@@ -65,7 +65,7 @@ class InternetManager {
 
     func getLectorsList(success:JSON -> (), failure:NSError-> ()){
           SwiftSpinner.show("Получаем список преподавателей")
-        let getRequest = serverURL
+        let getRequest = serverURL + getLectorsList
         Alamofire.request(.GET, getRequest).responseJSON(completionHandler: {
             response in
             switch response.result {

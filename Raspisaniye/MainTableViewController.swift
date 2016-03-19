@@ -62,8 +62,15 @@ class MainTableViewController: UITableViewController {
         cell.timeCell.text = "\(day.lessons![indexPath.item].lessonStart!) - \(day.lessons![indexPath.item].lessonEnd!)"
         
         cell.descriptionCell.text = "\(parseLessonType(day.lessons![indexPath.item].lessonType!)) | \(day.lessons![indexPath.item].startWeek!)-\(day.lessons![indexPath.item].endWeek!) неделя | "
-        if(day.lessons![indexPath.item].lector != nil){
+        if((day.lessons![indexPath.item].lector != nil)&&(amistudent)){
             cell.descriptionCell.text?.appendContentsOf(day.lessons![indexPath.item].lector!)
+        }
+        else
+        {
+                for group in day.lessons![indexPath.item].groups!
+                {
+                cell.descriptionCell.text?.appendContentsOf("\(group) ")
+                }
         }
         cell.placeCell.text = "Ауд. \(day.lessons![indexPath.item].room!) (\(day.lessons![indexPath.item].building!) к. \(day.lessons![indexPath.item].house!))"
     
