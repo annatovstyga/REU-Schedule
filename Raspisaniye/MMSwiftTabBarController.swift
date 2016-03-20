@@ -22,6 +22,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     var lesson: OneLesson = OneLesson()
     
     @IBAction func searchClick(sender: AnyObject) {
+        if(onSearch == false)
+        {
         self.subjectNameLabel.hidden = true
         self.weekLabel.hidden = true
         self.searchField.hidden = false
@@ -63,18 +65,24 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         
         print(groupsArray)
         searchField.suggestions = groupsArray + lectorsArray
+        onSearch = true
+        }
+        else{
+            searchField.hidden = true
+            self.subjectNameLabel.hidden = false
+            self.weekLabel.hidden = false
+            onSearch = false
+        }
     }
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         dispatch_async(dispatch_get_main_queue(), {
             InternetManager.sharedInstance.getTimestamp({
                 success in
-                print("AWESOMMMEEEE")
 //                self.updateAlert()
                 print(success)
                 
                 }, failure:{error in print(error)
-                   print("NO")
             })
 
             })
@@ -147,7 +155,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
    
     @IBAction func profileClick(sender: AnyObject) {
-        if(onSearch){
+        if(searchDisplayed){
             let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
             jsonDataList = JSON.parse(jsonstring)
             dispatch_async(dispatch_get_main_queue(), {
@@ -180,7 +188,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 })
                 
             })
-            onSearch = false
+            searchDisplayed = false
             self.leftButton.setTitle("", forState: .Normal)
             self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
         }
@@ -417,35 +425,33 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        if (amistudent) {
-            let groupNameTemp = searchField.suggestionNormal
-            print(searchField.suggestionNormal)
-            let indexTemp = groupNamesList[groupNameTemp]
-            
+        
+            let NameTemp = searchField.suggestionNormal
+            var indexTemp = groupNamesList[NameTemp]
+        print("INDEX")
+            print(indexTemp)
+            var tempAMIS:Bool  = true
+            if(indexTemp == nil)
+            {
+                indexTemp = lectorsNamesList[NameTemp]
+                if(indexTemp != nil){
+                    tempAMIS = false
+                }
+            }
             if(indexTemp != nil){
-                subjectName = (indexTemp!, groupNameTemp)
+                amistudent = tempAMIS
+                subjectName = (indexTemp!, NameTemp)
                 self.enter()
             }
             else{
                 self.showWarning()
             }
-        } else {
-            
-            let lectorNameTemp = searchField.suggestionNormal
-            
-            let indexTempLector = lectorsNamesList[lectorNameTemp]
-            if(indexTempLector != nil){
-                subjectName = (indexTempLector!, lectorNameTemp)
-                self.enter()
-            }
-            else{
-                self.showWarning()
-            }
-        }
+        
         self.leftButton.setImage(nil, forState: .Normal)
         self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
-        onSearch = true
-        enter()
+        onSearch = false
+        searchDisplayed = true
+        print(amistudent)
         return false
     }
     @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)
@@ -455,8 +461,12 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     
     func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
-        
-        InternetManager.sharedInstance.getLessonsList(["who":"lector","id":itemID,"timestamp":0], success: {
+        var Who:String = "lector"
+        if(amistudent)
+        {
+            Who = "group"
+        }
+        InternetManager.sharedInstance.getLessonsList(["who":Who,"id":itemID,"timestamp":0], success: {
             success in
             jsonDataList = success
             successBlock()

@@ -10,6 +10,7 @@ var weekNumber:Int = 1
 
 var changes:Bool = false //Temp var
 var onSearch:Bool = false
+var searchDisplayed:Bool = false
 var isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
 var amistudent: Bool = defaults.objectForKey("amistudent") as? Bool ?? Bool()
 var subjectNameMemory = defaults.objectForKey("subjectName") as? String ?? String()
