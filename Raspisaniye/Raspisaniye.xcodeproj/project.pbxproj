@@ -21,6 +21,7 @@
 		B21DA9211C82FC51008B6B32 /* Cat_laze.png in Resources */ = {isa = PBXBuildFile; fileRef = B21DA9201C82FC51008B6B32 /* Cat_laze.png */; };
 		B22466311C9338B500569745 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22466301C9338B500569745 /* SearchViewController.swift */; };
 		B22466331C933AB200569745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22466321C933AB200569745 /* Main.storyboard */; };
+		B24779F61CA020290032C3A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24779F51CA020290032C3A7 /* GoogleService-Info.plist */; };
 		B24ACABE1C408B86006FB191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACAB81C408B86006FB191 /* AppDelegate.swift */; };
 		B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */; };
 		B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */; };
@@ -65,6 +66,8 @@
 		B21DA9201C82FC51008B6B32 /* Cat_laze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cat_laze.png; sourceTree = "<group>"; };
 		B22466301C9338B500569745 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B22466321C933AB200569745 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B24779F51CA020290032C3A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B24779F71CA022360032C3A7 /* Raspisaniye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Raspisaniye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B24ACAB81C408B86006FB191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		B24ACABD1C408B86006FB191 /* MMSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
+				B24779F71CA022360032C3A7 /* Raspisaniye-Bridging-Header.h */,
+				B24779F51CA020290032C3A7 /* GoogleService-Info.plist */,
 				B22466301C9338B500569745 /* SearchViewController.swift */,
 				B2DDE85C1C8DF37E0055CDF4 /* AutoCompilte.swift */,
 				A2498BB11C6F585400AFBF4C /* images */,
@@ -282,7 +287,12 @@
 				TargetAttributes = {
 					B2FDE3751C3DB4C300290A04 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FKNLQ46HWC;
+						DevelopmentTeam = 9W968RZS7A;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -311,6 +321,7 @@
 			files = (
 				B255E9C41C9DACA70078F4CD /* interface.png in Resources */,
 				B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */,
+				B24779F61CA020290032C3A7 /* GoogleService-Info.plist in Resources */,
 				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
 				B255E9C61C9DAEDE0078F4CD /* arrows.png in Resources */,
 				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
@@ -510,11 +521,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rGradeStd;
+				PRODUCT_BUNDLE_IDENTIFIER = net.styleru.REA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Supporting Files/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
@@ -539,10 +549,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rGradeStd;
+				PRODUCT_BUNDLE_IDENTIFIER = net.styleru.REA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Supporting Files/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";

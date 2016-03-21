@@ -10,6 +10,7 @@ pod 'MBProgressHUD', '~> 0.9'
 pod 'SwiftyJSON', '~> 2.3'
 pod 'Log'
 pod "SwiftSpinner"
+pod 'Google/CloudMessaging'
 
 end
 
