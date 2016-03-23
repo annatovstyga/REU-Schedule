@@ -43,7 +43,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             lectorsArray.sortInPlace(before)
             InternetManager.sharedInstance.getGroupList({
                 success in
-                print(success)
                 let groups = success["success"]["data"]
                 for item in groups {
                     let idGroup   = item.1["ID"].int!
@@ -63,7 +62,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
 //                self.showWarning()
         })
         
-        print(groupsArray)
         searchField.suggestions = groupsArray + lectorsArray
         onSearch = true
         }
@@ -80,7 +78,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             InternetManager.sharedInstance.getTimestamp({
                 success in
 //                self.updateAlert()
-                print(success)
                 
                 }, failure:{error in print(error)
             })
@@ -101,7 +98,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 {
                     successBlock in
                     totalSchedule = successBlock
-                    
                     let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
                         action: "rotateWeekForward:")
                     let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
@@ -125,7 +121,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                         if(totalSchedule.count > 0)
                         {
                             self.weekNumberTab = getWeekNumber()
-                            print("NUMBER - \(self.weekNumberTab!)")
                             weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                             
                             self.weekLabel.text = "Неделя \(String(weekNumber))"
@@ -167,7 +162,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             if(totalSchedule.count > 0)
                             {
                                 self.weekNumberTab = getWeekNumber()
-                                print("NUMBER - \(self.weekNumberTab!)")
                                 weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                                 
                                 self.weekLabel.text = "Неделя \(String(weekNumber))"
@@ -344,7 +338,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     func updateScheduleProperties(dayIndex:Int?) {
 
-        print(totalSchedule[weekNumberTab! - 1].number)
+
         weekNumber = totalSchedule[weekNumberTab! - 1].number!
         if(dayIndex <= totalSchedule[weekNumberTab! - 1].days?.count)
         {
@@ -428,8 +422,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         
             let NameTemp = searchField.suggestionNormal
             var indexTemp = groupNamesList[NameTemp]
-        print("INDEX")
-            print(indexTemp)
             var tempAMIS:Bool  = true
             if(indexTemp == nil)
             {
@@ -451,7 +443,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
         onSearch = false
         searchDisplayed = true
-        print(amistudent)
         return false
     }
     @IBAction func unwindToMMSwiftTabBar(sender: UIStoryboardSegue)
@@ -489,7 +480,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                 if(totalSchedule.count > 0)
                                 {
                                     self.weekNumberTab = getWeekNumber()
-                                    print("NUMBER - \(self.weekNumberTab!)")
                                     weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                                     
                                     self.weekLabel.text = "Неделя \(String(weekNumber))"

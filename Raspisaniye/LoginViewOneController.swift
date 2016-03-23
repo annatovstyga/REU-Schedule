@@ -5,7 +5,6 @@ class LoginViewOneController: UIViewController {
     @IBAction func studClick(sender: AnyObject) {
         InternetManager.sharedInstance.getGroupList({
             success in
-            print(success)
             let groups = success["success"]["data"]
             for item in groups {
                 let idGroup   = item.1["ID"].int!

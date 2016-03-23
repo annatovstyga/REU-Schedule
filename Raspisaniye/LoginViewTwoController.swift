@@ -53,10 +53,6 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
                 self.showWarning()
             }
         }
-        
-        print("ENTER")
-        
-        print("Object that I checked - \(self.textField.text)")
  
         
     }

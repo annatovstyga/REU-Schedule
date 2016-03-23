@@ -102,24 +102,25 @@ func parseToList(parsingList:[String: Int],successBlock: [String] ->())
 
 func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 {
-       SwiftSpinner.show("Немного волшебства")
+    SwiftSpinner.show("Немного волшебства")
     var schedule: [OneWeek] = []
     for semestr in jsontoparse["success"]["data"] {
-        
+
         let oneWeek: OneWeek = OneWeek()
         oneWeek.number = semestr.1["weekNum"].int
         oneWeek.days = []
         // weekData - is one week
         for weekData in semestr.1 {
-            
+
             // dayData - is one day
             for dayData in weekData.1 {
                 let oneDay: OneDay = OneDay()
                 oneDay.dayName = dayData.0
                 oneDay.lessons = []
-                
                 // lessonData - is one lesson
-                for lessonData in dayData.1 {
+                for lessonData in dayData.1["lessons"] {
+
+                    print(lessonData.1)
                     if(lessonData.1 != nil) {
                         // Main properties
                         let lessonNumber        = Int(lessonData.0)
@@ -144,7 +145,6 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                         }
 
                         let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups,startWeek:startWeek,endWeek:endWeek)
-                        
                         oneDay.lessons?.append(lesson)
 
                         

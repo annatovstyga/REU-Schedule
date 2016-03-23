@@ -44,7 +44,6 @@ class MainTableViewController: UITableViewController {
             return (day.lessons?.count)!
         }
         else{
-            print("DADA")
             return 1
             
         }
@@ -79,7 +78,7 @@ class MainTableViewController: UITableViewController {
         else
         {
             print("noLessons")
-        let cell = tableView.dequeueReusableCellWithIdentifier("noLessons", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("noLessons", forIndexPath: indexPath)
             return cell
         }
     
