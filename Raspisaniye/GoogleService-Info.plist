@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>GCM_SENDER_ID</key>
-	<string>807809612693</string>
+	<string>556371772091</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>net.styleru.REA</string>
+	<string>net.styleru.REA-Schedule</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -19,8 +19,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:807809612693:ios:2b43c298ef63a436</string>
+	<string>1:556371772091:ios:ef77f677441ce383</string>
 	<key>PROJECT_ID</key>
-	<string>rea-schedule-d4b4a</string>
+	<string>rea-rasp</string>
 </dict>
 </plist>

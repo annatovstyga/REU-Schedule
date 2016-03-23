@@ -60,6 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             gcmConfig.receiverDelegate = self
             GCMService.sharedInstance().startWithConfig(gcmConfig)
             // [END start_gcm_service]
+            GCMService.sharedInstance().connectWithHandler({(error:NSError?) -> Void in
+            if let error = error {
+                print("Could not connect to GCM: \(error.localizedDescription)")
+            } else {
+                self.connectedToGCM = true
+                print("Connected to GCM")
+                // [START_EXCLUDE]
+                self.subscribeToTopic()
+                // [END_EXCLUDE]
+            }
+        })
             return true
     }
     
@@ -87,19 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     // [START connect_gcm_service]
     func applicationDidBecomeActive( application: UIApplication) {
         // Connect to the GCM server to receive non-APNS notifications
-        GCMService.sharedInstance().connectWithHandler({(error:NSError?) -> Void in
-            if let error = error {
-                print("Could not connect to GCM: \(error.localizedDescription)")
-            } else {
-                self.connectedToGCM = true
-                print("Connected to GCM")
-                // [START_EXCLUDE]
-                self.subscribeToTopic()
-                // [END_EXCLUDE]
-            }
-        })
+       
     }
     // [END connect_gcm_service]
+ 
     
     // [START disconnect_gcm_service]
     func applicationDidEnterBackground(application: UIApplication) {

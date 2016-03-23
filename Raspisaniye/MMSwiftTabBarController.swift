@@ -301,7 +301,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             if(weekNumberTab < totalSchedule.count)
             {
                 segueSide = 1
-                (weekNumberTab!)++
+                (weekNumberTab!) += 1
                 self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber)
                 if(self.day.lessons?.count != 0){
