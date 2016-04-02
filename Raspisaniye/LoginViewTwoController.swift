@@ -81,8 +81,8 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
 
         
 
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewTwoController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewTwoController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
             
             
  

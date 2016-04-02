@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>GCM_SENDER_ID</key>
-	<string>556371772091</string>
+	<string>15379204249</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
@@ -19,8 +19,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:556371772091:ios:ef77f677441ce383</string>
+	<string>1:15379204249:ios:ef77f677441ce383</string>
 	<key>PROJECT_ID</key>
-	<string>rea-rasp</string>
+	<string>rea-schedule</string>
 </dict>
 </plist>

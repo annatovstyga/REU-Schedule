@@ -76,7 +76,7 @@ func getWeekNumber() -> Int
     {
         if(item.number <= week)
         {
-            count++;
+            count += 1;
         }
         else
         {
@@ -137,6 +137,7 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                         let endWeek: Int?  = lessonData.1["week_end"].int
                         var groups: [String]?   = []
                         let lessonsGroups = lessonData.1["groups"].array
+                        
                         if let data = lessonsGroups {
                             for groupName in data {
                                 let groupString = groupName.stringValue

@@ -17,7 +17,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCMReceiverDelegate {
     
     var window: UIWindow?
     
@@ -74,6 +74,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             return true
     }
     
+    func getMessage(to: String,m:String) -> NSDictionary {
+        
+        // important field: "content_available":true
+        // [START notification_format]
+        return ["to": to,
+                "content_available":true,
+                "notification":[
+                    "body":m,
+            ],
+                "sound": "default",
+                "badge": "2",
+                "title": "default"
+        ]
+        
+        // [END notification_format]
+        
+    }
+    
     func subscribeToTopic() {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
@@ -96,19 +114,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     }
     
     // [START connect_gcm_service]
-    func applicationDidBecomeActive( application: UIApplication) {
-        // Connect to the GCM server to receive non-APNS notifications
-       
-    }
-    // [END connect_gcm_service]
+//    func applicationDidBecomeActive( application: UIApplication) {
+//        // Connect to the GCM server to receive non-APNS notifications
+//       
+//    }
+//    // [END connect_gcm_service]
  
-    
+    func applicationDidBecomeActive(application: UIApplication) {
+        GCMService.sharedInstance().connectWithHandler({
+            (error) -> Void in
+            if error != nil {
+                print("Could not connect to GCM: \(error.localizedDescription)")
+            } else {
+                self.connectedToGCM = true
+                print("Connected to GCM")
+                // ...
+            }
+        })
+        
+    }
+
     // [START disconnect_gcm_service]
     func applicationDidEnterBackground(application: UIApplication) {
         GCMService.sharedInstance().disconnect()
         // [START_EXCLUDE]
         self.connectedToGCM = false
-        // [END_EXCLUDE]
     }
     // [END disconnect_gcm_service]
     
@@ -140,34 +170,87 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                 registrationKey, object: nil, userInfo: userInfo)
     }
     
+    func methodOfReceivedNotification()
+    {
+        
+    }
+    
     // [START ack_message_reception]
     func application( application: UIApplication,
         didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-            print("Notification received: \(userInfo)")
+            print("Notification received SIMPLE: \(userInfo)")
             // This works only if the app started the GCM service
             GCMService.sharedInstance().appDidReceiveMessage(userInfo);
             // Handle the received message
-            // [START_EXCLUDE]
-            NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
-                userInfo: userInfo)
-            // [END_EXCLUDE]
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            "YES", object: nil, userInfo: userInfo)
+//         print("Notification received INACTIVE: \(userInfo)")
+//            // [START_EXCLUDE]
+            showWarning((userInfo.first?.1)! as! String)
+//            // [END_EXCLUDE]
+    }
+
+
+    func showWarning(withString:String) {
+        let alertController = UIAlertController(title: withString, message:
+            "Попробуйте ввести название группы правильно", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func application( application: UIApplication,
-        didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
-        fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
-            print("Notification received: \(userInfo)")
-            // This works only if the app started the GCM service
-            GCMService.sharedInstance().appDidReceiveMessage(userInfo);
-            // Handle the received message
-            // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
-            // [START_EXCLUDE]
-            NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
-                userInfo: userInfo)
-            handler(UIBackgroundFetchResult.NoData);
-            // [END_EXCLUDE]
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // display the userInfo
+       
+          
+            print("YEAHHH \(userInfo)")
+             let notification = getMessage("1131", m: "DA")
+            print("YEAHHH \(notification)")
+                let alert = notification["notification"]!["body"] as? String
+                
+                let alertCtrl = UIAlertController(title: "Доступно обновление расписания", message: alert! as String, preferredStyle: UIAlertControllerStyle.Alert)
+                alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                // Find the presented VC...
+                var presentedVC = self.window?.rootViewController
+                while (presentedVC!.presentedViewController != nil)  {
+                    presentedVC = presentedVC!.presentedViewController
+                }
+                presentedVC!.presentViewController(alertCtrl, animated: true, completion: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("YEAD", object: nil, userInfo: userInfo)
+                // call the completion handler
+                // -- pass in NoData, since no new data was fetched from the server.
+                completionHandler(UIBackgroundFetchResult.NoData)
+        
     }
-    // [END ack_message_reception]
+    
+//    func application( application: UIApplication,
+//        didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+//        fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
+//        if application.applicationState == .Inactive {
+//            print("BACKGROUD")
+//            print("Notification received INACTIVE: \(userInfo)")
+//            handler(UIBackgroundFetchResult.NoData);
+////            fetchCompletionHandler(UIBackgroundFetchResult.NewData)
+//        }
+//        else{
+//            
+//            print("Notification received ACTIVE: \(userInfo)")
+//            // This works only if the app started the GCM service
+//            GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+//            // Handle the received message
+//            // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
+//            // [START_EXCLUDE]
+//            NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
+//                                                                      userInfo: userInfo)
+//            handler(UIBackgroundFetchResult.NoData);
+//        }//            handler(UIBackgroundFetchResult.NoData);
+//        if application.applicationState == .Background {
+//            print("Notification received BACKGROUND \(userInfo)")
+//            handler(UIBackgroundFetchResult.NoData);
+//            //            fetchCompletionHandler(UIBackgroundFetchResult.NewData)
+//        }
+//
+//            // [END_EXCLUDE]
+//    }
     
     func registrationHandler(registrationToken: String!, error: NSError!) {
         if (registrationToken != nil) {

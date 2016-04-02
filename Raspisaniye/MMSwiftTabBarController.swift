@@ -72,6 +72,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             onSearch = false
         }
     }
+    func updateNotificationSentLabel() {
+     
+    }
+    
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         dispatch_async(dispatch_get_main_queue(), {
@@ -83,7 +87,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             })
 
             })
-      
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MMSwiftTabBarController.updateNotificationSentLabel), name:"NotificationIdentifier", object: nil)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
         super.viewDidLoad()
          self.searchField.delegate = self;
           self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
@@ -98,12 +104,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 {
                     successBlock in
                     totalSchedule = successBlock
-                    let screenForwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
-                        action: "rotateWeekForward:")
-                    let screenBackwardEdgeRecognizer: UIScreenEdgePanGestureRecognizer! = UIScreenEdgePanGestureRecognizer(target: self,
-                        action: "rotateWeekBackward:")
-                    screenForwardEdgeRecognizer.edges = .Right
-                    screenBackwardEdgeRecognizer.edges = .Left
+                    let screenForwardEdgeRecognizer: UISwipeGestureRecognizer! = UISwipeGestureRecognizer(target: self, action: #selector(MMSwiftTabBarController.rotateWeekForward(_:)))
+                    screenForwardEdgeRecognizer.direction = .Left
+                    let screenBackwardEdgeRecognizer: UISwipeGestureRecognizer! = UISwipeGestureRecognizer(target: self, action: #selector(MMSwiftTabBarController.rotateWeekBackward(_:)))
+                    screenBackwardEdgeRecognizer.direction = .Right
                     self.view.addGestureRecognizer(screenForwardEdgeRecognizer)
                     self.view.addGestureRecognizer(screenBackwardEdgeRecognizer)
                     
@@ -317,7 +321,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             {
                
                 segueSide = -1
-                (weekNumberTab!)--
+                (weekNumberTab!) -= 1
                  self.updateScheduleProperties(0)
                 weekLabel.text = "Неделя " + String(weekNumber)
                 if(self.day.lessons?.count != 0){

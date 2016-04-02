@@ -34,13 +34,13 @@
 		B25F65B01C7B83830033EB2B /* WeekNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F65AF1C7B83830033EB2B /* WeekNavigationSegue.swift */; };
 		B2639AD01C4123A30028F663 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2639ACF1C4123A30028F663 /* Global.swift */; };
 		B2639AD71C41291F0028F663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2639AD61C41291F0028F663 /* Images.xcassets */; };
-		B2712E4B1CA2E3380091C967 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2712E4A1CA2E3380091C967 /* GoogleService-Info.plist */; };
 		B27314051C7919760004B709 /* CabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27314041C7919760004B709 /* CabController.swift */; };
 		B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090D1C52D14500EB0A08 /* CabNavSegue.swift */; };
 		B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */; };
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
 		B29901891C956CDC00EE8D92 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */; };
+		B2B3E0BB1CA6DD4A0000EBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
 		B2D3B4371C6D1944003C1464 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D3B4361C6D1944003C1464 /* clock.png */; };
@@ -80,7 +80,6 @@
 		B25F65AF1C7B83830033EB2B /* WeekNavigationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekNavigationSegue.swift; sourceTree = "<group>"; };
 		B2639ACF1C4123A30028F663 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B2639AD61C41291F0028F663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Raspisaniye/Images.xcassets; sourceTree = "<group>"; };
-		B2712E4A1CA2E3380091C967 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27314041C7919760004B709 /* CabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabController.swift; sourceTree = "<group>"; };
 		B289090D1C52D14500EB0A08 /* CabNavSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabNavSegue.swift; sourceTree = "<group>"; };
 		B289090F1C52D88800EB0A08 /* LoginViewOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewOneController.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewTwoController.swift; sourceTree = "<group>"; };
 		B296042D1C582F0400A14509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = Pods/SwiftSpinner/SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
+		B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFld.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		B2FDE36D1C3DB4C300290A04 = {
 			isa = PBXGroup;
 			children = (
-				B2712E4A1CA2E3380091C967 /* GoogleService-Info.plist */,
+				B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */,
 				B24779F71CA022360032C3A7 /* Raspisaniye-Bridging-Header.h */,
 				B22466301C9338B500569745 /* SearchViewController.swift */,
 				B2DDE85C1C8DF37E0055CDF4 /* AutoCompilte.swift */,
@@ -324,7 +324,7 @@
 			files = (
 				B255E9C41C9DACA70078F4CD /* interface.png in Resources */,
 				B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */,
-				B2712E4B1CA2E3380091C967 /* GoogleService-Info.plist in Resources */,
+				B2B3E0BB1CA6DD4A0000EBD9 /* GoogleService-Info.plist in Resources */,
 				A2498BAE1C6F44C400AFBF4C /* profileNavigationBackground@2x.png in Resources */,
 				B255E9C61C9DAEDE0078F4CD /* arrows.png in Resources */,
 				A2498BAC1C6F39BB00AFBF4C /* profileBackground@2x.png in Resources */,
@@ -516,6 +516,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -529,7 +531,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
@@ -544,6 +546,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -557,7 +561,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Supporting Files/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;

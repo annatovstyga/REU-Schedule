@@ -117,7 +117,7 @@ public enum AutocompleteType {
     {
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "textChanged:",
+            selector: #selector(AutocompleteField.textChanged(_:)),
             name: UITextFieldTextDidChangeNotification,
             object: self)
     }
@@ -150,7 +150,7 @@ public enum AutocompleteType {
      Set content of the suggestion label.
      - parameter text: Suggestion text
      */
-    private func setLabelContent(var text : String = "")
+    private func setLabelContent( var text : String = "")
     {
         // label string
         if(text.characters.count < 1) {
@@ -164,7 +164,7 @@ public enum AutocompleteType {
             let words = self.text!.componentsSeparatedByString(" ")
             let suggestionWords = text.componentsSeparatedByString(" ")
             var string : String = ""
-            for(var i = 0; i < words.count; i++)
+            for i in 0 ..< words.count
             {
                 string = string.stringByAppendingString(suggestionWords[i]) + " "
             }
