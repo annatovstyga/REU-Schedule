@@ -94,17 +94,18 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MMSwiftTabBarController.updateNotificationSentLabel), name:"NotificationIdentifier", object: nil)
         
         NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
-        
+
         if(weekNumberTab == totalSchedule.count )
         {
             leftWeekArrow.hidden = true
         }
         else if(weekNumberTab == 1)
         {
-           rightWeekArrow.hidden = true
+            rightWeekArrow.hidden = true
         }
+
         self.searchField.delegate = self;
-          self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
+        self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
         self.searchField.autocorrectionType = .No
         self.searchField.autocompleteType = .Sentence
         let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
@@ -195,10 +196,18 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                 self.weekNumberTab = getWeekNumber()
                                 weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                                 
-                                self.weekLabel.text = "Неделя \(String(weekNumber))"
                                 
                                 self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                                 self.updateScheduleProperties(0)
+                                if(self.weekNumberTab == totalSchedule.count )
+                                {
+                                    self.leftWeekArrow.hidden = true
+                                }
+                                else if(self.weekNumberTab == 1)
+                                {
+                                    self.rightWeekArrow.hidden = true
+                                }
+
                                 if(self.day.lessons?.count != 0){
                                     self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
                                 }
@@ -352,6 +361,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 (weekNumberTab!) += 1
                 self.updateScheduleProperties(selectedDay)
                 weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
+                arrowPing(rightWeekArrow)
                 if(weekNumberTab == totalSchedule.count )
                 {
                     rightWeekArrow.hidden = true
@@ -387,6 +397,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 }
                 segueSide = -1
                 (weekNumberTab!) -= 1
+                arrowPing(leftWeekArrow)
                 self.updateScheduleProperties(selectedDay)
                 weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
                 if(self.day.lessons?.count != 0){
@@ -402,7 +413,14 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
         }
     }
-
+    func arrowPing(label:UILabel?) {
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.toValue = NSNumber(float: 1.7)
+        animation.duration = 0.3
+        animation.repeatCount = 1.0
+        animation.autoreverses = true
+        label!.layer.addAnimation(animation, forKey: nil)
+    }
 //     MARK: - Update schedule
     
     func updateScheduleProperties(dayIndex:Int?) {
@@ -436,7 +454,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier! == "mainSegue" ) {
-            
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
@@ -450,7 +467,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
         if(segue.identifier! == "voidLessons" )
         {
-            
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
