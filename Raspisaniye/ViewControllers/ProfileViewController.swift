@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
                 self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
-        self.weekNumberLabel.text = "\(weekNumber) неделя"
+        self.weekNumberLabel.text = "\(totalWeekNumber()) неделя"
         
         // Customize navigation bar
         self.navigationController?.navigationBarHidden = false
@@ -38,5 +38,26 @@ class ProfileViewController: UIViewController {
     }
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
+    }
+    func totalWeekNumber()->Int
+    {
+        let start = "2015-09-01"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startDate:NSDate = dateFormatter.dateFromString(start)!
+        let endDate:NSDate = NSDate()
+        
+        func daysBetweenDate(startDate: NSDate, endDate: NSDate) -> Int
+        {
+            let calendar = NSCalendar.currentCalendar()
+            
+            let components = calendar.components([.Day], fromDate: startDate, toDate: endDate, options: [])
+            
+            return components.day
+        }
+        let days = daysBetweenDate(startDate, endDate: endDate) + 1
+        let week = days/7 + 1
+        return week
     }
 }

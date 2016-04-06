@@ -223,7 +223,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                 
                                 
                                 self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
-                                self.updateScheduleProperties(0)
+                                self.updateScheduleProperties(self.todayDay)
                                 if(self.weekNumberTab == totalSchedule.count )
                                 {
                                     self.leftWeekArrow.hidden = true

@@ -41,6 +41,15 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if(day.lessons?.count != nil){
+            
+            if(day.lessons?.count>4)
+            {
+                tableView.scrollEnabled = true
+            }
+            else
+            {
+                tableView.scrollEnabled = false
+            }
             return (day.lessons?.count)!
         }
         else{
