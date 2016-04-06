@@ -8,6 +8,7 @@ var jsonDataList:JSON?
 var selectedDay:Int = 1
 var weekNumber:Int = 1
 
+var sevenDayWeek:Bool = false
 var changes:Bool = false //Temp var
 var onSearch:Bool = false
 var searchDisplayed:Bool = false
@@ -117,10 +118,9 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                 let oneDay: OneDay = OneDay()
                 oneDay.dayName = dayData.0
                 oneDay.lessons = []
+                oneDay.date = dayData.1["date"].string
                 // lessonData - is one lesson
                 for lessonData in dayData.1["lessons"] {
-
-                    print(lessonData.1)
                     if(lessonData.1 != nil) {
                         // Main properties
                         let lessonNumber        = Int(lessonData.0)
@@ -147,15 +147,18 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 
                         let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups,startWeek:startWeek,endWeek:endWeek)
                         oneDay.lessons?.append(lesson)
-
                         
                     }
                 }
-
+                
                 oneWeek.days?.append(oneDay)
                 oneWeek.number = semestr.1["weekNum"].int!
             }
 
+        }
+        if(oneWeek.days?.count > 6)
+        {
+            sevenDayWeek = true
         }
         schedule.append(oneWeek)
         

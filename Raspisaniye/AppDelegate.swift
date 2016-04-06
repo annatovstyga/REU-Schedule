@@ -43,16 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
             gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
             // [END_EXCLUDE]
             // Register for remote notifications
-            if #available(iOS 8.0, *) {
                 let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
                 application.registerUserNotificationSettings(settings)
                 application.registerForRemoteNotifications()
-            } else {
-                // Fallback
-                let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
-                application.registerForRemoteNotificationTypes(types)
-            }
             
             // [END register_for_remote_notifications]
             // [START start_gcm_service]

@@ -12,6 +12,7 @@ class OneDay {
     
     var dayName:  String?
     var lessons: [OneLesson]?
+    var date: String?
     
     // MARK: - Initializators
     init() {}

@@ -117,9 +117,7 @@ public enum AutocompleteType {
     {
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(AutocompleteField.textChanged(_:)),
-            name: UITextFieldTextDidChangeNotification,
-            object: self)
+            selector: #selector(AutocompleteField.textChanged(_:)),name: UITextFieldTextDidChangeNotification,object: self)
     }
     
     /**
