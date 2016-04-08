@@ -215,8 +215,8 @@ public enum AutocompleteType {
             {
                 var suggestionToReturn = searchTerm
                 print(suggestionToReturn)
-                suggestionToReturn = suggestionToReturn + suggestion.substringWithRange(Range<String.Index>(start: suggestion.startIndex.advancedBy(searchTerm.characters.count), end: suggestion.endIndex))
-                 suggestionNormal = suggestion.substringWithRange(Range<String.Index>(start: suggestion.startIndex, end: suggestion.endIndex))
+                suggestionToReturn = suggestionToReturn + suggestion.substringWithRange(Range<String.Index>( suggestion.startIndex.advancedBy(searchTerm.characters.count) ..< suggestion.endIndex))
+                 suggestionNormal = suggestion.substringWithRange(Range<String.Index>(suggestion.startIndex ..< suggestion.endIndex))
 
 
                 returnString = suggestionToReturn

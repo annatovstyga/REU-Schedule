@@ -13,6 +13,7 @@ class ProfileTableViewController: UITableViewController {
         self.tableView.rowHeight = (self.view.frame.size.height / 4) + plusH
         super.viewDidLoad()
     }
+    @IBOutlet weak var labelUpdate: UILabel!
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -20,13 +21,18 @@ class ProfileTableViewController: UITableViewController {
         return 1
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(changes){
-        let cell = tableView.dequeueReusableCellWithIdentifier("changesCell", forIndexPath: indexPath) as! ProfileScreenTableViewCell
+        isGCMReceived = defaults.objectForKey("isGCM") as? Bool ?? Bool()
+         print(isGCMReceived)
+        if((isGCMReceived) != false){
+            let cell = tableView.dequeueReusableCellWithIdentifier("noChanges", forIndexPath: indexPath) as!CustomUpdateCell
+       
+        cell.updateLable.text = "Есть обновление рассписания\nНажмите для обновления"
         plusH = cell.frame.height
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("noChanges", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("noChanges", forIndexPath: indexPath) as!CustomUpdateCell
+            
             return cell
         }
         

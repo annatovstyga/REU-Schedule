@@ -6,15 +6,11 @@
 //  Copyright © 2016 rGradeStd. All rights reserved.
 //
 
-class ProfileScreenTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var changeType: UILabel!
-    @IBOutlet weak var changeDate: UILabel!
-    @IBOutlet weak var changeTime: UILabel!
-    @IBOutlet weak var changePlace: UILabel!
-    @IBOutlet weak var changeTitle: UILabel!
-    @IBOutlet weak var changeDescription: UILabel!
+class CustomUpdateCell: UITableViewCell {
     
+    
+    
+    @IBOutlet weak var updateLable: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

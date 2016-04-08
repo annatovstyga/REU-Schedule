@@ -16,10 +16,10 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="9pR-zH-h8t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" id="G5b-5g-T73" customClass="CustomTableViewCell" customModule="Raspisaniye" customModuleProvider="target">
@@ -741,9 +741,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="254" y="44" width="22" height="15.5"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.46666666666666667" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -811,28 +808,28 @@
                                         <exclude reference="UXe-H4-lfX"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="6NF-VT-RZB"/>
-                                        <exclude reference="HJj-Xb-fI3"/>
-                                        <exclude reference="pEg-ek-NYZ"/>
-                                        <exclude reference="u1S-4g-xpU"/>
                                         <exclude reference="08r-pd-PEA"/>
                                         <exclude reference="zCI-NI-eHY"/>
-                                        <exclude reference="B0Q-EA-NbJ"/>
-                                        <exclude reference="KeU-Fq-KkQ"/>
-                                        <exclude reference="hOG-dA-EXW"/>
+                                        <exclude reference="HaR-FQ-PZE"/>
+                                        <exclude reference="lAG-5B-Vdx"/>
+                                        <exclude reference="q8K-zo-CuJ"/>
                                         <exclude reference="72N-d6-Wp1"/>
                                         <exclude reference="cbs-nx-E2f"/>
                                         <exclude reference="fLV-1W-J8I"/>
                                         <exclude reference="up3-wZ-Sdz"/>
-                                        <exclude reference="4ea-Vh-j2J"/>
-                                        <exclude reference="DdA-Mz-QlC"/>
-                                        <exclude reference="Def-Sc-RQR"/>
                                         <exclude reference="rA7-UP-E51"/>
                                         <exclude reference="wgr-S5-DZB"/>
                                         <exclude reference="zNc-lQ-SCQ"/>
-                                        <exclude reference="HaR-FQ-PZE"/>
-                                        <exclude reference="lAG-5B-Vdx"/>
-                                        <exclude reference="q8K-zo-CuJ"/>
+                                        <exclude reference="6NF-VT-RZB"/>
+                                        <exclude reference="HJj-Xb-fI3"/>
+                                        <exclude reference="pEg-ek-NYZ"/>
+                                        <exclude reference="u1S-4g-xpU"/>
+                                        <exclude reference="B0Q-EA-NbJ"/>
+                                        <exclude reference="KeU-Fq-KkQ"/>
+                                        <exclude reference="hOG-dA-EXW"/>
+                                        <exclude reference="4ea-Vh-j2J"/>
+                                        <exclude reference="DdA-Mz-QlC"/>
+                                        <exclude reference="Def-Sc-RQR"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -848,37 +845,37 @@
                                         <include reference="UXe-H4-lfX"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="3E7-Po-F7G"/>
-                                        <include reference="8Oy-40-9sq"/>
-                                        <include reference="Yc5-EL-gUC"/>
+                                        <include reference="08r-pd-PEA"/>
+                                        <include reference="zCI-NI-eHY"/>
+                                        <include reference="HaR-FQ-PZE"/>
+                                        <include reference="lAG-5B-Vdx"/>
+                                        <include reference="q8K-zo-CuJ"/>
+                                        <include reference="72N-d6-Wp1"/>
+                                        <exclude reference="cbs-nx-E2f"/>
+                                        <include reference="fLV-1W-J8I"/>
+                                        <include reference="up3-wZ-Sdz"/>
+                                        <include reference="rA7-UP-E51"/>
+                                        <exclude reference="wgr-S5-DZB"/>
+                                        <include reference="zNc-lQ-SCQ"/>
                                         <include reference="6NF-VT-RZB"/>
                                         <include reference="HJj-Xb-fI3"/>
                                         <exclude reference="YBa-DT-MBD"/>
                                         <include reference="pEg-ek-NYZ"/>
                                         <exclude reference="u1S-4g-xpU"/>
                                         <include reference="uZh-zC-6Tt"/>
-                                        <include reference="08r-pd-PEA"/>
-                                        <include reference="zCI-NI-eHY"/>
                                         <include reference="8QG-kJ-O3X"/>
                                         <exclude reference="B0Q-EA-NbJ"/>
                                         <include reference="KeU-Fq-KkQ"/>
                                         <include reference="hOG-dA-EXW"/>
                                         <include reference="tuL-qc-2ad"/>
-                                        <include reference="72N-d6-Wp1"/>
-                                        <exclude reference="cbs-nx-E2f"/>
-                                        <include reference="fLV-1W-J8I"/>
-                                        <include reference="up3-wZ-Sdz"/>
                                         <include reference="3X4-ji-ti5"/>
                                         <include reference="4ea-Vh-j2J"/>
                                         <exclude reference="DdA-Mz-QlC"/>
                                         <exclude reference="Def-Sc-RQR"/>
                                         <include reference="zg1-1s-Urm"/>
-                                        <include reference="rA7-UP-E51"/>
-                                        <exclude reference="wgr-S5-DZB"/>
-                                        <include reference="zNc-lQ-SCQ"/>
-                                        <include reference="HaR-FQ-PZE"/>
-                                        <include reference="lAG-5B-Vdx"/>
-                                        <include reference="q8K-zo-CuJ"/>
+                                        <include reference="3E7-Po-F7G"/>
+                                        <include reference="8Oy-40-9sq"/>
+                                        <include reference="Yc5-EL-gUC"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1322,16 +1319,16 @@
                                     <outlet property="changeType" destination="IG1-x6-TQ7" id="Zh1-ti-joP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noChanges" id="7j7-mZ-tSL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noChanges" id="7j7-mZ-tSL" customClass="CustomUpdateCell" customModule="Raspisaniye" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="162" width="600" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7j7-mZ-tSL" id="htE-kb-gAe">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет изменений в расписании" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ec-Ss-ZMb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет изменений в расписании" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ec-Ss-ZMb">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1359,6 +1356,9 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="updateLable" destination="7ec-Ss-ZMb" id="fGO-ot-6bh"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yVe-51-FKa">
                                 <rect key="frame" x="0.0" y="322" width="600" height="160"/>

@@ -8,6 +8,7 @@ var jsonDataList:JSON?
 var selectedDay:Int = 1
 var weekNumber:Int = 1
 
+var isGCMReceived:Bool? = defaults.objectForKey("isGCM") as? Bool ?? Bool()
 var sevenDayWeek:Bool = false
 var changes:Bool = false //Temp var
 var onSearch:Bool = false

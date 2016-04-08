@@ -32,6 +32,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         self.subjectNameLabel.hidden = true
         self.weekLabel.hidden = true
         self.searchField.hidden = false
+        self.leftWeekArrow.hidden = true
+        self.rightWeekArrow.hidden = true
         InternetManager.sharedInstance.getLectorsList({
             success in
             let groups = success["success"]["data"]
@@ -70,6 +72,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         onSearch = true
         }
         else{
+            self.leftWeekArrow.hidden = false
+            self.rightWeekArrow.hidden = false
             searchField.hidden = true
             self.subjectNameLabel.hidden = false
             self.weekLabel.hidden = false
@@ -91,10 +95,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             })
 
             })
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MMSwiftTabBarController.updateNotificationSentLabel), name:"NotificationIdentifier", object: nil)
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
-
         if(weekNumberTab == totalSchedule.count )
         {
             leftWeekArrow.hidden = true
@@ -252,7 +252,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
         }
         else{
-    performSegueWithIdentifier("profileSegue", sender: sender)
+            performSegueWithIdentifier("profileSegue", sender: sender)
         }
     }
     
@@ -379,7 +379,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 segueSide = 1
                 (weekNumberTab!) += 1
                 self.updateScheduleProperties(selectedDay)
-                weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
+                weekLabel.text = "Неделя " + String(weekNumber)
+                if(day.date != ""){
+                    weekLabel.text? += ", \(day.date!)"
+                }
                 arrowPing(rightWeekArrow)
                 if(weekNumberTab == totalSchedule.count )
                 {
@@ -418,7 +421,11 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 (weekNumberTab!) -= 1
                 arrowPing(leftWeekArrow)
                 self.updateScheduleProperties(selectedDay)
-                weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
+                
+                weekLabel.text = "Неделя " + String(weekNumber)
+                if(day.date != ""){
+                    weekLabel.text? += ", \(day.date!)"
+                }
                 if(self.day.lessons?.count != 0){
                     performSegueWithIdentifier("weekSegue", sender: tabBarButtons[selectedDay!])
                 }
@@ -472,7 +479,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
-            weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
+            weekLabel.text = "Неделя " + String(weekNumber)
+            if(day.date != ""){
+                weekLabel.text? += ", \(day.date!)"
+            }
             let senderBtn = sender as! UIButton
             senderBtn.backgroundColor = GlobalColors.BlueColor
             
@@ -485,7 +495,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             for btn in tabBarButtons {
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
-            weekLabel.text = "Неделя " + String(weekNumber) + ", \(day.date!)"
+            weekLabel.text = "Неделя " + String(weekNumber)
+            if(day.date != ""){
+                weekLabel.text? += ", \(day.date!)"
+            }
             let senderBtn = sender as! UIButton
             senderBtn.backgroundColor = GlobalColors.BlueColor
             
@@ -582,7 +595,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                     self.weekNumberTab = getWeekNumber()
                                     weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                                     
-                                    self.weekLabel.text = "Неделя \(String(weekNumber))"
+                                    self.weekLabel.text = "Неделя " + String(weekNumber)
+                                    if(self.day.date != ""){
+                                        self.weekLabel.text? += ", \(self.day.date!)"
+                                    }
                                     
                                     self.subjectNameLabel.text = subjectName.1
                                     self.updateScheduleProperties(0)
@@ -590,11 +606,11 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                     self.searchField.hidden = true
                                     self.subjectNameLabel.hidden = false
                                     if(self.day.lessons?.count != 0){
-                                        self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[0])
+                                        self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.selectedDay!])
                                     }
                                     else
                                     {
-                                        self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[0])
+                                        self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[self.selectedDay!])
                                     }
                             }
                     })

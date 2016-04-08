@@ -40,6 +40,7 @@
 		B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FBF1C54183400C9136B /* CustomBtn.swift */; };
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
 		B29901891C956CDC00EE8D92 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */; };
+		B29EF4F61CB6C6BB0051C02F /* CustomUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29EF4F51CB6C6BB0051C02F /* CustomUpdateCell.swift */; };
 		B2B3E0BB1CA6DD4A0000EBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
@@ -87,6 +88,7 @@
 		B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewTwoController.swift; sourceTree = "<group>"; };
 		B296042D1C582F0400A14509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = Pods/SwiftSpinner/SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
+		B29EF4F51CB6C6BB0051C02F /* CustomUpdateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUpdateCell.swift; sourceTree = "<group>"; };
 		B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B28F1FBF1C54183400C9136B /* CustomBtn.swift */,
 				B24ACABC1C408B86006FB191 /* MainNavigationSegue.swift */,
 				B25F65AF1C7B83830033EB2B /* WeekNavigationSegue.swift */,
+				B29EF4F51CB6C6BB0051C02F /* CustomUpdateCell.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
 				B2DDE85D1C8DF37E0055CDF4 /* AutoCompilte.swift in Sources */,
 				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
+				B29EF4F61CB6C6BB0051C02F /* CustomUpdateCell.swift in Sources */,
 				B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
 				B25612891C6A86AE0083CFCB /* CustomTableViewCell.swift in Sources */,
@@ -548,6 +552,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
