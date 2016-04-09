@@ -19,12 +19,16 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     var todayDay = getDayOfWeek()!
     var SundayExtended:Bool? = false
-    var  tabBarFixedIndex:Int? = 1
+    var tabBarFixedIndex:Int? = 1
     var weekNumberTab:Int? = 1
-    var selectedDay:Int? = 0
+    var selectedDay:Int? = getDayOfWeek()!
     var week: OneWeek = OneWeek()
     var day:  OneDay  = OneDay()
     var lesson: OneLesson = OneLesson()
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     @IBAction func searchClick(sender: AnyObject) {
         if(onSearch == false)
@@ -86,6 +90,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
+       self.modalTransitionStyle = .PartialCurl
         dispatch_async(dispatch_get_main_queue(), {
             InternetManager.sharedInstance.getTimestamp({
                 success in
@@ -103,6 +108,12 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         {
             rightWeekArrow.hidden = true
         }
+        if(sevenDayWeek == false && self.todayDay == 6)
+        {
+            self.todayDay = 1
+        }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         self.searchField.delegate = self;
         self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
         self.searchField.autocorrectionType = .No
@@ -166,7 +177,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                     isLogined = defaults.objectForKey("isLogined") as? Bool ?? Bool()
                     
                     
-                    if(isLogined ==  false) { // debuging
+                    if(isLogined ==  false) {
                         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
                         let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
                         appDelegate.window?.rootViewController = initialViewController
@@ -183,9 +194,26 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(self.todayDay)
+                            if(self.weekNumberTab == 2)
+                            {
+                                self.leftWeekArrow.hidden = true
+                            }
+                            else
+                            {
+                                 self.rightWeekArrow.hidden = false
+                            }
+                            if(self.weekNumberTab == totalSchedule.count)
+                            {
+                                self.rightWeekArrow.hidden = true
+                            }
+                            else{
+                                self.leftWeekArrow.hidden = false
+                            }
                             if(self.day.lessons?.count != 0){
-                                print(self.todayDay)
-                             self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
+                       
+                                    self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
+                                  
+                                
                             }
                             else
                             {

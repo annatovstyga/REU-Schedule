@@ -21,7 +21,7 @@ class MainTableViewController: UITableViewController {
     // MARK: - View methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         self.tableView.estimatedRowHeight = 120
         self.tableView.rowHeight = self.view.frame.size.height / 5
@@ -36,6 +36,11 @@ class MainTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +66,7 @@ class MainTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         if(day.lessons?.count != nil){
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomTableViewCell

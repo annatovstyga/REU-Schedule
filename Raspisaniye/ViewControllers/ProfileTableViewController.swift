@@ -20,6 +20,11 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         isGCMReceived = defaults.objectForKey("isGCM") as? Bool ?? Bool()
          print(isGCMReceived)

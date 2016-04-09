@@ -56,10 +56,14 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
  
         
     }
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     @IBOutlet weak var textField: AutocompleteField!
     override func viewDidLoad() {
         textField.autocompleteType = .Sentence
-        textField.returnKeyType = .Go
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         if(amistudent){
         textField.suggestions = groupsArray
         }
