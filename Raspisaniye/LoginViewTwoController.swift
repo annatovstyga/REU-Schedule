@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     
 
@@ -29,12 +29,23 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func enterClick(sender: AnyObject) {
+        print(self.textField.text!.lowercaseString)
+        print(self.textField.suggestionNormal.lowercaseString)
+    if((self.textField.suggestionNormal.lowercaseString.rangeOfString(self.textField.text!.lowercaseString)) != nil)
+        {
+            self.textField.text = self.textField.suggestionNormal
+        }
+        else
+        {
+            self.textField.text = ""
+        }
+       
         if (amistudent) {
-            let groupNameTemp = textField.suggestionNormal
-            let indexTemp = groupNamesList[groupNameTemp]
+            let groupNameTemp = textField.text
+            let indexTemp = groupNamesList[groupNameTemp!]
         
             if(indexTemp != nil){
-                subjectName = (indexTemp!, groupNameTemp)
+                subjectName = (indexTemp!, groupNameTemp!)
                 self.enter()
             }
             else{
@@ -42,11 +53,11 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
             }
         } else {
             
-            let lectorNameTemp = textField.suggestionNormal
+            let lectorNameTemp = textField.text
             
-            let indexTempLector = lectorsNamesList[lectorNameTemp]
+            let indexTempLector = lectorsNamesList[lectorNameTemp!]
             if(indexTempLector != nil){
-                subjectName = (indexTempLector!, lectorNameTemp)
+                subjectName = (indexTempLector!, lectorNameTemp!)
                 self.enter()
             }
             else{
