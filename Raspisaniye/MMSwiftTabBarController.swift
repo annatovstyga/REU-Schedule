@@ -90,23 +90,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     // MARK: ViewDidLoad
     override func viewDidLoad() {
        self.modalTransitionStyle = .PartialCurl
-        dispatch_async(dispatch_get_main_queue(), {
-            InternetManager.sharedInstance.getTimestamp({
-                success in
-//                self.updateAlert()
-                
-                }, failure:{error in print(error)
-            })
-
-            })
-//        if(weekNumberTab == totalSchedule.count )
-//        {
-//            leftWeekArrow.hidden = true
-//        }
-//        else if(weekNumberTab == 1)
-//        {
-//            rightWeekArrow.hidden = true
-//        }
         if(sevenDayWeek == false && self.todayDay == 6)
         {
             self.todayDay = 1

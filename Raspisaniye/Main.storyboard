@@ -620,7 +620,7 @@
                                             <action selector="searchClick:" destination="bPA-nv-JkJ" eventType="touchUpInside" id="UZ6-zn-CY9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyN-8s-SD7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyN-8s-SD7">
                                         <rect key="frame" x="276" y="44" width="47.5" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="RIk-jc-z3M">
@@ -1054,8 +1054,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="TEy-Pd-QYd"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="-44" width="600" height="217"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="TEy-Pd-QYd"/>
                                     </mask>
@@ -1089,9 +1088,6 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-Uk-Zvv">
                                 <rect key="frame" x="0.0" y="217" width="600" height="383"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="173" width="600" height="427"/>
-                                </variation>
                                 <connections>
                                     <segue destination="af6-j3-olF" kind="embed" identifier="tableInContainer" id="Wje-7Q-MYf"/>
                                 </connections>
@@ -1111,7 +1107,7 @@
                             <constraint firstItem="Kqd-Uk-Zvv" firstAttribute="leading" secondItem="Ig2-hW-LrA" secondAttribute="leadingMargin" constant="-20" id="jV4-Bf-NhC"/>
                             <constraint firstItem="Hmm-b0-r10" firstAttribute="top" secondItem="8W4-ju-Wjj" secondAttribute="bottom" constant="-64" id="rFP-cw-uLb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kqd-Uk-Zvv" secondAttribute="trailing" constant="-20" id="rZk-WS-Cos"/>
-                            <constraint firstItem="Hmm-b0-r10" firstAttribute="height" secondItem="Ig2-hW-LrA" secondAttribute="height" multiplier="2/7" id="tga-7D-q1L"/>
+                            <constraint firstItem="Hmm-b0-r10" firstAttribute="height" secondItem="Ig2-hW-LrA" secondAttribute="height" multiplier="5/14" id="tga-7D-q1L"/>
                             <constraint firstItem="EN8-t7-yU3" firstAttribute="centerX" secondItem="Ig2-hW-LrA" secondAttribute="centerX" id="y2a-Cr-Qxm"/>
                             <constraint firstItem="Vgr-Pc-3fn" firstAttribute="centerX" secondItem="Ig2-hW-LrA" secondAttribute="centerX" id="yGd-jk-eUP"/>
                             <constraint firstItem="Kqd-Uk-Zvv" firstAttribute="top" secondItem="Hmm-b0-r10" secondAttribute="bottom" id="zUI-Y1-mHO"/>
