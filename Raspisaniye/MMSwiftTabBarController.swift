@@ -12,7 +12,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
     @IBOutlet weak var subjectNameLabel: UILabel!
-    
     @IBOutlet weak var leftWeekArrow: UILabel!
     @IBOutlet weak var rightWeekArrow: UILabel!
     @IBOutlet weak var searchField: AutocompleteField!
@@ -31,6 +30,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func searchClick(sender: AnyObject) {
+        print(subjectNameMemory)
+        print(subjectIDMemory)
         if(onSearch == false)
         {
         self.subjectNameLabel.hidden = true
@@ -66,10 +67,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 groupsArray.sortInPlace(before)
                 self.searchField.suggestions = groupsArray + lectorsArray
                 }, failure:{error in print(error)
-                    //                self.showWarning()
             })
             }, failure:{error in print(error)
-//                self.showWarning()
         })
         
         searchField.suggestions = groupsArray + lectorsArray
@@ -100,14 +99,14 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             })
 
             })
-        if(weekNumberTab == totalSchedule.count )
-        {
-            leftWeekArrow.hidden = true
-        }
-        else if(weekNumberTab == 1)
-        {
-            rightWeekArrow.hidden = true
-        }
+//        if(weekNumberTab == totalSchedule.count )
+//        {
+//            leftWeekArrow.hidden = true
+//        }
+//        else if(weekNumberTab == 1)
+//        {
+//            rightWeekArrow.hidden = true
+//        }
         if(sevenDayWeek == false && self.todayDay == 6)
         {
             self.todayDay = 1
@@ -194,7 +193,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(self.todayDay)
-                            if(self.weekNumberTab == 2)
+                            if(self.weekNumberTab == 1)
                             {
                                 self.leftWeekArrow.hidden = true
                             }
@@ -252,13 +251,15 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                 
                                 self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                                 self.updateScheduleProperties(self.todayDay)
+                                self.leftWeekArrow.hidden = false
+                                self.rightWeekArrow.hidden = false
                                 if(self.weekNumberTab == totalSchedule.count )
                                 {
-                                    self.leftWeekArrow.hidden = true
+                                    self.rightWeekArrow.hidden = true
                                 }
                                 else if(self.weekNumberTab == 1)
                                 {
-                                    self.rightWeekArrow.hidden = true
+                                    self.leftWeekArrow.hidden = true
                                 }
 
                                 if(self.day.lessons?.count != 0){
@@ -565,31 +566,39 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        
-            let NameTemp = searchField.suggestionNormal
-            var indexTemp = groupNamesList[NameTemp]
+        if((self.searchField.suggestionNormal.lowercaseString.rangeOfString(self.searchField.text!.lowercaseString)) != nil)
+        {
+            self.searchField.text = self.searchField.suggestionNormal
+        }
+        else
+        {
+            self.searchField.text = ""
+        }
+            let NameTemp = searchField.text
+            var indexTemp = groupNamesList[NameTemp!]
             var tempAMIS:Bool  = true
+        
+
             if(indexTemp == nil)
             {
-                indexTemp = lectorsNamesList[NameTemp]
+                indexTemp = lectorsNamesList[NameTemp!]
                 if(indexTemp != nil){
                     tempAMIS = false
                 }
             }
             if(indexTemp != nil){
                 amistudent = tempAMIS
-                subjectName = (indexTemp!, NameTemp)
+                subjectName = (indexTemp!, NameTemp!)
+                self.leftButton.setImage(nil, forState: .Normal)
+                self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
+                onSearch = false
+                searchDisplayed = true
                 self.enter()
             }
             else{
                 self.showWarning()
             }
-        
-        self.leftButton.setImage(nil, forState: .Normal)
-        self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
-        onSearch = false
-        searchDisplayed = true
-        return false
+            return false
     }
     
     func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
@@ -633,6 +642,20 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                     self.weekLabel.hidden = false
                                     self.searchField.hidden = true
                                     self.subjectNameLabel.hidden = false
+                                    
+                                    self.leftWeekArrow.hidden = false
+                                    self.rightWeekArrow.hidden = false
+                                    if(self.weekNumberTab == totalSchedule.count )
+                                    {
+                           
+                                        self.rightWeekArrow.hidden = true
+                                    }
+                                    else if(self.weekNumberTab == 1)
+                                    {
+                                    
+                                        self.leftWeekArrow.hidden = true
+                                    }
+                                    
                                     if(self.day.lessons?.count != 0){
                                         self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.selectedDay!])
                                     }

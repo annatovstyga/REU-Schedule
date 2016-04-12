@@ -29,8 +29,7 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func enterClick(sender: AnyObject) {
-        print(self.textField.text!.lowercaseString)
-        print(self.textField.suggestionNormal.lowercaseString)
+        
     if((self.textField.suggestionNormal.lowercaseString.rangeOfString(self.textField.text!.lowercaseString)) != nil)
         {
             self.textField.text = self.textField.suggestionNormal
@@ -47,6 +46,7 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
             if(indexTemp != nil){
                 subjectName = (indexTemp!, groupNameTemp!)
                 self.enter()
+                subjectIDMemory   = defaults.objectForKey("subjectID") as? Int ?? Int()
             }
             else{
                 self.showWarning()
