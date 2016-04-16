@@ -127,6 +127,7 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                 oneDay.dayName = dayData.0
                 oneDay.lessons = []
                 oneDay.date = dayData.1["date"].string
+                print(oneDay.date)
                 // lessonData - is one lesson
                 for lessonData in dayData.1["lessons"] {
                     if(lessonData.1 != nil) {
@@ -182,35 +183,9 @@ func getDayOfWeek()->Int? {
     let calendar = NSCalendar.currentCalendar();
     calendar.firstWeekday = 2
     let myComponents = calendar.components(.Weekday, fromDate: todaysDate)
-    var dayOfWeek = (myComponents.weekday + 7 - calendar.firstWeekday) % 7 + 1
+    let dayOfWeek = (myComponents.weekday + 7 - calendar.firstWeekday) % 7 + 1
   
-    switch(dayOfWeek)
-    {
-    case 1:
-        dayOfWeek = 0
-        break
-    case 2:
-        dayOfWeek = 4
-        break
-    case 3:
-        dayOfWeek = 3
-        break
-    case 4:
-        dayOfWeek = 5
-        break
-    case 5:
-        dayOfWeek = 2
-        break
-    case 6:
-        dayOfWeek = 1
-        break
-    case 7:
-        dayOfWeek = 6
-        break
-    default:
-        dayOfWeek = 0
-    }
     
-    return dayOfWeek
+    return (dayOfWeek - 1)
 }
 

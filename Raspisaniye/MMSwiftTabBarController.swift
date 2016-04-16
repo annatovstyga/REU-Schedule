@@ -132,22 +132,22 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             switch(index)
                             {
                                 case 0:
-                                xMult = 0
-                                break
-                                case 1:
-                                xMult = 5
-                                break
-                                case 2:
-                                xMult = 4
-                                break
-                                case 3:
-                                xMult = 2
-                                break
-                                case 4:
                                 xMult = 1
                                 break
-                                case 5:
+                                case 1:
+                                xMult = 0
+                                break
+                                case 2:
+                                xMult = 2
+                                break
+                                case 3:
+                                xMult = 4
+                                break
+                                case 4:
                                 xMult = 3
+                                break
+                                case 5:
+                                xMult = 5
                                 break
                                 case 6:
                                 xMult = 6
@@ -319,8 +319,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
    
     @IBAction func monClick(sender: AnyObject) {
-        updateScheduleProperties(0)
-        selectedDay = 0
+        updateScheduleProperties(1)
+        selectedDay = 1
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
@@ -331,8 +331,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func TueClick(sender: AnyObject) {
 
-        updateScheduleProperties(4)
-        selectedDay = 4
+        updateScheduleProperties(0)
+        selectedDay = 0
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
@@ -344,8 +344,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func WedClick(sender: AnyObject) {
 
-        updateScheduleProperties(3)
-        selectedDay = 3
+        updateScheduleProperties(2)
+        selectedDay = 2
         if(self.day.lessons?.count != 0){
        
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
@@ -357,8 +357,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func ThuClick(sender: AnyObject) {
 
-        updateScheduleProperties(5)
-        selectedDay = 5
+        updateScheduleProperties(4)
+        selectedDay = 4
         if(self.day.lessons?.count != 0){
          
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
@@ -370,11 +370,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func FriClick(sender: AnyObject) {
 
-        updateScheduleProperties(2)
-        selectedDay = 2
+        updateScheduleProperties(3)
+        selectedDay = 3
         
         if(self.day.lessons?.count != 0){
-            selectedDay = 2
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
         else
@@ -384,10 +383,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func SutClick(sender: AnyObject) {
 
-        updateScheduleProperties(1)
-        selectedDay = 1
+        updateScheduleProperties(5)
+        selectedDay = 5
         if(self.day.lessons?.count != 0){
-            selectedDay = 1
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
         else
