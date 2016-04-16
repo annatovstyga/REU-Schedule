@@ -117,17 +117,16 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 
         let oneWeek: OneWeek = OneWeek()
         oneWeek.number = semestr.1["weekNum"].int
-        oneWeek.days = []
+        oneWeek.days = [OneDay(),OneDay(),OneDay(),OneDay(),OneDay(),OneDay()]
         // weekData - is one week
         for weekData in semestr.1 {
 
             // dayData - is one day
             for dayData in weekData.1 {
-                let oneDay: OneDay = OneDay()
+                var oneDay: OneDay = OneDay()
                 oneDay.dayName = dayData.0
                 oneDay.lessons = []
                 oneDay.date = dayData.1["date"].string
-                print(oneDay.date)
                 // lessonData - is one lesson
                 for lessonData in dayData.1["lessons"] {
                     if(lessonData.1 != nil) {
@@ -153,22 +152,47 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                                 groups?.append(groupString)
                             }
                         }
-
                         let lesson = OneLesson(lessonNumber: lessonNumber, hashID: hashID, lessonType: lessonType, room: room, lessonStart: lessonStart, lessonEnd: lessonEnd, discipline: discipline, building: building, lector: lector, house: house, groups: groups,startWeek:startWeek,endWeek:endWeek)
+                       
                         oneDay.lessons?.append(lesson)
                         
+
+
                     }
                 }
-                
-                oneWeek.days?.append(oneDay)
+        
+
+                switch oneDay.dayName! {
+                case "Monday":
+                    oneWeek.days?[0] = oneDay
+                    break
+                case "Tuesday":
+                    oneWeek.days?[1] = oneDay
+                    break
+                case "Wednesday":
+                    oneWeek.days?[2] = oneDay
+                    break
+                case "Thursday":
+                    oneWeek.days?[3] = oneDay
+                    break
+                case "Friday":
+                    oneWeek.days?[4] = oneDay
+                    break
+                case "Saturday":
+                    oneWeek.days?[5] = oneDay
+                    break
+                default:
+                    oneWeek.days?[6] = oneDay
+                }
                 oneWeek.number = semestr.1["weekNum"].int!
             }
-
+            
         }
         if(oneWeek.days?.count > 6)
         {
             sevenDayWeek = true
         }
+//        print(oneWeek.days?.count)
         schedule.append(oneWeek)
         
     }

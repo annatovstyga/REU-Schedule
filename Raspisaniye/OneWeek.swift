@@ -17,7 +17,7 @@ class OneWeek {
     // MARK: - Initializators
     init() {}
     
-    init(number: Int?, days: [OneDay]?) {
+    init(number: Int?, days: [OneDay]) {
         self.number = number
         self.days   = days
     }

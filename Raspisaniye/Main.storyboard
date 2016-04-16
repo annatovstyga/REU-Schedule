@@ -943,13 +943,13 @@
                         <outlet property="subjectNameLabel" destination="RPp-YC-EJG" id="zDz-Zo-mTG"/>
                         <outlet property="tabBarView" destination="ktf-3l-bkW" id="ykX-q4-tp1"/>
                         <outlet property="weekLabel" destination="zyN-8s-SD7" id="PFT-1W-M3A"/>
-                        <outletCollection property="tabBarButtons" destination="mhe-sn-TKh" collectionClass="NSMutableArray" id="dtb-Ae-kGU"/>
-                        <outletCollection property="tabBarButtons" destination="wjW-Pf-JXm" collectionClass="NSMutableArray" id="fkB-jJ-hyt"/>
-                        <outletCollection property="tabBarButtons" destination="IDo-mC-B8j" collectionClass="NSMutableArray" id="ulL-B3-Yft"/>
-                        <outletCollection property="tabBarButtons" destination="aAz-2s-g5K" collectionClass="NSMutableArray" id="Jcz-sY-QyX"/>
-                        <outletCollection property="tabBarButtons" destination="7Z9-QE-YBw" collectionClass="NSMutableArray" id="kSB-LH-7YK"/>
-                        <outletCollection property="tabBarButtons" destination="QQs-Se-R3T" collectionClass="NSMutableArray" id="vhN-PS-0mk"/>
-                        <outletCollection property="tabBarButtons" destination="IgN-Pq-dnH" collectionClass="NSMutableArray" id="XsD-3B-sPd"/>
+                        <outletCollection property="tabBarButtons" destination="wjW-Pf-JXm" collectionClass="NSMutableArray" id="cwn-dC-pwQ"/>
+                        <outletCollection property="tabBarButtons" destination="mhe-sn-TKh" collectionClass="NSMutableArray" id="wiV-LC-p6V"/>
+                        <outletCollection property="tabBarButtons" destination="IDo-mC-B8j" collectionClass="NSMutableArray" id="1Xr-8p-fKx"/>
+                        <outletCollection property="tabBarButtons" destination="7Z9-QE-YBw" collectionClass="NSMutableArray" id="scj-Ov-2c9"/>
+                        <outletCollection property="tabBarButtons" destination="aAz-2s-g5K" collectionClass="NSMutableArray" id="ljb-0E-lsD"/>
+                        <outletCollection property="tabBarButtons" destination="QQs-Se-R3T" collectionClass="NSMutableArray" id="Sch-ZM-oHK"/>
+                        <outletCollection property="tabBarButtons" destination="IgN-Pq-dnH" collectionClass="NSMutableArray" id="hU1-I2-trg"/>
                         <segue destination="1iq-y0-Rhh" kind="custom" identifier="mainSegue" customClass="MainNavigationSegue" customModule="Raspisaniye" customModuleProvider="target" id="wsd-Qu-EgG"/>
                         <segue destination="RYg-Jc-fvV" kind="show" identifier="profileSegue" id="Zf9-H0-CWa"/>
                         <segue destination="1iq-y0-Rhh" kind="custom" identifier="weekSegue" customClass="WeekNavigationSegue" customModule="Raspisaniye" id="ZTr-C1-zsR"/>

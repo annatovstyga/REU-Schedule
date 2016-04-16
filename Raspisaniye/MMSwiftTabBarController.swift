@@ -107,7 +107,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
        self.modalTransitionStyle = .PartialCurl
         if(sevenDayWeek == false && self.todayDay == 6)
         {
-            self.todayDay = 1
+            self.selectedDay = 5
+            self.todayDay = 5
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -127,35 +128,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                     {
                         for index in self.tabBarButtons.indices
                         {
-                        
-                            var xMult:CGFloat?=0
-                            switch(index)
-                            {
-                                case 0:
-                                xMult = 1
-                                break
-                                case 1:
-                                xMult = 0
-                                break
-                                case 2:
-                                xMult = 2
-                                break
-                                case 3:
-                                xMult = 4
-                                break
-                                case 4:
-                                xMult = 3
-                                break
-                                case 5:
-                                xMult = 5
-                                break
-                                case 6:
-                                xMult = 6
-                                break
-                                default:
-                                xMult = 0
-                            }
-                            self.tabBarButtons[index].frame.origin.x = (self.tabBarView.frame.width/6)*(xMult)!
+                            
+                            self.tabBarButtons[index].frame.origin.x = (self.tabBarView.frame.width/6)*(CGFloat(index))
                             self.tabBarButtons[index].frame.size.width = self.tabBarView.frame.width / 6
 
                         }
@@ -319,8 +293,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
    
     @IBAction func monClick(sender: AnyObject) {
-        updateScheduleProperties(1)
-        selectedDay = 1
+        updateScheduleProperties(0)
+        selectedDay = 0
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
@@ -331,8 +305,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func TueClick(sender: AnyObject) {
 
-        updateScheduleProperties(0)
-        selectedDay = 0
+        updateScheduleProperties(1)
+        selectedDay = 1
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
         }
@@ -357,8 +331,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func ThuClick(sender: AnyObject) {
 
-        updateScheduleProperties(4)
-        selectedDay = 4
+        updateScheduleProperties(3)
+        selectedDay = 3
         if(self.day.lessons?.count != 0){
          
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
@@ -370,8 +344,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     @IBAction func FriClick(sender: AnyObject) {
 
-        updateScheduleProperties(3)
-        selectedDay = 3
+        updateScheduleProperties(4)
+        selectedDay = 4
         
         if(self.day.lessons?.count != 0){
             performSegueWithIdentifier("mainSegue", sender: tabBarButtons[selectedDay!])
@@ -445,6 +419,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 segueSide = -1
                 (weekNumberTab!) -= 1
                 arrowPing(leftWeekArrow)
+                print(selectedDay)
                 self.updateScheduleProperties(selectedDay)
                 
                 weekLabel.text = "Неделя " + String(weekNumber)
@@ -505,7 +480,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 btn.backgroundColor = GlobalColors.lightBlueColor
             }
             weekLabel.text = "Неделя " + String(weekNumber)
-            if(day.date != ""){
+            if(day.date != "" && day.date != nil){
                 weekLabel.text? += ", \(day.date!)"
             }
             let senderBtn = sender as! UIButton

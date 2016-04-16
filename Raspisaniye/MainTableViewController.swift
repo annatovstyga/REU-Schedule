@@ -92,8 +92,7 @@ class MainTableViewController: UITableViewController {
         }
         else
         {
-            print("noLessons")
-            let cell = tableView.dequeueReusableCellWithIdentifier("noLessons", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath)
             return cell
         }
     
