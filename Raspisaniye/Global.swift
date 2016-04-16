@@ -2,6 +2,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import SwiftDate
 
 let defaults = NSUserDefaults.standardUserDefaults()
 var jsonDataList:JSON?
@@ -54,15 +55,21 @@ func parseLessonType(notParsedString:String) -> String
             return "Занятие"
     }
 }
+
 func getWeekNumber() -> Int
 {
-    let start = "2015-09-01"
+    var todayYear = NSDate.today().year
+    if(NSDate.today() < NSDate(year: todayYear, month: 09, day: 1))
+    {
+        todayYear -= 1
+    }
+    let start = "\(todayYear)-09-01"
+    print(todayYear)
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    
+  
     let startDate:NSDate = dateFormatter.dateFromString(start)!
     let endDate:NSDate = NSDate()
-    
     func daysBetweenDate(startDate: NSDate, endDate: NSDate) -> Int
     {
         let calendar = NSCalendar.currentCalendar()

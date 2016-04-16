@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -84,16 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Raspisaniye/Alamofire.framework"
-  install_framework "Pods-Raspisaniye/Log.framework"
-  install_framework "Pods-Raspisaniye/MBProgressHUD.framework"
-  install_framework "Pods-Raspisaniye/SwiftSpinner.framework"
-  install_framework "Pods-Raspisaniye/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftDate/SwiftDate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Raspisaniye/Alamofire.framework"
-  install_framework "Pods-Raspisaniye/Log.framework"
-  install_framework "Pods-Raspisaniye/MBProgressHUD.framework"
-  install_framework "Pods-Raspisaniye/SwiftSpinner.framework"
-  install_framework "Pods-Raspisaniye/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftDate/SwiftDate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi

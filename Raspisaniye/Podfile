@@ -6,11 +6,9 @@ use_frameworks!
 target 'Raspisaniye' do
 
 pod 'Alamofire', '~> 3.2'
-pod 'MBProgressHUD', '~> 0.9'
 pod 'SwiftyJSON', '~> 2.3'
-pod 'Log'
+pod "SwiftDate"
 pod "SwiftSpinner"
 pod 'Google/CloudMessaging'
-
 end
 

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
     // [START register_for_remote_notifications]
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [NSObject: AnyObject]?) -> Bool {
+        SwiftSpinner.hide()
             // [START_EXCLUDE]
             // Configure the Google context: parses the GoogleService-Info.plist, and initializes
             // the services that have entries in the file
@@ -100,14 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
         }
     }
     
-    // [START connect_gcm_service]
-//    func applicationDidBecomeActive( application: UIApplication) {
-//        // Connect to the GCM server to receive non-APNS notifications
-//       
-//    }
-//    // [END connect_gcm_service]
     
     func applicationDidBecomeActive(application: UIApplication) {
+        
         GCMService.sharedInstance().connectWithHandler({
             (error) -> Void in
             if error != nil {
@@ -169,11 +165,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
         }
         let alertController = UIAlertController(title: withString, message:
             messageString, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default,handler: nil
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default,handler: {(alert: UIAlertAction!) in self.updateSch()}
             ))
+        
         self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func updateSch()
+    {
+        let id = defaults.objectForKey("subjectID") as! Int
+        print("ID = \(id)")
+        dispatch_async(dispatch_get_main_queue(), {
+            self.updateSchedule(itemID: id, successBlock: {
+                successBlock in
+                dispatch_async(dispatch_get_main_queue(), {
+                    parse(jsonDataList!,successBlock:
+                        {
+                            successBlock in
+                            totalSchedule = successBlock
+                    })
+                    
+                })
+            })
+        })
+    }
+
+    
+
+    func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
+        var Who:String = "lector"
+        if(amistudent)
+        {
+            Who = "group"
+        }
+        print(Who)
+        InternetManager.sharedInstance.getLessonsList(["who":Who,"id":itemID,"timestamp":0], success: {
+            success in
+            jsonDataList = success
+            successBlock()
+            }, failure: {error in
+                print(error)})
+    }
 
     func registrationHandler(registrationToken: String!, error: NSError!) {
         if (registrationToken != nil) {

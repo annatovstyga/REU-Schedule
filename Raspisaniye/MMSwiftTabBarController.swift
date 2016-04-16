@@ -1,6 +1,6 @@
 import UIKit
 import SwiftyJSON
-
+import SwiftSpinner
 class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: Propiertes
@@ -30,8 +30,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func searchClick(sender: AnyObject) {
-        print(subjectNameMemory)
-        print(subjectIDMemory)
         if(onSearch == false)
         {
         self.subjectNameLabel.hidden = true
@@ -80,6 +78,22 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             searchField.hidden = true
             self.subjectNameLabel.hidden = false
             self.weekLabel.hidden = false
+            if(self.weekNumberTab == 1)
+            {
+                self.leftWeekArrow.hidden = true
+            }
+            else
+            {
+                self.rightWeekArrow.hidden = false
+            }
+            if(self.weekNumberTab == totalSchedule.count)
+            {
+                self.rightWeekArrow.hidden = true
+            }
+            else{
+                self.leftWeekArrow.hidden = false
+            }
+
             onSearch = false
         }
     }
@@ -89,6 +103,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
+        SwiftSpinner.show("")
        self.modalTransitionStyle = .PartialCurl
         if(sevenDayWeek == false && self.todayDay == 6)
         {
@@ -209,7 +224,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
         })
         super.viewDidLoad()
-        
+        SwiftSpinner.hide()
         
     }
     
@@ -451,7 +466,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
         }
     }
-    func arrowPing(label:UILabel?) {
+        func arrowPing(label:UILabel?) {
         let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.toValue = NSNumber(float: 1.7)
         animation.duration = 0.3
@@ -538,14 +553,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
-    func updateAlert() {
-        let alertController = UIAlertController(title: "Доступно обновление расписания!", message:
-            "Загрузить обновленное расписание?", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.Default,handler: nil))
-        alertController.addAction(UIAlertAction(title: "Отменить", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
+       
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
