@@ -403,7 +403,7 @@
         <!--Swift Tab Bar Controller-->
         <scene sceneID="KKj-La-x0L">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bPA-nv-JkJ" customClass="MMSwiftTabBarController" customModule="Raspisaniye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainTabBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bPA-nv-JkJ" customClass="MMSwiftTabBarController" customModule="Raspisaniye" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uyw-lS-Dkf"/>
                         <viewControllerLayoutGuide type="bottom" id="JtT-77-7pa"/>

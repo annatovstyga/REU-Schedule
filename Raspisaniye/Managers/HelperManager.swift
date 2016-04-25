@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MBProgressHUD
 
 class HelperManager {
     
@@ -18,17 +17,5 @@ class HelperManager {
     {
         
     }
-    // MARK: MBProgressHUD - Show & Hide
-    func showMBProgressHUD() -> MBProgressHUD {
-        let window = UIApplication.sharedApplication().windows.last
-        MBProgressHUD.hideHUDForView(window, animated: true)
-        let hud = MBProgressHUD.showHUDAddedTo(window, animated: true)
-        hud.labelText = "Загрузка..."
-        return hud
-    }
-    
-    func hideMBProgressHUD() {
-        let window = UIApplication.sharedApplication().windows.last
-        MBProgressHUD.hideHUDForView(window, animated: true)
-    }
+
 }

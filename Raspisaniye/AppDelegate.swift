@@ -156,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
     
 
     func showWarning(withString:String,type:Int) {
-        var messageString:String? = "тест"
+        var messageString:String? = ""
         switch type {
         case 1:
             messageString = "Нажмите ОК для загрузки"
@@ -165,7 +165,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
         }
         let alertController = UIAlertController(title: withString, message:
             messageString, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default,handler: {(alert: UIAlertAction!) in self.updateSch()}
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default,handler: {(alert: UIAlertAction!) in
+            self.updateSch()
+            }
             ))
         
         self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
@@ -183,6 +185,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
                         {
                             successBlock in
                             totalSchedule = successBlock
+                            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let initialViewControlleripad : MMSwiftTabBarController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("mainTabBar") as! MMSwiftTabBarController
+                            initialViewControlleripad.updateScheduleProperties(initialViewControlleripad.selectedDay)
+                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                            self.window?.rootViewController = initialViewControlleripad
+//                            self.window?.makeKeyAndVisible()
                     })
                     
                 })
