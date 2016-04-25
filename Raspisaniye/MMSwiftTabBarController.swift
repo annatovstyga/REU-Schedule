@@ -198,7 +198,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
         })
         super.viewDidLoad()
-        SwiftSpinner.hide()
+//        SwiftSpinner.hide()
         
     }
     

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
     // [START register_for_remote_notifications]
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [NSObject: AnyObject]?) -> Bool {
-        SwiftSpinner.hide()
+//        SwiftSpinner.hide()
             // [START_EXCLUDE]
             // Configure the Google context: parses the GoogleService-Info.plist, and initializes
             // the services that have entries in the file
@@ -175,6 +175,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
     
     func updateSch()
     {
+        SwiftSpinner.show("")
         let id = defaults.objectForKey("subjectID") as! Int
         print("ID = \(id)")
         dispatch_async(dispatch_get_main_queue(), {
@@ -187,19 +188,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GGLInstanceIDDelegate, GCM
                             totalSchedule = successBlock
                             let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let initialViewControlleripad : MMSwiftTabBarController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("mainTabBar") as! MMSwiftTabBarController
-                            initialViewControlleripad.updateScheduleProperties(initialViewControlleripad.selectedDay)
-                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                            self.window?.rootViewController = initialViewControlleripad
-//                            self.window?.makeKeyAndVisible()
+                           let viewCR = self.getCurrentViewController() as! MMSwiftTabBarController
+                        
+//                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//                            self.window?.rootViewController = initialViewControlleripad
+////                            self.window?.makeKeyAndVisible()
+//                            self.window?.becomeKeyWindow()
+//                            initialViewControlleripad.updateScheduleProperties(initialViewControlleripad.selectedDay)
+//                            initialViewControlleripad.performSegueWithIdentifier("mainSegue", sender: initialViewControlleripad.tabBarButtons[initialViewControlleripad.selectedDay!])
+                            viewCR.updateScheduleProperties(viewCR.selectedDay!)
+                            viewCR.performSegueWithIdentifier("mainSegue", sender: viewCR.tabBarButtons[viewCR.selectedDay!])
                     })
                     
                 })
             })
         })
     }
-
     
-
+    func getNavigationController() -> UINavigationController? {
+        
+        if let navigationController = UIApplication.sharedApplication().keyWindow?.rootViewController  {
+            
+            return navigationController as? UINavigationController
+        }
+        return nil
+    }
+    
+    // Returns the most recently presented UIViewController (visible)
+    func getCurrentViewController() -> UIViewController? {
+        
+        // If the root view is a navigation controller, we can just return the visible ViewController
+        if let navigationController = getNavigationController() {
+            
+            return navigationController.visibleViewController
+        }
+        
+        // Otherwise, we must get the root UIViewController and iterate through presented views
+        if let rootController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            
+            var currentController: UIViewController! = rootController
+            
+            // Each ViewController keeps track of the view it has presented, so we
+            // can move from the head to the tail, which will always be the current view
+            while( currentController.presentedViewController != nil ) {
+                
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return UIViewController()
+    }
+    
+        // Returns the navigation controller if it exists
+     
     func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
         var Who:String = "lector"
         if(amistudent)
