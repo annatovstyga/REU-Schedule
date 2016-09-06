@@ -151,8 +151,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                     if(isLogined ==  false) {
                         let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
                         let initialViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewOneControllerID")
-//                        appDelegate.window?.rootViewController = initialViewController
-//                        appDelegate.window?.makeKeyAndVisible()
+                        appDelegate.window?.rootViewController = initialViewController
+                        appDelegate.window?.makeKeyAndVisible()
                     }
                     else{
                         

@@ -4,7 +4,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
+var window: UIWindow?
 
 func updateSch()
     {
@@ -39,12 +40,11 @@ func updateSch()
     }
     
     func getNavigationController()-> UINavigationController? {
-        if let navigationController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+        if let navigationController = UIApplication.sharedApplication().keyWindow?.rootViewController  {
             
             return navigationController as? UINavigationController
         }
         return nil
-        
     }
     
     // Returns the most recently presented UIViewController (visible)
