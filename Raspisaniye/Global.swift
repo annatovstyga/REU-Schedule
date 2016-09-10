@@ -210,6 +210,6 @@ func getDayOfWeek()->Int? {
     let dayOfWeek = (myComponents.weekday + 7 - calendar.firstWeekday) % 7 + 1
   
     
-    return (dayOfWeek - 1)
+    return ((dayOfWeek - 1) > 5) ? (5) : (dayOfWeek - 1)
 }
 

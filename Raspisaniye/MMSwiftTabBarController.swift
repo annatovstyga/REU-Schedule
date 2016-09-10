@@ -12,9 +12,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     @IBOutlet var tabBarButtons: Array<UIButton>!
     var currentViewController: UIViewController?
     @IBOutlet weak var subjectNameLabel: UILabel!
-    @IBOutlet weak var leftWeekArrow: UILabel!
-    @IBOutlet weak var rightWeekArrow: UILabel!
-    @IBOutlet weak var searchField: AutocompleteField!
     
     var todayDay = getDayOfWeek()!
     var SundayExtended:Bool? = false
@@ -30,72 +27,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func searchClick(sender: AnyObject) {
-        if(onSearch == false)
-        {
-        self.subjectNameLabel.hidden = true
-        self.weekLabel.hidden = true
-        self.searchField.hidden = false
-        self.leftWeekArrow.hidden = true
-        self.rightWeekArrow.hidden = true
-        InternetManager.sharedInstance.getLectorsList({
-            success in
-            let groups = success["success"]["data"]
-            
-            for item in groups {
-                let idLector   = item.1["ID"].int!
-                let nameLector = item.1["name"].string!
-                lectorsNamesList[nameLector] = idLector
-                
-            }
-            for (value, _) in lectorsNamesList {
-                lectorsArray.append(value)
-            }
-            lectorsArray.sortInPlace(before)
-            InternetManager.sharedInstance.getGroupList({
-                success in
-                let groups = success["success"]["data"]
-                for item in groups {
-                    let idGroup   = item.1["ID"].int!
-                    let nameGroup = item.1["name"].string!
-                    groupNamesList[nameGroup] = idGroup
-                }
-                for (value, _) in groupNamesList {
-                    groupsArray.append(value)
-                }
-                groupsArray.sortInPlace(before)
-                self.searchField.suggestions = groupsArray + lectorsArray
-                }, failure:{error in print(error)
-            })
-            }, failure:{error in print(error)
-        })
-        
-        searchField.suggestions = groupsArray + lectorsArray
-        onSearch = true
-        }
-        else{
-            self.leftWeekArrow.hidden = false
-            self.rightWeekArrow.hidden = false
-            searchField.hidden = true
-            self.subjectNameLabel.hidden = false
-            self.weekLabel.hidden = false
-            if(self.weekNumberTab == 1)
-            {
-                self.leftWeekArrow.hidden = true
-            }
-            else
-            {
-                self.rightWeekArrow.hidden = false
-            }
-            if(self.weekNumberTab == totalSchedule.count)
-            {
-                self.rightWeekArrow.hidden = true
-            }
-            else{
-                self.leftWeekArrow.hidden = false
-            }
-
-            onSearch = false
-        }
+//TODO delete
     }
     func updateNotificationSentLabel() {
      
@@ -103,23 +35,13 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-        SwiftSpinner.show("")
        self.modalTransitionStyle = .PartialCurl
-        if(sevenDayWeek == false && self.todayDay == 6)
-        {
-            self.selectedDay = 5
-            self.todayDay = 5
-        }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        self.searchField.delegate = self;
-        self.tabBarButtons.last?.imageView?.frame.size.height = self.tabBarView.frame.height / 2
-        self.searchField.autocorrectionType = .No
-        self.searchField.autocompleteType = .Sentence
         let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
         jsonDataList = JSON.parse(jsonstring)
-        self.navigationItem.title = " "
-        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+//        self.navigationItem.title = " "
+//        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         dispatch_async(dispatch_get_main_queue(), {
             parse(jsonDataList!,successBlock:
                 {
@@ -128,14 +50,11 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                     {
                         for index in self.tabBarButtons.indices
                         {
-                            
+                            print(self.tabBarButtons.count)
                             self.tabBarButtons[index].frame.origin.x = (self.tabBarView.frame.width/6)*(CGFloat(index))
                             self.tabBarButtons[index].frame.size.width = self.tabBarView.frame.width / 6
 
                         }
-                    }
-                    else{
-                        self.tabBarButtons[6].hidden = false
                     }
                     totalSchedule = successBlock
                     let screenForwardEdgeRecognizer: UISwipeGestureRecognizer! = UISwipeGestureRecognizer(target: self, action: #selector(MMSwiftTabBarController.rotateWeekForward(_:)))
@@ -165,21 +84,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(self.todayDay)
-                            if(self.weekNumberTab == 1)
-                            {
-                                self.leftWeekArrow.hidden = true
-                            }
-                            else
-                            {
-                                 self.rightWeekArrow.hidden = false
-                            }
-                            if(self.weekNumberTab == totalSchedule.count)
-                            {
-                                self.rightWeekArrow.hidden = true
-                            }
-                            else{
-                                self.leftWeekArrow.hidden = false
-                            }
                             if(self.day.lessons?.count != 0){
                        
                                     self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
@@ -198,7 +102,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             
         })
         super.viewDidLoad()
-//        SwiftSpinner.hide()
         
     }
     
@@ -206,93 +109,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
    
     @IBAction func profileClick(sender: AnyObject) {
-//        if(searchDisplayed){
-//            let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
-//            jsonDataList = JSON.parse(jsonstring)
-//            dispatch_async(dispatch_get_main_queue(), {
-//                parse(jsonDataList!,successBlock:
-//                    {
-//                        successBlock in
-//                        totalSchedule = successBlock
-//                            
-//                            if(totalSchedule.count > 0)
-//                            {
-//                                self.weekNumberTab = getWeekNumber()
-//                                weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
-//                                
-//                                
-//                                self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
-//                                self.updateScheduleProperties(self.todayDay)
-//                                self.leftWeekArrow.hidden = false
-//                                self.rightWeekArrow.hidden = false
-//                                if(self.weekNumberTab == totalSchedule.count )
-//                                {
-//                                    self.rightWeekArrow.hidden = true
-//                                }
-//                                else if(self.weekNumberTab == 1)
-//                                {
-//                                    self.leftWeekArrow.hidden = true
-//                                }
-//
-//                                if(self.day.lessons?.count != 0){
-//                                    self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
-//                                }
-//                                else
-//                                {
-//                                    self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[self.todayDay])
-//                                }
-//                                
-//                            }
-//                            
-//                        
-//                })
-//                
-//            })
-//            searchDisplayed = false
-//            self.leftButton.setTitle("", forState: .Normal)
-//            self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
-//        }
-//        else{
-//            performSegueWithIdentifier("profileSegue", sender: sender)
-//        }
         sideMenuVC.toggleMenu()
     }
     
-    @IBAction func SunExtend(sender: AnyObject) {
-        if(SundayExtended != true)
-        {
-            SundayExtension()
-            tabBarButtons.last?.setTitle("Вс", forState: .Normal)
-        }
-        updateScheduleProperties(6)
-        selectedDay = 6
-        print(self.day.lessons?.count)
-        if(self.day.lessons?.count != 0){
-            performSegueWithIdentifier("mainSegue", sender: tabBarButtons[6])
-        }
-        else
-        {
-            performSegueWithIdentifier("voidLessons", sender: tabBarButtons[6])
-        }
-
-
-    }
-    
-    func SundayExtension()
-    {
-        
-        var count:CGFloat = 0;
-        for btn in tabBarButtons
-        {
-            
-            
-            btn.frame.origin.x = (tabBarView.frame.width/7)*(count)
-            btn.frame.size.width = tabBarView.frame.width / 7
-            count++
-        }
-        SundayExtended = true
-    }
-   
     @IBAction func monClick(sender: AnyObject) {
         updateScheduleProperties(0)
         selectedDay = 0
@@ -313,7 +132,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
         else
         {
-            
             performSegueWithIdentifier("voidLessons", sender: tabBarButtons[selectedDay!])
         }
     }
@@ -383,15 +201,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 if(day.date != ""){
                     weekLabel.text? += ", \(day.date!)"
                 }
-                arrowPing(rightWeekArrow)
-                if(weekNumberTab == totalSchedule.count )
-                {
-                    rightWeekArrow.hidden = true
-                }
-                else
-                {
-                    leftWeekArrow.hidden = false
-                }
                 if(self.day.lessons?.count != 0){
                     performSegueWithIdentifier("weekSegue", sender: tabBarButtons[selectedDay!])
                 }
@@ -409,17 +218,8 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         if sender.state == .Ended {
             if(weekNumberTab > 1)
             {
-                if(weekNumberTab == 2)
-                {
-                    leftWeekArrow.hidden = true
-                }
-                else
-                {
-                    rightWeekArrow.hidden = false
-                }
                 segueSide = -1
                 (weekNumberTab!) -= 1
-                arrowPing(leftWeekArrow)
                 print(selectedDay)
                 self.updateScheduleProperties(selectedDay)
                 
@@ -439,14 +239,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             }
             
         }
-    }
-        func arrowPing(label:UILabel?) {
-        let animation = CABasicAnimation(keyPath: "transform.scale")
-        animation.toValue = NSNumber(float: 1.7)
-        animation.duration = 0.3
-        animation.repeatCount = 1.0
-        animation.autoreverses = true
-        label!.layer.addAnimation(animation, forKey: nil)
     }
 //     MARK: - Update schedule
     func updateScheduleProperties(dayIndex:Int?) {
@@ -477,15 +269,10 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier! == "mainSegue" ) {
-            for btn in tabBarButtons {
-                btn.backgroundColor = GlobalColors.lightBlueColor
-            }
             weekLabel.text = "Неделя " + String(weekNumber)
             if(day.date != "" && day.date != nil){
                 weekLabel.text? += ", \(day.date!)"
             }
-            let senderBtn = sender as! UIButton
-            senderBtn.backgroundColor = GlobalColors.BlueColor
             
             let dayVC = segue.destinationViewController as! MainTableViewController
             dayVC.day = self.day
@@ -493,26 +280,15 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
         if(segue.identifier! == "voidLessons" )
         {
-            for btn in tabBarButtons {
-                btn.backgroundColor = GlobalColors.lightBlueColor
-            }
             weekLabel.text = "Неделя " + String(weekNumber)
             if(day.date != ""){
                 weekLabel.text? += ", \(day.date!)"
             }
-            let senderBtn = sender as! UIButton
-            senderBtn.backgroundColor = GlobalColors.BlueColor
             
         }
         if(segue.identifier! == "weekSegue")
         {
             
-            for btn in tabBarButtons {
-                btn.backgroundColor = GlobalColors.lightBlueColor
-            }
-            
-            let senderBtn = sender as! UIButton
-            senderBtn.backgroundColor = GlobalColors.BlueColor
             let dayVC = segue.destinationViewController as! MainTableViewController
             dayVC.day = self.day
 
@@ -529,43 +305,6 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
 
        
     // MARK: - Text field delegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        if((self.searchField.suggestionNormal.lowercaseString.rangeOfString(self.searchField.text!.lowercaseString)) != nil)
-        {
-            self.searchField.text = self.searchField.suggestionNormal
-        }
-        else
-        {
-            self.searchField.text = ""
-        }
-            let NameTemp = searchField.text
-            var indexTemp = groupNamesList[NameTemp!]
-            var tempAMIS:Bool  = true
-        
-
-            if(indexTemp == nil)
-            {
-                indexTemp = lectorsNamesList[NameTemp!]
-                if(indexTemp != nil){
-                    tempAMIS = false
-                }
-            }
-            if(indexTemp != nil){
-                amistudent = tempAMIS
-                subjectName = (indexTemp!, NameTemp!)
-                self.leftButton.setImage(nil, forState: .Normal)
-                self.leftButton.setImage(UIImage(named: "Arrow"), forState: .Normal)
-                onSearch = false
-                searchDisplayed = true
-                self.enter()
-            }
-            else{
-                self.showWarning()
-            }
-            return false
-    }
-    
     func updateSchedule(itemID itemID: Int, successBlock: Void -> ()) {
         var Who:String = "lector"
         if(amistudent)
@@ -605,21 +344,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                                     self.subjectNameLabel.text = subjectName.1
                                     self.updateScheduleProperties(0)
                                     self.weekLabel.hidden = false
-                                    self.searchField.hidden = true
                                     self.subjectNameLabel.hidden = false
-                                    
-                                    self.leftWeekArrow.hidden = false
-                                    self.rightWeekArrow.hidden = false
-                                    if(self.weekNumberTab == totalSchedule.count )
-                                    {
-                           
-                                        self.rightWeekArrow.hidden = true
-                                    }
-                                    else if(self.weekNumberTab == 1)
-                                    {
-                                    
-                                        self.leftWeekArrow.hidden = true
-                                    }
                                     
                                     if(self.day.lessons?.count != 0){
                                         self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.selectedDay!])

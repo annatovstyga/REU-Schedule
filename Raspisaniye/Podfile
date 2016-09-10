@@ -10,5 +10,6 @@ pod 'SwiftyJSON', '~> 2.3'
 pod "SwiftDate"
 pod "SwiftSpinner"
 pod 'Google/CloudMessaging'
+pod 'RealmSwift'
 end
 
