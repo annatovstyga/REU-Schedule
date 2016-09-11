@@ -15,6 +15,7 @@ class LoginViewTwoController: UIViewController,UITextFieldDelegate{
     
     // MARK: - Properties
 
+    @IBOutlet weak var label_IT_lab_: UILabel!
     @IBOutlet weak var REALogo: UIImageView!
     var tempID:Int? = 0
     

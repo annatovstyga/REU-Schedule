@@ -2,6 +2,7 @@ import UIKit
 
 class LoginViewOneController: UIViewController {
 
+    @IBOutlet weak var label_IT_lab: UILabel!
     @IBAction func studClick(sender: AnyObject) {
         InternetManager.sharedInstance.getGroupList({
             success in
