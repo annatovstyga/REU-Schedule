@@ -1,11 +1,21 @@
 //Created by rGradeStd
 
 import UIKit
-
+let kConstantObj = kConstant()
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 var window: UIWindow?
+
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        let mainVcIntial = kConstantObj.SetIntialMainViewController("mainTabBar")
+        self.window?.rootViewController = mainVcIntial
+        self.window?.makeKeyAndVisible()
+        // Override point for customization after application launch.
+        return true
+}
 
 func updateSch()
     {

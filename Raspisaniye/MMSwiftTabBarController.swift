@@ -206,55 +206,56 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
    
     @IBAction func profileClick(sender: AnyObject) {
-        if(searchDisplayed){
-            let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
-            jsonDataList = JSON.parse(jsonstring)
-            dispatch_async(dispatch_get_main_queue(), {
-                parse(jsonDataList!,successBlock:
-                    {
-                        successBlock in
-                        totalSchedule = successBlock
-                            
-                            if(totalSchedule.count > 0)
-                            {
-                                self.weekNumberTab = getWeekNumber()
-                                weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
-                                
-                                
-                                self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
-                                self.updateScheduleProperties(self.todayDay)
-                                self.leftWeekArrow.hidden = false
-                                self.rightWeekArrow.hidden = false
-                                if(self.weekNumberTab == totalSchedule.count )
-                                {
-                                    self.rightWeekArrow.hidden = true
-                                }
-                                else if(self.weekNumberTab == 1)
-                                {
-                                    self.leftWeekArrow.hidden = true
-                                }
-
-                                if(self.day.lessons?.count != 0){
-                                    self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
-                                }
-                                else
-                                {
-                                    self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[self.todayDay])
-                                }
-                                
-                            }
-                            
-                        
-                })
-                
-            })
-            searchDisplayed = false
-            self.leftButton.setTitle("", forState: .Normal)
-            self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
-        }
-        else{
-            performSegueWithIdentifier("profileSegue", sender: sender)
-        }
+//        if(searchDisplayed){
+//            let jsonstring = defaults.valueForKey("jsonData") as? String ?? String()
+//            jsonDataList = JSON.parse(jsonstring)
+//            dispatch_async(dispatch_get_main_queue(), {
+//                parse(jsonDataList!,successBlock:
+//                    {
+//                        successBlock in
+//                        totalSchedule = successBlock
+//                            
+//                            if(totalSchedule.count > 0)
+//                            {
+//                                self.weekNumberTab = getWeekNumber()
+//                                weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
+//                                
+//                                
+//                                self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
+//                                self.updateScheduleProperties(self.todayDay)
+//                                self.leftWeekArrow.hidden = false
+//                                self.rightWeekArrow.hidden = false
+//                                if(self.weekNumberTab == totalSchedule.count )
+//                                {
+//                                    self.rightWeekArrow.hidden = true
+//                                }
+//                                else if(self.weekNumberTab == 1)
+//                                {
+//                                    self.leftWeekArrow.hidden = true
+//                                }
+//
+//                                if(self.day.lessons?.count != 0){
+//                                    self.performSegueWithIdentifier("mainSegue", sender: self.tabBarButtons[self.todayDay])
+//                                }
+//                                else
+//                                {
+//                                    self.performSegueWithIdentifier("voidLessons", sender: self.tabBarButtons[self.todayDay])
+//                                }
+//                                
+//                            }
+//                            
+//                        
+//                })
+//                
+//            })
+//            searchDisplayed = false
+//            self.leftButton.setTitle("", forState: .Normal)
+//            self.leftButton.setImage(UIImage(named: "Person"), forState: .Normal)
+//        }
+//        else{
+//            performSegueWithIdentifier("profileSegue", sender: sender)
+//        }
+        sideMenuVC.toggleMenu()
     }
     
     @IBAction func SunExtend(sender: AnyObject) {

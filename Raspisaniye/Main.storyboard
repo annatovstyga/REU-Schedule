@@ -1601,6 +1601,113 @@
             </objects>
             <point key="canvasLocation" x="-3124" y="203"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="ZR1-qY-XPM">
+            <objects>
+                <viewController storyboardIdentifier="leftMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1IX-5H-UXV" customClass="MenuViewController" customModule="Raspisaniye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ga-eX-e29"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vqa-xw-990"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="khe-bf-JOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjC-bf-PwK">
+                                <rect key="frame" x="40" y="63" width="300" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vW2-1v-I89">
+                                <rect key="frame" x="40" y="139" width="300" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jv-CI-S8U">
+                                <rect key="frame" x="40" y="101" width="300" height="30"/>
+                                <state key="normal" title="Сменить группу/преподавателя">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-XE-72m">
+                                <rect key="frame" x="40" y="72" width="300" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIp-q8-eYR" customClass="MenuItems" customModule="Raspisaniye" customModuleProvider="target">
+                                <rect key="frame" x="40" y="148" width="300" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f88-Ew-f2A">
+                                        <rect key="frame" x="8" y="39" width="47" height="30"/>
+                                        <state key="normal" title="Месяц">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="EIp-q8-eYR" eventType="touchUpInside" id="KD2-iQ-sYH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRX-aV-vzG">
+                                        <rect key="frame" x="8" y="8" width="54" height="30"/>
+                                        <state key="normal" title="Неделя">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="EIp-q8-eYR" eventType="touchUpInside" id="zG3-z9-NGn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="f88-Ew-f2A" secondAttribute="bottom" constant="25" id="J7r-fT-RQi"/>
+                                    <constraint firstItem="vRX-aV-vzG" firstAttribute="top" secondItem="EIp-q8-eYR" secondAttribute="topMargin" id="SGc-1l-oEH"/>
+                                    <constraint firstItem="vRX-aV-vzG" firstAttribute="leading" secondItem="EIp-q8-eYR" secondAttribute="leadingMargin" id="bTN-0W-Mo7"/>
+                                    <constraint firstItem="f88-Ew-f2A" firstAttribute="top" secondItem="vRX-aV-vzG" secondAttribute="bottom" constant="1" id="ksR-z7-uLP"/>
+                                    <constraint firstItem="vRX-aV-vzG" firstAttribute="leading" secondItem="f88-Ew-f2A" secondAttribute="leading" id="mwL-XE-RFN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="mounthButton" destination="f88-Ew-f2A" id="LNd-u7-05T"/>
+                                    <outlet property="weekButton" destination="vRX-aV-vzG" id="mE3-EG-J20"/>
+                                </connections>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FS-iF-Ujb">
+                                <rect key="frame" x="40" y="38" width="300" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="sOw-wS-GGt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.75686274509803919" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MjC-bf-PwK" firstAttribute="trailing" secondItem="jEJ-XE-72m" secondAttribute="trailing" id="1Hr-TH-Pcu"/>
+                            <constraint firstItem="MjC-bf-PwK" firstAttribute="top" secondItem="3FS-iF-Ujb" secondAttribute="bottom" constant="6" id="4Wg-qd-ufx"/>
+                            <constraint firstItem="vW2-1v-I89" firstAttribute="trailing" secondItem="EIp-q8-eYR" secondAttribute="trailing" id="72E-g4-ats"/>
+                            <constraint firstItem="jEJ-XE-72m" firstAttribute="top" secondItem="MjC-bf-PwK" secondAttribute="bottom" constant="8" symbolic="YES" id="7az-qi-5A1"/>
+                            <constraint firstItem="EIp-q8-eYR" firstAttribute="top" secondItem="vW2-1v-I89" secondAttribute="bottom" constant="8" symbolic="YES" id="BBj-HO-PLq"/>
+                            <constraint firstItem="jEJ-XE-72m" firstAttribute="top" secondItem="khe-bf-JOJ" secondAttribute="top" constant="72" id="E0z-i6-hVA"/>
+                            <constraint firstItem="7jv-CI-S8U" firstAttribute="top" secondItem="jEJ-XE-72m" secondAttribute="bottom" constant="6" id="Feh-Yw-Le5"/>
+                            <constraint firstItem="3FS-iF-Ujb" firstAttribute="leading" secondItem="khe-bf-JOJ" secondAttribute="leadingMargin" constant="20" id="GE5-ag-fai"/>
+                            <constraint firstItem="vW2-1v-I89" firstAttribute="top" secondItem="7jv-CI-S8U" secondAttribute="bottom" constant="8" symbolic="YES" id="L0z-YE-Vss"/>
+                            <constraint firstItem="Vqa-xw-990" firstAttribute="top" secondItem="EIp-q8-eYR" secondAttribute="bottom" constant="358" id="Rds-6l-Ll7"/>
+                            <constraint firstItem="3FS-iF-Ujb" firstAttribute="leading" secondItem="MjC-bf-PwK" secondAttribute="leading" id="SDM-N5-Uiv"/>
+                            <constraint firstItem="jEJ-XE-72m" firstAttribute="leading" secondItem="7jv-CI-S8U" secondAttribute="leading" id="WJ2-1x-N74"/>
+                            <constraint firstItem="vW2-1v-I89" firstAttribute="leading" secondItem="EIp-q8-eYR" secondAttribute="leading" id="Wht-5A-hAZ"/>
+                            <constraint firstItem="3FS-iF-Ujb" firstAttribute="top" secondItem="5ga-eX-e29" secondAttribute="bottom" constant="20" id="b1B-sT-Orv"/>
+                            <constraint firstItem="MjC-bf-PwK" firstAttribute="leading" secondItem="jEJ-XE-72m" secondAttribute="leading" id="f0h-Os-Ee3"/>
+                            <constraint firstItem="7jv-CI-S8U" firstAttribute="leading" secondItem="vW2-1v-I89" secondAttribute="leading" id="f5c-gM-ay6"/>
+                            <constraint firstItem="jEJ-XE-72m" firstAttribute="trailing" secondItem="7jv-CI-S8U" secondAttribute="trailing" id="fBA-wG-qlI"/>
+                            <constraint firstItem="3FS-iF-Ujb" firstAttribute="trailing" secondItem="MjC-bf-PwK" secondAttribute="trailing" id="iH6-w3-ZKd"/>
+                            <constraint firstItem="7jv-CI-S8U" firstAttribute="trailing" secondItem="vW2-1v-I89" secondAttribute="trailing" id="jX8-tp-c45"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuItems" destination="EIp-q8-eYR" id="v6n-9K-nxc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6j2-oX-IA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2636" y="975"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rPU-EJ-FQ9">
             <objects>
@@ -1636,6 +1743,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Sye-4k-cqK"/>
-        <segue reference="ZTr-C1-zsR"/>
+        <segue reference="wsd-Qu-EgG"/>
     </inferredMetricsTieBreakers>
 </document>
