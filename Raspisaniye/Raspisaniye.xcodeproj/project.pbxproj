@@ -17,8 +17,6 @@
 		A29F12D21C6A154C00D73B5C /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CD1C69F3BC00D73B5C /* InternetManager.swift */; };
 		A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12D51C6A63DA00D73B5C /* HelperManager.swift */; };
 		A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */; };
-		B217EFB61D7F6C9E00BA177E /* kConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217EFB41D7F6C9E00BA177E /* kConstant.swift */; };
-		B217EFB71D7F6C9E00BA177E /* KSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217EFB51D7F6C9E00BA177E /* KSideMenuVC.swift */; };
 		B217EFB91D7F751400BA177E /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217EFB81D7F751400BA177E /* MenuItems.swift */; };
 		B217EFBB1D7F797F00BA177E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217EFBA1D7F797F00BA177E /* MenuViewController.swift */; };
 		B21DA91F1C82EFB0008B6B32 /* Cat.png in Resources */ = {isa = PBXBuildFile; fileRef = B21DA91E1C82EFB0008B6B32 /* Cat.png */; };
@@ -45,6 +43,8 @@
 		B28F1FC51C542A7D00C9136B /* LoginViewTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F1FC41C542A7D00C9136B /* LoginViewTwoController.swift */; };
 		B29901891C956CDC00EE8D92 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */; };
 		B29EF4F61CB6C6BB0051C02F /* CustomUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29EF4F51CB6C6BB0051C02F /* CustomUpdateCell.swift */; };
+		B2A799A71D861A60007EE806 /* kConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A799A51D861A60007EE806 /* kConstant.swift */; };
+		B2A799A81D861A60007EE806 /* KSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A799A61D861A60007EE806 /* KSideMenuVC.swift */; };
 		B2B3E0BB1CA6DD4A0000EBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */; };
 		B2C4063D1C408CD000FB90BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */; };
 		B2C4F8731C5629B500B7CAFD /* CustomTextFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4F8721C5629B500B7CAFD /* CustomTextFld.swift */; };
@@ -67,8 +67,6 @@
 		A29F12D01C6A085200D73B5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
 		A29F12D51C6A63DA00D73B5C /* HelperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperManager.swift; path = Managers/HelperManager.swift; sourceTree = "<group>"; };
 		A29F12DC1C6A8AE300D73B5C /* OneLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneLesson.swift; path = "Data Model/OneLesson.swift"; sourceTree = "<group>"; };
-		B217EFB41D7F6C9E00BA177E /* kConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = kConstant.swift; path = ../SideMenuSwiftDemo/SideMenuSwiftDemo/kConstant.swift; sourceTree = "<group>"; };
-		B217EFB51D7F6C9E00BA177E /* KSideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KSideMenuVC.swift; path = ../SideMenuSwiftDemo/SideMenuSwiftDemo/KSideMenuVC.swift; sourceTree = "<group>"; };
 		B217EFB81D7F751400BA177E /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		B217EFBA1D7F797F00BA177E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B21DA91E1C82EFB0008B6B32 /* Cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cat.png; sourceTree = "<group>"; };
@@ -97,6 +95,8 @@
 		B296042D1C582F0400A14509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B29901881C956CDC00EE8D92 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = Pods/SwiftSpinner/SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
 		B29EF4F51CB6C6BB0051C02F /* CustomUpdateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUpdateCell.swift; sourceTree = "<group>"; };
+		B2A799A51D861A60007EE806 /* kConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kConstant.swift; sourceTree = "<group>"; };
+		B2A799A61D861A60007EE806 /* KSideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSideMenuVC.swift; sourceTree = "<group>"; };
 		B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2C406391C408C4E00FB90BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4063B1C408CD000FB90BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -227,8 +227,6 @@
 			children = (
 				B217EFBA1D7F797F00BA177E /* MenuViewController.swift */,
 				B217EFB81D7F751400BA177E /* MenuItems.swift */,
-				B217EFB41D7F6C9E00BA177E /* kConstant.swift */,
-				B217EFB51D7F6C9E00BA177E /* KSideMenuVC.swift */,
 				B2B3E0BA1CA6DD4A0000EBD9 /* GoogleService-Info.plist */,
 				B24779F71CA022360032C3A7 /* Raspisaniye-Bridging-Header.h */,
 				B22466301C9338B500569745 /* SearchViewController.swift */,
@@ -236,6 +234,8 @@
 				A2498BB11C6F585400AFBF4C /* images */,
 				B2C4F87E1C566D3000B7CAFD /* Customs */,
 				B296042F1C58316700A14509 /* Login Screen */,
+				B2A799A51D861A60007EE806 /* kConstant.swift */,
+				B2A799A61D861A60007EE806 /* KSideMenuVC.swift */,
 				A27DA1251C735A6100F7A92D /* Main Screen */,
 				A29DC4031C7114D4000842D3 /* Profile Screen */,
 				B24ACAB81C408B86006FB191 /* AppDelegate.swift */,
@@ -417,10 +417,10 @@
 				A29F12DD1C6A8AE300D73B5C /* OneLesson.swift in Sources */,
 				A29DC4071C7115DF000842D3 /* ProfileScreenTableViewCell.swift in Sources */,
 				B28F1FC01C54183400C9136B /* CustomBtn.swift in Sources */,
-				B217EFB61D7F6C9E00BA177E /* kConstant.swift in Sources */,
 				B2DDE85D1C8DF37E0055CDF4 /* AutoCompilte.swift in Sources */,
 				B217EFBB1D7F797F00BA177E /* MenuViewController.swift in Sources */,
 				A29DC4051C711507000842D3 /* ProfileTableViewController.swift in Sources */,
+				B2A799A81D861A60007EE806 /* KSideMenuVC.swift in Sources */,
 				B29EF4F61CB6C6BB0051C02F /* CustomUpdateCell.swift in Sources */,
 				B24B287B1C75184100CDF3BA /* OneWeek.swift in Sources */,
 				B24ACAC11C408B86006FB191 /* MainNavigationSegue.swift in Sources */,
@@ -435,9 +435,9 @@
 				B289090E1C52D14500EB0A08 /* CabNavSegue.swift in Sources */,
 				B28909101C52D88800EB0A08 /* LoginViewOneController.swift in Sources */,
 				B24ACAC21C408B86006FB191 /* MMSwiftTabBarController.swift in Sources */,
+				B2A799A71D861A60007EE806 /* kConstant.swift in Sources */,
 				A29F12D61C6A63DA00D73B5C /* HelperManager.swift in Sources */,
 				B217EFB91D7F751400BA177E /* MenuItems.swift in Sources */,
-				B217EFB71D7F6C9E00BA177E /* KSideMenuVC.swift in Sources */,
 				B24B287F1C751C5E00CDF3BA /* OneDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
