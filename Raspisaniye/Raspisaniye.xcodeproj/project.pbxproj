@@ -248,6 +248,7 @@
 				A250EB601C56CF530022A117 /* Supporting files */,
 				39E17D8BF96077BD126B01D3 /* Pods */,
 				D54C2DEEA65FC030BB451828 /* Frameworks */,
+				D5841BBAFDAE9DA59AF709A1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +266,13 @@
 				80428C21B7A19E73BE15A123 /* Pods_Raspisaniye.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5841BBAFDAE9DA59AF709A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +331,7 @@
 				Base,
 			);
 			mainGroup = B2FDE36D1C3DB4C300290A04;
-			productRefGroup = B2FDE3771C3DB4C300290A04 /* Products */;
+			productRefGroup = D5841BBAFDAE9DA59AF709A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -551,6 +559,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
@@ -582,6 +591,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raspisaniye-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Supporting Files/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
