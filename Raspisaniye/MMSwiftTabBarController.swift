@@ -1,6 +1,7 @@
 import UIKit
 import SwiftyJSON
 import SwiftSpinner
+import RealmSwift
 class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: Propiertes
@@ -13,6 +14,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     var currentViewController: UIViewController?
     @IBOutlet weak var subjectNameLabel: UILabel!
     
+    let realm = try! Realm()
     var todayDay = getDayOfWeek()!
     var SundayExtended:Bool? = false
     var tabBarFixedIndex:Int? = 1
@@ -35,6 +37,14 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
+        let start = "2016-09-01"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startDate:NSDate = dateFormatter.dateFromString(start)!
+        
+        
+        print("first of September \(startDate)")
        self.modalTransitionStyle = .PartialCurl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -46,17 +56,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
             parse(jsonDataList!,successBlock:
                 {
                     successBlock in
-                    if(sevenDayWeek == false)
-                    {
-                        for index in self.tabBarButtons.indices
-                        {
-                            print(self.tabBarButtons.count)
-                            self.tabBarButtons[index].frame.origin.x = (self.tabBarView.frame.width/6)*(CGFloat(index))
-                            self.tabBarButtons[index].frame.size.width = self.tabBarView.frame.width / 6
-
-                        }
-                    }
-                    totalSchedule = successBlock
+                    totalSchedule = successBlock //!
+                    
+                    
                     let screenForwardEdgeRecognizer: UISwipeGestureRecognizer! = UISwipeGestureRecognizer(target: self, action: #selector(MMSwiftTabBarController.rotateWeekForward(_:)))
                     screenForwardEdgeRecognizer.direction = .Left
                     let screenBackwardEdgeRecognizer: UISwipeGestureRecognizer! = UISwipeGestureRecognizer(target: self, action: #selector(MMSwiftTabBarController.rotateWeekBackward(_:)))
@@ -74,8 +76,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                         appDelegate.window?.makeKeyAndVisible()
                     }
                     else{
+                        var schedule = self.realm.objects(Schedule)
                         
-                        if(totalSchedule.count > 0)
+                        if(schedule.count > 0)
                         {
                             self.weekNumberTab = getWeekNumber()
                             weekNumber = totalSchedule[self.weekNumberTab! - 1].number!

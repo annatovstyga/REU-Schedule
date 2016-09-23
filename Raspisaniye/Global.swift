@@ -2,12 +2,14 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 let defaults = NSUserDefaults.standardUserDefaults()
 var jsonDataList:JSON?
 var selectedDay:Int = 1
 var weekNumber:Int = 1
 
+var firstOfSeptember:NSDate? = NSDate()
 var isGCMReceived:Bool? = defaults.objectForKey("isGCM") as? Bool ?? Bool()
 var sevenDayWeek:Bool = false
 var changes:Bool = false //Temp var
@@ -127,13 +129,33 @@ func parseToList(parsingList:[String: Int],successBlock: [String] ->())
     return
 }
 
+
+//lesson.
+
 func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
 {
+    let realm = try! Realm()
+    try! realm.write {
+        realm.deleteAll()
+    }
     SwiftSpinner.show("Немного волшебства")
     var schedule: [OneWeek] = []
+    
+    
+    var rasp = Schedule()
+    rasp.year = "2016"
+    print(jsontoparse)
+    
     for semestr in jsontoparse["success"]["data"] {
 
         let oneWeek: OneWeek = OneWeek()
+        
+        var week = Week()
+        week.number = semestr.1["weekNum"].int
+        
+        
+        
+        
         oneWeek.number = semestr.1["weekNum"].int
         oneWeek.days = [OneDay(),OneDay(),OneDay(),OneDay(),OneDay(),OneDay()]
         // weekData - is one week
@@ -142,7 +164,19 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
             // dayData - is one day
             for dayData in weekData.1 {
                 var oneDay: OneDay = OneDay()
+                
+                
+                
+                var day = Day()
+                day.dayName = dayData.0
+                day.date = dayData.1["date"].string
+                
+                
+                
+                
                 oneDay.dayName = dayData.0
+
+                
                 oneDay.lessons = []
                 oneDay.date = dayData.1["date"].string
                 // lessonData - is one lesson
@@ -174,12 +208,47 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
                        
                         oneDay.lessons?.append(lesson)
                         
+                        
+                        var subject = Lesson()
 
+                        
+                        subject.lessonNumber = lessonData.0
+                        subject.hashID  = lessonData.1["hash_id"].string
+                        subject.lessonType = lessonData.1["lesson_type"].string
+                        subject.room = lessonData.1["room"].string
+                        subject.lessonStart = lessonData.1["lesson_start"].string
+                        subject.lessonEnd = lessonData.1["lesson_end"].string
+                        subject.discipline = lessonData.1["discipline"].string
+                        subject.lessonType = lessonData.1["lessontype"].string
+                        subject.building = lessonData.1["building"].string
+                        subject.lector = lessonData.1["lector"].string
+                        subject.house  = lessonData.1["housing"].int
+                        subject.startWeek = lessonData.1["week_start"].int
+                        subject.endWeek = lessonData.1["week_end"].int
+                       
+                        
+                        
+    
+                        try! realm.write {
+                            day.lessons.append(subject)
+                        }
+                        
 
-                    }
+                    
+                        print("lessons 1\(day.lessons)")
                 }
-        
 
+                    print("lessons \(day.lessons)")
+
+                }
+                try! realm.write {
+                    week.days.append(day)
+                }
+                print("lessons 1\(day.lessons)")
+
+//                try! realm.write{
+//        
+//                }
                 switch oneDay.dayName! {
                 case "Monday":
                     oneWeek.days?[0] = oneDay
@@ -206,14 +275,27 @@ func parse(jsontoparse:JSON,successBlock: [OneWeek] -> ())
             }
             
         }
+        
+        try! realm.write {
+            rasp.weeks.append(week)
+        }
+
+        
         if(oneWeek.days?.count > 6)
         {
             sevenDayWeek = true
         }
 //        print(oneWeek.days?.count)
-        schedule.append(oneWeek)
         
+        try! realm.write() {
+            
+        }
+        schedule.append(oneWeek)
+        try! realm.write(){
+            realm.add(rasp, update: true)
+        }
     }
+    
     successBlock(schedule)
     SwiftSpinner.hide()
 }

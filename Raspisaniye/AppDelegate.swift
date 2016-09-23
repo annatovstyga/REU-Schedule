@@ -1,6 +1,7 @@
 //Created by rGradeStd
 
 import UIKit
+import RealmSwift
 let kConstantObj = kConstant()
 @UIApplicationMain
 
@@ -13,6 +14,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         let mainVcIntial = kConstantObj.SetIntialMainViewController("mainTabBar")
         self.window?.rootViewController = mainVcIntial
         self.window?.makeKeyAndVisible()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         // Override point for customization after application launch.
         return true
 }

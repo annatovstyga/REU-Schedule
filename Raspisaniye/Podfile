@@ -9,8 +9,8 @@ pod 'Alamofire', '~> 3.5'
 pod 'SwiftyJSON'
 pod "SwiftSpinner"
 pod 'Google/CloudMessaging'
-pod 'Realm', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', :submodules => true
-pod 'RealmSwift', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', :submodules => true
+pod ‘SwiftDate’
+
 end
 
 post_install do |installer|

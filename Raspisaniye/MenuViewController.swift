@@ -10,9 +10,26 @@ import UIKit
 
 class MenuViewController: UIViewController {
     @IBOutlet var menuItems:MenuItems?
+    @IBAction func change_group(sender: AnyObject) {
+        
+        defaults.setBool(false, forKey: "isLogined")
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("LoginViewOneControllerID") as?
+            LoginViewOneController
+        {
+            navigationController?.pushViewController(vc, animated: true)
+            self.presentViewController(vc, animated: true, completion: nil)
+//            self.present(vc, animated: true, completion: nil)
+
+        }
+    }
+    
+    
+    @IBOutlet weak var group_name: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         menuItems?.addLabel()
+        group_name.text = defaults.valueForKey("subjectName") as? String
+        
         // Do any additional setup after loading the view.
     }
 
