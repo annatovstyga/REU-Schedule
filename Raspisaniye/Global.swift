@@ -86,7 +86,7 @@ func getWeekNumber() -> Int
     let start = "\(todayYear)-09-01"
     print(todayYear)
     let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.dateFormat = "yyyy.MM.dd"
   
     let startDate:NSDate = dateFormatter.dateFromString(start)!
     let endDate:NSDate = NSDate()

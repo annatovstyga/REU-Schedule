@@ -75,7 +75,7 @@ class MainTableViewController: UITableViewController {
         
         cell.timeCell.text = "\(day.lessons![indexPath.item].lessonStart!) - \(day.lessons![indexPath.item].lessonEnd!)"
         
-        cell.descriptionCell.text = "\(parseLessonType(day.lessons![indexPath.item].lessonType!)) | \(day.lessons![indexPath.item].startWeek!)-\(day.lessons![indexPath.item].endWeek!) неделя | "
+        cell.descriptionCell.text = "\(parseLessonType(day.lessons![indexPath.item].lessonType!))  |  \(day.lessons![indexPath.item].startWeek!)-\(day.lessons![indexPath.item].endWeek!) неделя  |  "
         if((day.lessons![indexPath.item].lector != nil)&&(amistudent)){
             cell.descriptionCell.text?.appendContentsOf(day.lessons![indexPath.item].lector!)
         }

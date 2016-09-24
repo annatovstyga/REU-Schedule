@@ -37,9 +37,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
-        let start = "2016-09-01"
+        let start = "01.09.16"
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd.MM.yy"
         
         let startDate:NSDate = dateFormatter.dateFromString(start)!
         
@@ -83,7 +83,7 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                             self.weekNumberTab = getWeekNumber()
                             weekNumber = totalSchedule[self.weekNumberTab! - 1].number!
                             
-                            self.weekLabel.text = "Неделя \(String(weekNumber))"
+                            self.weekLabel.text = "Неделя \(String(weekNumber)) |  "
                             
                             self.subjectNameLabel.text = defaults.valueForKey("subjectName") as? String ?? ""
                             self.updateScheduleProperties(self.todayDay)
@@ -200,9 +200,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 segueSide = 1
                 (weekNumberTab!) += 1
                 self.updateScheduleProperties(selectedDay)
-                weekLabel.text = "Неделя " + String(weekNumber)
+                weekLabel.text = String(weekNumber) + " Неделя"
                 if(day.date != ""){
-                    weekLabel.text? += ", \(day.date!)"
+                    weekLabel.text? += " | \(day.date!)"
                 }
                 if(self.day.lessons?.count != 0){
                     performSegueWithIdentifier("weekSegue", sender: tabBarButtons[selectedDay!])
@@ -226,9 +226,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
                 print(selectedDay)
                 self.updateScheduleProperties(selectedDay)
                 
-                weekLabel.text = "Неделя " + String(weekNumber)
+                weekLabel.text = String(weekNumber) + " Неделя"
                 if(day.date != ""){
-                    weekLabel.text? += ", \(day.date!)"
+                    weekLabel.text? += " | \(day.date!)"
                 }
                 if(self.day.lessons?.count != 0){
                     performSegueWithIdentifier("weekSegue", sender: tabBarButtons[selectedDay!])
@@ -272,9 +272,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier! == "mainSegue" ) {
-            weekLabel.text = "Неделя " + String(weekNumber)
+            weekLabel.text = String(weekNumber) + " Неделя"
             if(day.date != "" && day.date != nil){
-                weekLabel.text? += ", \(day.date!)"
+                weekLabel.text? += " | \(day.date!)"
             }
             
             let dayVC = segue.destinationViewController as! MainTableViewController
@@ -283,9 +283,9 @@ class MMSwiftTabBarController: UIViewController,UITextFieldDelegate{
         }
         if(segue.identifier! == "voidLessons" )
         {
-            weekLabel.text = "Неделя " + String(weekNumber)
+            weekLabel.text =  String(weekNumber) + " Неделя"
             if(day.date != ""){
-                weekLabel.text? += ", \(day.date!)"
+                weekLabel.text? += " | \(day.date!)"
             }
             
         }
